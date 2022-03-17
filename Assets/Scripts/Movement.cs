@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public static Movement Instance { get; private set; }
+
     public float speed = 5f;
     public float jumpForce = 5f;
 
     private Rigidbody2D rb;
+
+    public SceneDetails CurrentScene { get; private set; }
+    public SceneDetails PrevScene { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -27,5 +37,11 @@ public class Movement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
         #endregion
+    }
+
+    public void SetCurrentScene(SceneDetails currScene)
+    {
+        PrevScene = CurrentScene;
+        CurrentScene = currScene;
     }
 }
