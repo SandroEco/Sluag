@@ -8,6 +8,9 @@ TagManager:
   - Collectable
   - circleShards
   - squareShards
+  - Cameras
+  - otherCameras
+  - Room
   layers:
   - Default
   - TransparentFX
