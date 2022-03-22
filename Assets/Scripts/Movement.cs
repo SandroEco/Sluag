@@ -23,17 +23,26 @@ public class Movement : MonoBehaviour
     private float horizontalDirection;
     private bool changingDirection => (rb.velocity.x > 0f && horizontalDirection < 0f) || (rb.velocity.x < 0f && horizontalDirection > 0f);
     private bool isFacingRight = true;
+    public bool canWalk;
        
     [Header("Jump Variables")]
     public float jumpForce = 12f;
     public float airLinearDrag = 2.5f;
     public float fallMultiplier = 8f;
     public float lowJumpFallMultiplier = 5f;
-    private bool canJump => Input.GetButtonDown("Jump") && isGrounded;
+    private float coyoteTime = 0.05f;
+    private float coyoteTimeCounter;
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+    private bool canJump => jumpBufferCounter > 0f && coyoteTimeCounter > 0f;
 
     [Header("Ground Collision Variables")]
     public float groundRaycastLength;
     public bool isGrounded;
+
+    [Header("Particles")]
+    public Transform dustJump;
+    private bool spawnDust;
 
     private void Awake()
     {
@@ -54,15 +63,63 @@ public class Movement : MonoBehaviour
         #endregion
 
         #region Jumping
-        if (canJump) Jump();
+        if (canJump)
+        {
+            jumpBufferCounter = 0f;
+            anim.SetTrigger("takeOf");
+            Jump();
+        }
+
         if (isGrounded)
         {
+            anim.SetBool("isJumping", false);
             ApplyGroundLinearDrag();
         }
         else
         {
+            anim.SetBool("isJumping", true);
             ApplyAirLinearDrag();
             FallMultiplier();
+        }
+        #endregion
+
+        #region CoyoteTime
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            coyoteTimeCounter = 0f;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+        #endregion
+
+        #region Particles
+        if (isGrounded == true)
+        {
+            if (spawnDust == true)
+            {
+                Instantiate(dustJump, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                spawnDust = false;
+            }
+        }
+        else
+        {
+            spawnDust = true;
         }
         #endregion
     }
@@ -85,8 +142,8 @@ public class Movement : MonoBehaviour
     }
     private void MoveCharacter()
     {
-        rb.AddForce(new Vector2(horizontalDirection, 0f) * movementAcceleration);
-        anim.SetFloat("speed", Mathf.Abs(horizontalDirection));
+            rb.AddForce(new Vector2(horizontalDirection, 0f) * movementAcceleration);
+            anim.SetFloat("speed", Mathf.Abs(horizontalDirection));
 
         if(isFacingRight && horizontalDirection < 0 || !isFacingRight && horizontalDirection > 0)
         {

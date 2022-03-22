@@ -11,6 +11,7 @@ TagManager:
   - Cameras
   - otherCameras
   - Room
+  - Hit
   layers:
   - Default
   - TransparentFX
