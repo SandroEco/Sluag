@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Square : TransformBaseState
+public class Bear : TransformBaseState
 {
     public InventoryScript IS;
 
@@ -10,21 +10,21 @@ public class Square : TransformBaseState
 
         transformStateManager.sluagObject.SetActive(false);
         transformStateManager.circleObject.SetActive(false);
-        transformStateManager.squareObject.SetActive(true);
+        transformStateManager.bearObject.SetActive(true);
 
-        transformStateManager.squareObject.transform.position = transformStateManager.currentPos.transform.position;
+        transformStateManager.bearObject.transform.position = transformStateManager.currentPos.transform.position;
     }
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown("v") && IS.circleShards >= 1)
+        if (Input.GetKeyDown("r") && IS.circleShards >= 1)
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.squareObject.transform.position;
+            transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.circle);
         }
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("e"))
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.squareObject.transform.position;
+            transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
     }

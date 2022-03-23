@@ -9,12 +9,12 @@ public class TransformStateManager : MonoBehaviour
     [Header("Souls")]
     public GameObject sluagObject;
     public GameObject circleObject;
-    public GameObject squareObject;
+    public GameObject bearObject;
 
     TransformBaseState currentState;
     public Sluag sluag = new Sluag();
     public Circle circle = new Circle();
-    public Square square = new Square();
+    public Bear bear = new Bear();
 
     void Start()
     {
