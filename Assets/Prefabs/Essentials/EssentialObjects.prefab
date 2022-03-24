@@ -12,16 +12,16 @@ GameObject:
   - component: {fileID: 776020405742515749}
   - component: {fileID: 776020405742515751}
   - component: {fileID: 1917283013352944847}
+  - component: {fileID: 7052001703354935946}
   - component: {fileID: 776020405742515747}
   - component: {fileID: 2223686474021643924}
-  - component: {fileID: 7052001703354935946}
   m_Layer: 0
   m_Name: Sluag
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &776020405742515746
 Transform:
   m_ObjectHideFlags: 0
@@ -137,50 +137,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.8}
   m_EdgeRadius: 0
---- !u!114 &776020405742515747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776020405742515750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b31be2a15d5731b499391932f443cfac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  movementAcceleration: 75
-  maxMoveSpeed: 8
-  movementDeceleration: 10
-  isFacingRight: 1
-  canMove: 1
-  jumpForce: 12
-  airLinearDrag: 2.5
-  fallMultiplier: 7
-  lowJumpFallMultiplier: 5
-  groundRaycastLength: 0.1
-  isGrounded: 1
-  dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
-  topRaycastLength: 1.2
-  edgeRaycastOffset: {x: 0.35, y: 0, z: 0}
-  innerRaycastOffset: {x: 0.18, y: 0, z: 0}
---- !u!114 &2223686474021643924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776020405742515750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f733fd2b90da92a47862e01e47628526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBtwAttack: 0
-  cooldown: 0.3
 --- !u!95 &7052001703354935946
 Animator:
   serializedVersion: 4
@@ -201,6 +157,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &776020405742515747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405742515750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31be2a15d5731b499391932f443cfac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  movementAcceleration: 75
+  maxMoveSpeed: 8
+  movementDeceleration: 10
+  horizontalDirection: 0
+  isFacingRight: 1
+  canMove: 1
+  jumpForce: 12
+  airLinearDrag: 2.5
+  fallMultiplier: 7
+  lowJumpFallMultiplier: 5
+  groundRaycastLength: 0.1
+  isGrounded: 1
+  dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
+  topRaycastLength: 1.25
+  edgeRaycastOffset: {x: 0.35, y: 0, z: 0}
+  innerRaycastOffset: {x: 0.14, y: 0, z: 0}
+--- !u!114 &2223686474021643924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405742515750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f733fd2b90da92a47862e01e47628526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBtwAttack: 0
+  cooldown: 0.25
 --- !u!1 &776020405830092886
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +375,7 @@ MonoBehaviour:
   movementAcceleration: 75
   maxMoveSpeed: 8
   movementDeceleration: 10
+  horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
   jumpForce: 10
@@ -453,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776020406215712387
 Transform:
   m_ObjectHideFlags: 0
@@ -607,6 +609,7 @@ MonoBehaviour:
   movementAcceleration: 75
   maxMoveSpeed: 8
   movementDeceleration: 10
+  horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
   jumpForce: 10
@@ -990,7 +993,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7760181, y: 1}
+    m_SensorSize: {x: 1.7779661, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

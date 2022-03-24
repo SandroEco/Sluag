@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public float movementAcceleration;
     public float maxMoveSpeed;
     public float movementDeceleration;
-    private float horizontalDirection;
+    public float horizontalDirection;
     private bool changingDirection => (rb.velocity.x > 0f && horizontalDirection < 0f) || (rb.velocity.x < 0f && horizontalDirection > 0f);
     public bool isFacingRight = true;
     public bool canMove = true;
@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
     {
         #region Movement
         horizontalDirection = GetInput().x;
-        #endregion
+        #endregion 
 
         #region CoyoteTime
         if (isGrounded)
@@ -114,11 +114,12 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCharacter();
         CheckCollisions();
+        MoveCharacter();
         #region Jumping
         if (isGrounded)
         {
+            anim.SetBool("isFalling", false);
             anim.SetBool("isJumping", false);
             ApplyGroundLinearDrag();
         }
@@ -135,6 +136,11 @@ public class Movement : MonoBehaviour
             Jump();
         }
         #endregion
+
+        if (canCornerCorrect)
+        {
+            CornerCorrect(rb.velocity.y);
+        }
     }
 
     public void SetCurrentScene(SceneDetails currScene)
@@ -168,11 +174,6 @@ public class Movement : MonoBehaviour
             {
                 anim.SetBool("MaxSpeedReached", false);
             }
-        }
-
-        if (canCornerCorrect)
-        {
-            CornerCorrect(rb.velocity.y);
         }
     }
 
@@ -211,6 +212,7 @@ public class Movement : MonoBehaviour
         if(rb.velocity.y < 0)
         {
             rb.gravityScale = fallMultiplier;
+            anim.SetBool("isFalling", true);
         }
         else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {

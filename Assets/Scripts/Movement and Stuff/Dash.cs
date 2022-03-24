@@ -61,6 +61,11 @@ public class Dash : MonoBehaviour
     private IEnumerator StopDashing()
     {
         yield return new WaitForSeconds(dashingTime);
+        if(rb.velocity.y > 1f)
+        {
+            rb.velocity = new Vector2(transform.position.x, 20f);
+
+        }
         isDashing = false;
         movementScript.canMove = true;
     }

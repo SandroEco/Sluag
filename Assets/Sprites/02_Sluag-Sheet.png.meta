@@ -856,6 +856,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea69e9415344914c8e6ba3c34faa9c3
+      internalID: 1668038311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9153528f29b69ad46a503a9abf03a50c
+      internalID: -321088878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -882,6 +924,7 @@ TextureImporter:
       02_Sluag-Sheet_4: 2106060998
       02_Sluag-Sheet_17: -941308045
       02_Sluag-Sheet_27: 2146915718
+      02_Sluag-Sheet_34: -321088878
       02_Sluag-Sheet_13: -509096335
       02_Sluag-Sheet_14: -1131669518
       02_Sluag-Sheet_7: -998440560
@@ -900,6 +943,7 @@ TextureImporter:
       02_Sluag-Sheet_9: -241150952
       02_Sluag-Sheet_20: -1348429451
       02_Sluag-Sheet_21: -915905247
+      02_Sluag-Sheet_33: 1668038311
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
