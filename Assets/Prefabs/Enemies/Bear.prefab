@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8663804945825078864}
   - component: {fileID: 8663804945825078865}
+  - component: {fileID: 5111498656739385955}
+  - component: {fileID: 6977592853132472450}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -65,6 +67,48 @@ PolygonCollider2D:
       - {x: 0.22784382, y: -0.71724534}
       - {x: 0.72756535, y: -0.23774195}
       - {x: 0.7322703, y: 0.19354668}
+--- !u!61 &5111498656739385955
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663804945825078863}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.36, y: -0.15}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.77, y: 1.45}
+  m_EdgeRadius: 0
+--- !u!58 &6977592853132472450
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663804945825078863}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8663804946147808767
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +138,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8663804946147808767}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.6, y: -4.25, z: -9.805987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -194,7 +238,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 3}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 4, y: 3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -239,12 +283,18 @@ MonoBehaviour:
   groundCheckPos: {fileID: 8663804946905710123}
   anim: {fileID: 8663804946147808705}
   bodyCollider: {fileID: 8663804945825078865}
-  enemyHealth: {fileID: 8663804946147808710}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  enemyHealth: {fileID: 8663804946147808710}
   walkSpeed: 125
   mustPatrol: 0
+  maxDistance: 8
+  isFacingRight: 0
+  attackDamage: 5
 --- !u!114 &8663804946147808710
 MonoBehaviour:
   m_ObjectHideFlags: 0

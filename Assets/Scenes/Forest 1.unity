@@ -8090,7 +8090,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c77585e21c60db4c864e96851a23eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   totalHP: 20
+  knockback: 0
+  knockbackTime: 0
+  isKnockbacked: 0
 --- !u!1 &1832395638
 GameObject:
   m_ObjectHideFlags: 0
