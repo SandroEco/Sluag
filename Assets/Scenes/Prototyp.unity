@@ -24708,6 +24708,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5111498656739385955, guid: a034206816ed9cb48974335667180cea, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111498656739385955, guid: a034206816ed9cb48974335667180cea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663804945825078865, guid: a034206816ed9cb48974335667180cea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663804946147808706, guid: a034206816ed9cb48974335667180cea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663804946147808706, guid: a034206816ed9cb48974335667180cea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8663804946147808709, guid: a034206816ed9cb48974335667180cea, type: 3}
       propertyPath: m_RootOrder
       value: 2

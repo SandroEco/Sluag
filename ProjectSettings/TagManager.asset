@@ -9,9 +9,10 @@ TagManager:
   - circleShards
   - squareShards
   - Cameras
-  - otherCameras
   - Room
   - Hit
+  - BearBody
+  - BearAntlers
   layers:
   - Default
   - TransparentFX

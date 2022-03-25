@@ -179,7 +179,7 @@ MonoBehaviour:
   horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
-  jumpForce: 12
+  jumpForce: 14
   airLinearDrag: 2.5
   fallMultiplier: 7
   lowJumpFallMultiplier: 5
@@ -1026,7 +1026,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7755102, y: 1}
+    m_SensorSize: {x: 1.7762864, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1253,7 +1253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.123, y: -23.123001}
+  m_AnchoredPosition: {x: 93.122986, y: -23.123001}
   m_SizeDelta: {x: 186.247, y: 46.247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5919614264224674972

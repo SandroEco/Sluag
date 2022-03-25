@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public Rigidbody2D rb;
 
@@ -44,4 +44,5 @@ public class enemyHealth : MonoBehaviour
         yield return new WaitForSeconds(knockbackTime);
         isKnockbacked = false;
     }
+
 }

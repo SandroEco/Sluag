@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Ded");
             //playDeathanim
-            // reset to checkpoint
+            //reset to checkpoint
         }
     }
 }
