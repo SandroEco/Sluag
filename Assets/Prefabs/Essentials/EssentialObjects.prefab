@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 776020405742515751}
-  movementScript: {fileID: 0}
   healtAllScript: {fileID: 2771922871288175187}
   knockback: 30
   knockbackTime: 2
@@ -548,7 +547,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -730429633, guid: db75edad5beb61a47a986381a66af17b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16862746, g: 0.8117648, b: 0.5019608, a: 0.7529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -686,7 +685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  movementScript: {fileID: 0}
   healtAllScript: {fileID: 0}
   knockback: 0
   knockbackTime: 0
@@ -1046,7 +1044,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7779661, y: 1}
+    m_SensorSize: {x: 1.7752444, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1081,7 +1079,7 @@ GameObject:
   - component: {fileID: 2771922871288175187}
   m_Layer: 0
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,8 +1134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6587599694306732990}
+  movementScript: {fileID: 0}
   maxHealth: 30
   currentHealth: 0
+  lastCheckPointPos: {x: 0, y: 0}
 --- !u!1 &776020407428802624
 GameObject:
   m_ObjectHideFlags: 0

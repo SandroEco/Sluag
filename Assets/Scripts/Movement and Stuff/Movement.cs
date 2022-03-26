@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private BoxCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
+    private HealthAll healthAll;
 
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -63,6 +64,7 @@ public class Movement : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
+        healthAll = GetComponent<HealthAll>();
 
         canMove = true;
     }
@@ -254,6 +256,11 @@ public class Movement : MonoBehaviour
             transform.position = new Vector3(transform.position.x - newPos, transform.position.y, transform.position.z);
             rb.velocity = new Vector2(rb.velocity.x, Yvelocity);
         }
+    }
+
+    public void Die()
+    {
+        anim.SetTrigger("Dead");
     }
 
     private void CheckCollisions()

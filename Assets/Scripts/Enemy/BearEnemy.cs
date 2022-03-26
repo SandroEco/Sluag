@@ -185,7 +185,6 @@ public class BearEnemy : MonoBehaviour
             if (healthAllScript != null)
             {
                 healthAllScript.TakeDamage(touchDamage);
-                Debug.Log("Aua");
             }
         }
     }

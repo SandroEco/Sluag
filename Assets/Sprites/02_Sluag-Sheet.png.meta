@@ -898,6 +898,174 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3921c7ff4008e4e9e85910c7f1967c
+      internalID: -1647914872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95aaf4f01bdf5ef44b4825e00e26594a
+      internalID: -1491882576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ce3fcae2211884f8afffc26af7f390
+      internalID: -1535445482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6e3db19d5a0b34fa06b9dd2bc77141
+      internalID: -721843775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ecc387a5b726748b55e454a3d3404b
+      internalID: -1734251627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b10cf0a581fc3438b4f8bf120574d2
+      internalID: 2104559682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea74f1ee748f28e4393462da8709a413
+      internalID: -1581637746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cad5b4c11a5c840a47c08066cd4a6b
+      internalID: -513172632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -910,13 +1078,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       02_Sluag-Sheet_12: 1061534596
-      02_Sluag-Sheet_11: 1695853310
+      02_Sluag-Sheet_35: -1647914872
       02_Sluag-Sheet_26: 355084717
       02_Sluag-Sheet_32: -1697391270
       02_Sluag-Sheet_16: -1308009745
       02_Sluag-Sheet_1: 1533794233
-      02_Sluag-Sheet_5: -1748230464
-      02_Sluag-Sheet_18: -1113193026
       02_Sluag-Sheet_2: 97649766
       02_Sluag-Sheet_10: -2042600654
       02_Sluag-Sheet_0: 1204038114
@@ -925,25 +1091,35 @@ TextureImporter:
       02_Sluag-Sheet_17: -941308045
       02_Sluag-Sheet_27: 2146915718
       02_Sluag-Sheet_34: -321088878
+      02_Sluag-Sheet_39: -1734251627
+      02_Sluag-Sheet_8: 783320833
+      02_Sluag-Sheet_31: -1614835890
+      02_Sluag-Sheet_29: 2045409250
+      02_Sluag-Sheet_25: -310949764
+      02_Sluag-Sheet_3: -520377060
+      02_Sluag-Sheet_40: 2104559682
+      02_Sluag-Sheet_42: -513172632
+      02_Sluag-Sheet_33: 1668038311
+      02_Sluag-Sheet_11: 1695853310
+      02_Sluag-Sheet_41: -1581637746
+      02_Sluag-Sheet_5: -1748230464
+      02_Sluag-Sheet_18: -1113193026
+      02_Sluag-Sheet_38: -721843775
       02_Sluag-Sheet_13: -509096335
       02_Sluag-Sheet_14: -1131669518
       02_Sluag-Sheet_7: -998440560
-      02_Sluag-Sheet_8: 783320833
       02_Sluag-Sheet_23: -903956643
       02_Sluag-Sheet_28: 1853045133
-      02_Sluag-Sheet_31: -1614835890
-      02_Sluag-Sheet_29: 2045409250
       02_Sluag-Sheet_22: 495588172
-      02_Sluag-Sheet_25: -310949764
       02_Sluag-Sheet_19: 228527003
-      02_Sluag-Sheet_3: -520377060
+      02_Sluag-Sheet_36: -1491882576
+      02_Sluag-Sheet_37: -1535445482
       02_Sluag-Sheet_24: -1012096765
       02_Sluag-Sheet_15: 219932396
       02_Sluag-Sheet_30: -678553232
       02_Sluag-Sheet_9: -241150952
       02_Sluag-Sheet_20: -1348429451
       02_Sluag-Sheet_21: -915905247
-      02_Sluag-Sheet_33: 1668038311
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
