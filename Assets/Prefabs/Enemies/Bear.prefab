@@ -43,7 +43,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.94, y: 0.48}
@@ -266,6 +266,7 @@ MonoBehaviour:
   groundCheckPos: {fileID: 8663804946905710123}
   anim: {fileID: 8663804946147808705}
   bodyCollider: {fileID: 8663804945825078865}
+  antlers: {fileID: 5111498656739385955}
   enemyHealth: {fileID: 8663804946147808710}
   groundLayer:
     serializedVersion: 2
@@ -277,6 +278,9 @@ MonoBehaviour:
   huntSpeed: 6
   mustPatrol: 0
   maxDistance: 8
+  isFacingRight: 0
+  playerFound: 0
+  targetDirection: {x: 0, y: 0}
   touchDamage: 5
 --- !u!114 &8663804946147808710
 MonoBehaviour:
@@ -291,7 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
-  totalHP: 50
+  drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
+  totalHP: 10
   knockback: 12
   knockbackTime: 0.3
   isKnockbacked: 0

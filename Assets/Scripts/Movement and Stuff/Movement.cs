@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D bc;
     private Animator anim;
+    private Acceleration accelerationScript;
 
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -61,6 +62,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        accelerationScript = GetComponent<Acceleration>();
 
         canMove = true;
     }
@@ -167,12 +169,19 @@ public class Movement : MonoBehaviour
 
             if (Mathf.Abs(rb.velocity.x) > maxMoveSpeed)
             {
-                anim.SetBool("MaxSpeedReached", true);
+                if (accelerationScript)
+                {
+                    accelerationScript.setMaxSpeedReached = true;
+
+                }
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxMoveSpeed, rb.velocity.y);
             }
             else
             {
-                anim.SetBool("MaxSpeedReached", false);
+                if (accelerationScript)
+                {
+                    accelerationScript.setMaxSpeedReached = false;
+                }
             }
         }
     }

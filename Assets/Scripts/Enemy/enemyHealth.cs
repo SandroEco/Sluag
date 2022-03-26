@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Components")]
     public Rigidbody2D rb;
+    public GameObject drop;
 
     public float totalHP;
     private float HP;
@@ -21,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(HP <= 0)
         {
+            Dead();
             Destroy(gameObject);
         }
     }
@@ -45,4 +48,9 @@ public class EnemyHealth : MonoBehaviour
         isKnockbacked = false;
     }
 
+    private void Dead()
+    {
+        //play death anim
+        Instantiate(drop, transform.position, Quaternion.identity);
+    }
 }

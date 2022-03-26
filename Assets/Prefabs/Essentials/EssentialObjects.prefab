@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 776020405742515747}
   - component: {fileID: 2223686474021643924}
   - component: {fileID: 1560163632881159199}
+  - component: {fileID: 5857009278826993379}
   m_Layer: 7
   m_Name: Sluag
   m_TagString: Player
@@ -215,9 +216,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4514912da8e10b46a60657960ac1a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 0
-  healthBar: {fileID: 6587599694306732990}
+  rb: {fileID: 776020405742515751}
+  movementScript: {fileID: 0}
+  healtAllScript: {fileID: 2771922871288175187}
+  knockback: 30
+  knockbackTime: 2
+  isKnockbacked: 0
+--- !u!114 &5857009278826993379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405742515750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b053932d9b6f414b89e9d517a12f86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setMaxSpeedReached: 0
 --- !u!1 &776020405830092886
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,9 +685,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4514912da8e10b46a60657960ac1a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 0
-  healthBar: {fileID: 0}
+  rb: {fileID: 0}
+  movementScript: {fileID: 0}
+  healtAllScript: {fileID: 0}
+  knockback: 0
+  knockbackTime: 0
+  isKnockbacked: 0
 --- !u!1 &776020406217204785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1046,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7762864, y: 1}
+    m_SensorSize: {x: 1.7779661, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1058,6 +1078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 776020407137322592}
   - component: {fileID: 776020407137322620}
+  - component: {fileID: 2771922871288175187}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1102,6 +1123,21 @@ MonoBehaviour:
   sluagObject: {fileID: 776020405742515750}
   circleObject: {fileID: 776020405843842707}
   bearObject: {fileID: 776020406215712386}
+--- !u!114 &2771922871288175187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020407137322594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b168e51b3a04d4e94b405ce005d136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 6587599694306732990}
+  maxHealth: 30
+  currentHealth: 0
 --- !u!1 &776020407428802624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.122986, y: -23.123001}
+  m_AnchoredPosition: {x: 93.122986, y: -23.122986}
   m_SizeDelta: {x: 186.247, y: 46.247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5919614264224674972

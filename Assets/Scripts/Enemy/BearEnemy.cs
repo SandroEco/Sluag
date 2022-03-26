@@ -9,8 +9,10 @@ public class BearEnemy : MonoBehaviour
     public Transform groundCheckPos;
     public Animator anim;
     public PolygonCollider2D bodyCollider;
+    public BoxCollider2D antlers;
     public EnemyHealth enemyHealth;
     private Transform target;
+    public HealthAll healthAllScript;
 
     [Header("Layermasks")]
     public LayerMask groundLayer;
@@ -25,13 +27,13 @@ public class BearEnemy : MonoBehaviour
     [Header("RaycastStuff")]
     public float maxDistance;
     private float oldPos = 0.0f;
-    private bool isFacingRight;
+    public bool isFacingRight;
     public bool playerFound;
+    public Vector2 targetDirection;
+    private bool checkForPlayer;
 
     [Header("Damage")]
     public int touchDamage;
-
-    public Vector2 targetDirection;
 
     private bool once;
     enum EnemyState
@@ -45,7 +47,9 @@ public class BearEnemy : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        healthAllScript = GameObject.FindObjectOfType<HealthAll>();
 
+        checkForPlayer = true;
         once = true;
         mustPatrol = true;
         oldPos = transform.position.x;
@@ -66,11 +70,6 @@ public class BearEnemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     void Patrol()
     {
         mustFlip = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer);
@@ -78,7 +77,6 @@ public class BearEnemy : MonoBehaviour
         if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer) && !enemyHealth.isKnockbacked)
         {
             Flip();
-            Debug.Log("flip");
         }
         anim.SetBool("MaxSpeedReached", false);
         if (!enemyHealth.isKnockbacked)
@@ -98,61 +96,65 @@ public class BearEnemy : MonoBehaviour
 
     void CheckForPlayer()
     {
-        if(transform.position.x > oldPos)
+        if (checkForPlayer)
         {
-            isFacingRight = true;
-        }
-        else if(transform.position.x < oldPos)
-        {
-            isFacingRight = false;
-        }
-        oldPos = transform.position.x;
-
-        if (isFacingRight)
-        {
-            Debug.DrawRay(transform.position, Vector3.right * maxDistance, Color.green);
-
-            if (Physics2D.Raycast(transform.position, Vector3.right, maxDistance, playerLayer))
+            if (transform.position.x > oldPos)
             {
-                playerFound = true;
-                Debug.DrawRay(transform.position, Vector3.up - Vector3.left * maxDistance, Color.red);
-                //Debug.DrawRay(transform.position, Vector3.right * maxDistance, Color.red);
-                currentState = EnemyState.Hunt;
-                targetDirection = new Vector2(target.position.x, transform.position.y);
+                isFacingRight = true;
             }
-            else
+            else if (transform.position.x < oldPos)
             {
-                if (once && playerFound)
+                isFacingRight = false;
+            }
+            oldPos = transform.position.x;
+
+            if (isFacingRight)
+            {
+                Debug.DrawRay(transform.position, Vector3.right * maxDistance, Color.green);
+
+                if (Physics2D.Raycast(transform.position, Vector3.right, maxDistance, playerLayer))
                 {
-                    StartCoroutine(Timer());
-
+                    playerFound = true;
+                    Debug.DrawRay(transform.position, Vector3.up - Vector3.left * maxDistance, Color.red);
+                    //Debug.DrawRay(transform.position, Vector3.right * maxDistance, Color.red);
+                    currentState = EnemyState.Hunt;
+                    targetDirection = new Vector2(target.position.x, transform.position.y);
                 }
-                playerFound = false;
-            }
-
-        }
-
-        if (!isFacingRight)
-        {
-            Debug.DrawRay(transform.position, Vector3.left * maxDistance, Color.green);
-
-            if (Physics2D.Raycast(transform.position, Vector3.left, maxDistance, playerLayer))
-            {
-                playerFound = true;
-                Debug.DrawRay(transform.position, Vector3.left * maxDistance, Color.red);
-                //Debug.DrawRay(transform.position, Vector3.up - Vector3.right * maxDistance, Color.red);
-                currentState = EnemyState.Hunt;
-                targetDirection = new Vector2(target.position.x, transform.position.y);
-            }
-            else
-            {
-                if (once && playerFound)
+                else
                 {
-                    StartCoroutine(Timer());
+                    if (once && playerFound)
+                    {
+                        StartCoroutine(Timer());
+
+                    }
+                    playerFound = false;
                 }
-                playerFound = false;
+
+            }
+
+            if (!isFacingRight)
+            {
+                Debug.DrawRay(transform.position, Vector3.left * maxDistance, Color.green);
+
+                if (Physics2D.Raycast(transform.position, Vector3.left, maxDistance, playerLayer))
+                {
+                    playerFound = true;
+                    Debug.DrawRay(transform.position, Vector3.left * maxDistance, Color.red);
+                    //Debug.DrawRay(transform.position, Vector3.up - Vector3.right * maxDistance, Color.red);
+                    currentState = EnemyState.Hunt;
+                    targetDirection = new Vector2(target.position.x, transform.position.y);
+                }
+                else
+                {
+                    if (once && playerFound)
+                    {
+                        StartCoroutine(Timer());
+                    }
+                    playerFound = false;
+                }
             }
         }
+        
     }
 
     void RunTowardsPlayer()
@@ -168,17 +170,21 @@ public class BearEnemy : MonoBehaviour
         {
             transform.position = transform.position + (-transform.right * huntSpeed * Time.deltaTime);
         }
+
+        if (antlers.IsTouchingLayers(groundLayer))
+        {
+            anim.SetBool("MaxSpeedReached", false);
+            Bonk();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            var healthComponent = collision.gameObject.GetComponent<PlayerHealth>();
-            if (healthComponent != null)
+            if (healthAllScript != null)
             {
-                healthComponent.TakeDamage(touchDamage);
-                //dicker Knockback
+                healthAllScript.TakeDamage(touchDamage);
                 Debug.Log("Aua");
             }
         }
@@ -187,13 +193,45 @@ public class BearEnemy : MonoBehaviour
     private IEnumerator Timer()
     {
         once = false;
-        Debug.Log("startCoroutine");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1);
         if(!playerFound)
         {
             currentState = EnemyState.Patrol;
         }
         once = true;
-        Debug.Log("endCoroutine");
+    }
+
+    private void Bonk()
+    {
+        Debug.Log("Bonk");
+        checkForPlayer = false;
+        enemyHealth.isKnockbacked = true;
+        anim.SetBool("isStunned", true);
+        if (isFacingRight)
+        {
+            rb.AddForce((Vector3.up - Vector3.right) * 0.2f, ForceMode2D.Impulse);
+            Debug.Log("otherBonk");
+        }
+        if (!isFacingRight)
+        {
+            rb.AddForce((Vector3.up - Vector3.left) * 0.2f, ForceMode2D.Impulse);
+        }
+        StartCoroutine(BonkTimer());
+        StartCoroutine(Stunned());
+    }
+
+    private IEnumerator BonkTimer()
+    {
+        yield return new WaitForSeconds(1);
+        rb.velocity = Vector3.zero;
+    }
+    private IEnumerator Stunned()
+    {
+        yield return new WaitForSeconds(4);
+        anim.SetBool("MaxSpeedReached", false);
+        anim.SetBool("isStunned", false);
+        enemyHealth.isKnockbacked = false;
+        checkForPlayer = true;
+        currentState = EnemyState.Patrol;
     }
 }

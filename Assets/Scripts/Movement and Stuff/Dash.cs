@@ -7,6 +7,7 @@ public class Dash : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
     public Movement movementScript;
+    private Animator anim;
 
     public float dashingVelocity = 14f;
     public float dashingTime = 0.5f;
@@ -20,6 +21,7 @@ public class Dash : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Movement.Instance.canMove = true;
         movementScript = GetComponent<Movement>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -43,10 +45,9 @@ public class Dash : MonoBehaviour
             StartCoroutine(StopDashing());
         }
 
-        //anim.SetBool("isDashing", isDashing);
-
         if (isDashing)
         {
+            anim.SetBool("isDashing", true);
             rb.velocity = dashingDir.normalized * dashingVelocity;
             return;
         }
@@ -68,5 +69,6 @@ public class Dash : MonoBehaviour
         }
         isDashing = false;
         movementScript.canMove = true;
+        anim.SetBool("isDashing", false);
     }
 }

@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 30;
-    public int currentHealth;
+    [Header("Components")]
+    public Rigidbody2D rb;
+    public HealthAll healtAllScript;
 
-    public HealthBar healthBar;
+    [Header("Knockback")]
+    public float knockback;
+    public float knockbackTime;
+    public bool isKnockbacked;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        isKnockbacked = false;
+        healtAllScript = GameObject.FindObjectOfType<HealthAll>();
     }
 
-    public void TakeDamage(int amount)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        currentHealth -= amount;
-        healthBar.SetHealth(currentHealth);
-
-        if(currentHealth <= 0)
+        if(other.tag == "BearAntlers")
         {
-            Debug.Log("Ded");
-            //playDeathanim
-            //reset to checkpoint
+            rb = GetComponent<Rigidbody2D>();
+            isKnockbacked = true;
+            Vector2 difference = (transform.position - other.transform.position);
+            difference.y = 1f;
+            Vector2 force = difference * knockback;
+            rb.AddForce(force, ForceMode2D.Impulse);
+            healtAllScript.TakeDamage(10);
+            StartCoroutine(KnockbackCounter());
         }
+    }
+
+    private IEnumerator KnockbackCounter()
+    {
+        yield return new WaitForSeconds(knockbackTime);
+        isKnockbacked = false;
     }
 }
