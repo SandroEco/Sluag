@@ -19,12 +19,12 @@ public class Circle : TransformBaseState
     {
         if (Input.GetKeyDown("r"))
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
+            //transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
         if (Input.GetKeyDown("e") && IS.squareShards >= 1)
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
+            //transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.bear);
         }
     }

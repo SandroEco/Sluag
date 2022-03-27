@@ -19,12 +19,12 @@ public class Bear : TransformBaseState
     {
         if (Input.GetKeyDown("r") && IS.circleShards >= 1)
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
+            //transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.circle);
         }
         if (Input.GetKeyDown("e"))
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
+            //transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
     }

@@ -6,7 +6,7 @@ using Cinemachine;
 public class CameraAdjustement : MonoBehaviour
 {
     CinemachineVirtualCamera cva;
-    public Transform player;
+    public Transform currentPos;
 
     private void Start()
     {
@@ -15,8 +15,8 @@ public class CameraAdjustement : MonoBehaviour
 
     private void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        cva.LookAt = player;
-        cva.Follow = player;
+        currentPos = GameObject.FindGameObjectWithTag("CurrentPos").transform;
+        cva.LookAt = currentPos;
+        cva.Follow = currentPos;
     }
 }

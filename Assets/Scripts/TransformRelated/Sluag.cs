@@ -19,13 +19,12 @@ public class Sluag : TransformBaseState
     {
         if (Input.GetKeyDown("r") && IS.circleShards >= 1)
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.sluagObject.transform.position;
+            //transformStateManager.currentPos.transform.position = transformStateManager.sluagObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.circle);
         }
         if (Input.GetKeyDown("e") && IS.squareShards >= 1)
         {
-            transformStateManager.currentPos.transform.position = transformStateManager.sluagObject.transform.position;
-
+            //transformStateManager.currentPos.transform.position = transformStateManager.sluagObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.bear);
         }
     }

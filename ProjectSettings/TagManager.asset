@@ -15,6 +15,7 @@ TagManager:
   - BearAntlers
   - Environment
   - Boundary
+  - CurrentPos
   layers:
   - Default
   - TransparentFX
