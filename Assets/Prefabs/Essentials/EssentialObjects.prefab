@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7052001703354935946}
   - component: {fileID: 776020405742515747}
   - component: {fileID: 2223686474021643924}
-  - component: {fileID: 1560163632881159199}
   - component: {fileID: 5857009278826993379}
   m_Layer: 7
   m_Name: Sluag
@@ -202,25 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f733fd2b90da92a47862e01e47628526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwAttack: 0
-  cooldown: 0.25
---- !u!114 &1560163632881159199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776020405742515750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4514912da8e10b46a60657960ac1a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 776020405742515751}
-  healtAllScript: {fileID: 2771922871288175187}
+  healthAllScript: {fileID: 0}
   knockback: 30
   knockbackTime: 2
   isKnockbacked: 0
+  timeBtwAttack: 0
+  cooldown: 0.25
 --- !u!114 &5857009278826993379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +467,6 @@ GameObject:
   - component: {fileID: 152562282919868481}
   - component: {fileID: 776020406215712384}
   - component: {fileID: 1064628905894302273}
-  - component: {fileID: 1017088705281249228}
   m_Layer: 7
   m_Name: Bear
   m_TagString: Player
@@ -672,23 +657,7 @@ MonoBehaviour:
   dashingTime: 0.1
   isDashing: 0
   canDash: 1
---- !u!114 &1017088705281249228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776020406215712386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4514912da8e10b46a60657960ac1a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  healtAllScript: {fileID: 0}
-  knockback: 0
-  knockbackTime: 0
-  isKnockbacked: 0
+  dashCooldown: 0.5
 --- !u!1 &776020406217204785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1013,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7752444, y: 1}
+    m_SensorSize: {x: 1.7783595, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1135,6 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6587599694306732990}
   movementScript: {fileID: 0}
+  player: {fileID: 0}
   maxHealth: 30
   currentHealth: 0
   lastCheckPointPos: {x: 0, y: 0}
@@ -1442,6 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4785178457058034583}
   - component: {fileID: 4588758190198715418}
+  - component: {fileID: 2731301955596238393}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -1497,6 +1468,32 @@ PolygonCollider2D:
       - {x: 0.22784382, y: -0.71724534}
       - {x: 0.72756535, y: -0.23774195}
       - {x: 0.7322703, y: 0.19354668}
+--- !u!61 &2731301955596238393
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674463590612035843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5893884685984176184
 GameObject:
   m_ObjectHideFlags: 0

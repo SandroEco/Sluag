@@ -13,6 +13,7 @@ TagManager:
   - Hit
   - BearBody
   - BearAntlers
+  - Environment
   layers:
   - Default
   - TransparentFX

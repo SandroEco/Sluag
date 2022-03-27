@@ -8,13 +8,15 @@ public class Dash : MonoBehaviour
     private Rigidbody2D rb;
     public Movement movementScript;
     private Animator anim;
+    //public GameObject destroyEffect;
 
     public float dashingVelocity = 14f;
     public float dashingTime = 0.5f;
     private Vector2 dashingDir;
     public bool isDashing;
     public bool canDash = true;
-
+    private float timeBtwDash;
+    public float dashCooldown;
 
     void Start()
     {
@@ -27,22 +29,34 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("w") && canDash)
+        if(timeBtwDash <= 0)
         {
-            movementScript.canMove = false;
-            isDashing = true;
-            canDash = false;
-            rb.drag = 0f;
-            rb.velocity = Vector2.zero;
-            rb.gravityScale = 0f;
-            dashingDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-            if (dashingDir == Vector2.zero)
+            if (Input.GetKeyDown("w") && canDash)
             {
-                dashingDir = new Vector2(transform.localScale.x, 0);
-            }
+                movementScript.canMove = false;
+                isDashing = true;
+                canDash = false;
+                rb.drag = 0f;
+                rb.velocity = Vector2.zero;
+                rb.gravityScale = 0f;
+                dashingDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-            StartCoroutine(StopDashing());
+                if (dashingDir == Vector2.zero)
+                {
+                    dashingDir = new Vector2(transform.localScale.x, 0);
+                }
+
+                if(timeBtwDash <= 0)
+                {
+                    timeBtwDash = dashCooldown;
+                }
+
+                StartCoroutine(StopDashing());
+            }
+        }
+        else
+        {
+            timeBtwDash -= Time.deltaTime;
         }
 
         if (isDashing)
@@ -65,10 +79,21 @@ public class Dash : MonoBehaviour
         if(rb.velocity.y > 1f)
         {
             rb.velocity = new Vector2(transform.position.x, 20f);
-
         }
         isDashing = false;
         movementScript.canMove = true;
         anim.SetBool("isDashing", false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (isDashing)
+        {
+            if (other.gameObject.CompareTag("Environment"))
+            {
+                Destroy(other.gameObject);
+                //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            }
+        }
     }
 }
