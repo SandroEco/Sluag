@@ -188,7 +188,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void Flip()
+    public void Flip()
     {
         isFacingRight = !isFacingRight;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
