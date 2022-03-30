@@ -13,28 +13,38 @@ public class WallJumping : MonoBehaviour
     public Movement movementScript;
 
     private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space");
+    public bool sticksToWall;
+
+    [Header("Wall Jump")]
+    public float wallJumpForce;
+    public bool canWallJump;
 
     void Start()
     {
         movementScript = GetComponent<Movement>();
         rb = GetComponent<Rigidbody2D>();
+        canWallJump = true;
     }
 
     void FixedUpdate()
     {
         CheckCollisions();
-    }
-
-    private void Update()
-    {
         if (wallGrab)
         {
             WallGrab();
         }
+    }
 
-        //if (Input.GetKeyUp("space") && !movementScript.isJumping)
+    private void Update()
+    {
+        if (Input.GetKeyUp("space") && sticksToWall && canWallJump)
         {
             WallJump();
+            canWallJump = false;
+        }
+        if (movementScript.isGrounded)
+        {
+            canWallJump = true;
         }
     }
 
@@ -62,25 +72,39 @@ public class WallJumping : MonoBehaviour
         if(onRightWall && movementScript.horizontalDirection >= 0f)
         {
             rb.velocity = new Vector2(1f, rb.velocity.y);
+            sticksToWall = true;
         }
         else if(!onRightWall && movementScript.horizontalDirection <= 0f)
         {
             rb.velocity = new Vector2(-1f, rb.velocity.y);
+            sticksToWall = true;
+        }
+        else
+        {
+            sticksToWall = false;
         }
 
-        if(onRightWall && !movementScript.isFacingRight)
+        if (onRightWall && !movementScript.isFacingRight)
         {
-            //movementScript.Flip();
+            movementScript.Flip();
         }
         else if(!onRightWall && movementScript.isFacingRight)
         {
-            //movementScript.Flip();
+            movementScript.Flip();
         }
     }
 
     void WallJump()
     {
-        Vector2 jumpDirection = onRightWall ? Vector2.left : Vector2.right;
-        //movementScript.Jump(Vector2.up + jumpDirection);
+        if (onWall)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce((Vector2.up + Vector2.right).normalized * wallJumpForce, ForceMode2D.Impulse);
+        }
+        if (onRightWall)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce((Vector2.up + Vector2.left).normalized * wallJumpForce, ForceMode2D.Impulse);
+        }
     }
 }

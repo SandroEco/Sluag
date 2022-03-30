@@ -194,7 +194,7 @@ public class Movement : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
-    private void ApplyAirLinearDrag()
+    public void ApplyAirLinearDrag()
     {
         rb.drag = airLinearDrag;
     }
@@ -211,7 +211,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
         ApplyAirLinearDrag();
         rb.velocity = new Vector2(rb.velocity.x, 0f);
