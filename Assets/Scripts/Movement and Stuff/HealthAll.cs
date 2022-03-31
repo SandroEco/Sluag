@@ -9,6 +9,7 @@ public class HealthAll : MonoBehaviour
     public HealthBar healthBar;
     public Movement movementScript;
     public GameObject player;
+    private Rigidbody2D rb;
 
     [Header("Health")]
     public int maxHealth = 30;
@@ -37,10 +38,17 @@ public class HealthAll : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            player.transform.position = lastCheckPointPos;
             movementScript.Die();
-            currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            StartCoroutine(DeathTransition());
         }
+    }
+
+    private IEnumerator DeathTransition()
+    {
+        yield return new WaitForSeconds(1);
+        movementScript.canMove = true;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        player.transform.position = lastCheckPointPos;
     }
 }

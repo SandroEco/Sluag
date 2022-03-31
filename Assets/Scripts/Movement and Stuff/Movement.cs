@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour
     private BoxCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
-    private HealthAll healthAll;
 
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -52,6 +51,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 innerRaycastOffset;
     private bool canCornerCorrect;
 
+    [Header("Others")]
+    public float strength;
 
     private void Awake()
     {
@@ -64,7 +65,6 @@ public class Movement : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
-        healthAll = GetComponent<HealthAll>();
 
         canMove = true;
     }
@@ -258,11 +258,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        anim.SetTrigger("Dead");
-    }
-
     private void CheckCollisions()
     {
         isGrounded = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, groundRaycastLength, Vector2.down, groundRaycastLength, groundLayer);
@@ -282,5 +277,12 @@ public class Movement : MonoBehaviour
 
         Gizmos.DrawLine(transform.position - innerRaycastOffset + Vector3.up * topRaycastLength, transform.position - innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
         Gizmos.DrawLine(transform.position + innerRaycastOffset + Vector3.up * topRaycastLength, transform.position + innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
+    }
+
+    public void Die()
+    {
+        rb.velocity = Vector2.zero;
+        canMove = false;
+        anim.SetTrigger("Dead");
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8663804945825078864}
   - component: {fileID: 8663804945825078865}
   - component: {fileID: 5111498656739385955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack
   m_TagString: BearAntlers
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8663804946147808705}
   - component: {fileID: 8663804946147808704}
   - component: {fileID: 8663804946147808710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear
   m_TagString: BearBody
   m_Icon: {fileID: 0}
@@ -268,6 +268,7 @@ MonoBehaviour:
   bodyCollider: {fileID: 8663804945825078865}
   antlers: {fileID: 5111498656739385955}
   enemyHealth: {fileID: 8663804946147808710}
+  healthAllScript: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -309,10 +310,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8663804946905710123}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheckPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

@@ -202,14 +202,12 @@ public class BearEnemy : MonoBehaviour
 
     private void Bonk()
     {
-        Debug.Log("Bonk");
         checkForPlayer = false;
         enemyHealth.isKnockbacked = true;
         anim.SetBool("isStunned", true);
         if (isFacingRight)
         {
             rb.AddForce((Vector3.up - Vector3.right) * 0.2f, ForceMode2D.Impulse);
-            Debug.Log("otherBonk");
         }
         if (!isFacingRight)
         {

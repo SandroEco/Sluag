@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2223686474021643924}
   - component: {fileID: 5857009278826993379}
   - component: {fileID: 6917044877100072720}
+  - component: {fileID: 583750729780602846}
   m_Layer: 7
   m_Name: Sluag
   m_TagString: Player
@@ -190,6 +191,7 @@ MonoBehaviour:
   topRaycastLength: 1.25
   edgeRaycastOffset: {x: 0.35, y: 0, z: 0}
   innerRaycastOffset: {x: 0.14, y: 0, z: 0}
+  strength: 5
 --- !u!114 &2223686474021643924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +244,20 @@ MonoBehaviour:
   movementScript: {fileID: 0}
   sticksToWall: 0
   wallJumpForce: 30
+  canWallJump: 0
+--- !u!114 &583750729780602846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405742515750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a5f1032ade5214c84202c19147180c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAll: {fileID: 2771922871288175187}
 --- !u!1 &776020405830092886
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +320,7 @@ GameObject:
   - component: {fileID: 776020405843842668}
   - component: {fileID: 8621195452189660907}
   - component: {fileID: 3657310012692097660}
+  - component: {fileID: 8172029026589419669}
   m_Layer: 7
   m_Name: FlyingSquirrel
   m_TagString: Player
@@ -476,6 +493,7 @@ MonoBehaviour:
   topRaycastLength: 0
   edgeRaycastOffset: {x: 0, y: 0, z: 0}
   innerRaycastOffset: {x: 0, y: 0, z: 0}
+  strength: 0
 --- !u!114 &8621195452189660907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +530,19 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   anim: {fileID: 0}
   glidingSpeed: 1
+--- !u!114 &8172029026589419669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405843842707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a5f1032ade5214c84202c19147180c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAll: {fileID: 2771922871288175187}
 --- !u!1 &776020406215712386
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +558,7 @@ GameObject:
   - component: {fileID: 152562282919868481}
   - component: {fileID: 776020406215712384}
   - component: {fileID: 1064628905894302273}
+  - component: {fileID: 7255683273131985949}
   m_Layer: 7
   m_Name: Bear
   m_TagString: Player
@@ -700,6 +732,7 @@ MonoBehaviour:
   topRaycastLength: 1.7
   edgeRaycastOffset: {x: 1.65, y: 0, z: 0}
   innerRaycastOffset: {x: 1.2, y: 0, z: 0}
+  strength: 20
 --- !u!114 &1064628905894302273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +751,19 @@ MonoBehaviour:
   isDashing: 0
   canDash: 1
   dashCooldown: 0.5
+--- !u!114 &7255683273131985949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020406215712386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a5f1032ade5214c84202c19147180c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAll: {fileID: 2771922871288175187}
 --- !u!1 &776020406393474670
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
@@ -1871,7 +1917,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771536, y: 1}
+    m_SensorSize: {x: 1.775974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

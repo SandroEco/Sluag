@@ -8,6 +8,7 @@ public class CameraAdjustement : MonoBehaviour
     CinemachineVirtualCamera cva;
     public Transform currentPos;
 
+
     private void Start()
     {
         cva = GetComponent<CinemachineVirtualCamera>();
