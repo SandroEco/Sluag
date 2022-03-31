@@ -10,6 +10,9 @@ public class InventoryScript : MonoBehaviour
     public int circleShards = 0;
     public int squareShards = 0;
 
+    [Header("Gold")]
+    public int gold = 0;
+
     private void Start()
     {
         if(instance == null)

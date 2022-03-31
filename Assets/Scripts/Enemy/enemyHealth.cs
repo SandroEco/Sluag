@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public GameObject drop;
+    public GameObject goldDrop;
 
     public float totalHP;
     private float HP;
@@ -52,5 +53,6 @@ public class EnemyHealth : MonoBehaviour
     {
         //play death anim
         Instantiate(drop, transform.position, Quaternion.identity);
+        Instantiate(goldDrop, transform.position, Quaternion.identity);
     }
 }

@@ -297,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
   drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
+  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
   totalHP: 10
   knockback: 12
   knockbackTime: 0.3

@@ -6,6 +6,7 @@ public class WallRun : MonoBehaviour
 {
     [Header("Components")]
     public Rigidbody2D rb;
+    private Animator anim;
 
     [Header("LayerMask")]
     public LayerMask wallLayer;
@@ -27,13 +28,22 @@ public class WallRun : MonoBehaviour
     {
         movementScript = GetComponent<Movement>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         CheckCollisions();
         if (wallGrab) WallGrab();
-        if (wallRun) Wallrun();
+        if (wallRun)
+        {
+            Wallrun();
+        }
+        else
+        {
+            anim.SetBool("isWallRunning", false);
+        }
+
     }
 
     void StickToWall()
@@ -67,6 +77,7 @@ public class WallRun : MonoBehaviour
     void Wallrun()
     {
         rb.velocity = new Vector2(rb.velocity.x, movementScript.maxMoveSpeed * wallRunModifier);
+        anim.SetBool("isWallRunning", true);
         StickToWall();
     }
 
