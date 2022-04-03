@@ -12,7 +12,7 @@ public class WallJumping : MonoBehaviour
     private bool onRightWall;
     public Movement movementScript;
 
-    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space");
+    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("w") && !Input.GetKeyDown("w");
     public bool sticksToWall;
 
     [Header("Wall Jump")]
@@ -37,7 +37,7 @@ public class WallJumping : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp("space") && sticksToWall && canWallJump)
+        if (Input.GetKeyUp("w") && sticksToWall && canWallJump)
         {
             WallJump();
             canWallJump = false;
@@ -96,15 +96,15 @@ public class WallJumping : MonoBehaviour
 
     void WallJump()
     {
-        if (onWall)
+        if (onWall && !onRightWall)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce((Vector2.up + Vector2.right).normalized * wallJumpForce, ForceMode2D.Impulse);
         }
-        if (onRightWall)
+        if (onRightWall && onRightWall)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce((Vector2.up + Vector2.left).normalized * wallJumpForce, ForceMode2D.Impulse);
+            rb.AddForce((Vector2.left + Vector2.up).normalized * wallJumpForce, ForceMode2D.Impulse);
         }
     }
 }

@@ -140,11 +140,12 @@ public class Movement : MonoBehaviour
             Jump();
         }
         #endregion
-
+        /*
         if (canCornerCorrect)
         {
             CornerCorrect(rb.velocity.y);
         }
+        */
     }
 
     public void SetCurrentScene(SceneDetails currScene)
@@ -235,6 +236,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+    /*
     void CornerCorrect(float Yvelocity)
     {
         //Push player to left
@@ -257,6 +259,7 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Yvelocity);
         }
     }
+    */
 
     private void CheckCollisions()
     {
@@ -268,6 +271,7 @@ public class Movement : MonoBehaviour
         canCornerCorrect = Physics2D.Raycast(transform.position + edgeRaycastOffset, Vector2.up, topRaycastLength, groundLayer) && !Physics2D.Raycast(transform.position + innerRaycastOffset, Vector2.up, topRaycastLength, groundLayer) || Physics2D.Raycast(transform.position - edgeRaycastOffset, Vector2.up, topRaycastLength, groundLayer) && !Physics2D.Raycast(transform.position - innerRaycastOffset, Vector2.up, topRaycastLength, groundLayer);
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position + edgeRaycastOffset, transform.position + edgeRaycastOffset + Vector3.up * topRaycastLength);
@@ -278,6 +282,7 @@ public class Movement : MonoBehaviour
         Gizmos.DrawLine(transform.position - innerRaycastOffset + Vector3.up * topRaycastLength, transform.position - innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
         Gizmos.DrawLine(transform.position + innerRaycastOffset + Vector3.up * topRaycastLength, transform.position + innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
     }
+    */
 
     public void Die()
     {
