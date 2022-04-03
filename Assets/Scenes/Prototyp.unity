@@ -36724,6 +36724,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 815b5f55f0be6a742ac4f9265e50359c, type: 3}
+--- !u!1001 &1278123948146029437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670073, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123948236670077, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
+      propertyPath: m_Name
+      value: Gold_Chest
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9db5c05d81ca70a45b80c048775495b6, type: 3}
 --- !u!1001 &1470046968565931977
 PrefabInstance:
   m_ObjectHideFlags: 0
