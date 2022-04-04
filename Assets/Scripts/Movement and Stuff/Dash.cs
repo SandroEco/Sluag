@@ -12,7 +12,7 @@ public class Dash : MonoBehaviour
 
     public float dashingVelocity = 14f;
     public float dashingTime = 0.5f;
-    private Vector2 dashingDir;
+    private float dashingDir;
     public bool isDashing;
     public bool canDash = true;
     private float timeBtwDash;
@@ -39,12 +39,7 @@ public class Dash : MonoBehaviour
                 rb.drag = 0f;
                 rb.velocity = Vector2.zero;
                 rb.gravityScale = 0f;
-                dashingDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-                if (dashingDir == Vector2.zero)
-                {
-                    dashingDir = new Vector2(transform.localScale.x, 0);
-                }
+                dashingDir = (int)Input.GetAxisRaw("Horizontal");
 
                 if(timeBtwDash <= 0)
                 {
@@ -62,7 +57,7 @@ public class Dash : MonoBehaviour
         if (isDashing)
         {
             anim.SetBool("isDashing", true);
-            rb.velocity = dashingDir.normalized * dashingVelocity;
+            rb.velocity = transform.right * dashingDir * dashingVelocity;
             return;
         }
 
