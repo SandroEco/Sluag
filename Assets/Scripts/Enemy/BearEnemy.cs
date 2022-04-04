@@ -32,9 +32,6 @@ public class BearEnemy : MonoBehaviour
     public Vector2 targetDirection;
     private bool checkForPlayer;
 
-    [Header("Damage")]
-    public int touchDamage;
-
     private bool once;
     enum EnemyState
     {
@@ -175,17 +172,6 @@ public class BearEnemy : MonoBehaviour
         {
             anim.SetBool("MaxSpeedReached", false);
             Bonk();
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (healthAllScript != null)
-            {
-                healthAllScript.TakeDamage(touchDamage);
-            }
         }
     }
 

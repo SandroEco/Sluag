@@ -17,12 +17,12 @@ public class Bear : TransformBaseState
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown("r") && IS.circleShards >= 1)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IS.circleShards >= 1)
         {
             //transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.circle);
         }
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             //transformStateManager.currentPos.transform.position = transformStateManager.bearObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.sluag);

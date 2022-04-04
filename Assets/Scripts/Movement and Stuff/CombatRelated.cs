@@ -59,7 +59,7 @@ public class CombatRelated : MonoBehaviour
             difference.y = 1f;
             Vector2 force = difference * knockback;
             rb.AddForce(force, ForceMode2D.Impulse);
-            healthAllScript.TakeDamage(10);
+            healthAllScript.TakeDamage(1);
             StartCoroutine(KnockbackCounter());
         }
     }
@@ -75,6 +75,7 @@ public class CombatRelated : MonoBehaviour
             Vector2 force = difference * knockback;
             rb.AddForce(force, ForceMode2D.Impulse);
             StartCoroutine(KnockbackCounter());
+            healthAllScript.TakeDamage(1);
         }
     }
 

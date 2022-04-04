@@ -19,10 +19,9 @@ public class WallRun : MonoBehaviour
     private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space") && !wallRun;
 
     [Header("Wall Run")]
-    private float verticalDirection;
     public Movement movementScript;
     public float wallRunModifier = 0.85f;
-    private bool wallRun => onWall && Input.GetKey(KeyCode.UpArrow);
+    private bool wallRun => onWall && Input.GetKey("w");
 
     private void Start()
     {

@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HealthAll : MonoBehaviour
 {
     [Header("Components")]
-    public HealthBar healthBar;
     public Movement movementScript;
     public GameObject player;
-    private Rigidbody2D rb;
 
     [Header("Health")]
-    public int maxHealth = 30;
-    public int currentHealth;
+    public int health;
+    public int maxhealth;
+
+    public Image[] heartsImages;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     [Header("Checkpoint")]
     public Vector2 lastCheckPointPos;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
         movementScript = GetComponent<Movement>();
     }
 
@@ -29,14 +30,39 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        if(health > maxhealth)
+        {
+            health = maxhealth;
+        }
+
+        for(int i = 0; i < heartsImages.Length; i++)
+        {
+            if(i < health)
+            {
+                heartsImages[i].sprite = fullHeart;
+            }
+            else
+            {
+                heartsImages[i].sprite = emptyHeart;
+            }
+
+            if(i < maxhealth)
+            {
+                heartsImages[i].enabled = true;
+            }
+            else
+            {
+                heartsImages[i].enabled = false;
+            }
+        }
     }
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-        healthBar.SetHealth(currentHealth);
+        health -= amount;
 
-        if (currentHealth <= 0)
+        if (health <= 0)
         {
             movementScript.Die();
             StartCoroutine(DeathTransition());
@@ -47,8 +73,7 @@ public class HealthAll : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         movementScript.canMove = true;
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        health = maxhealth;
         player.transform.position = lastCheckPointPos;
     }
 }

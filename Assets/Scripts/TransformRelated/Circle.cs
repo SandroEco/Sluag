@@ -17,12 +17,12 @@ public class Circle : TransformBaseState
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
-        if (Input.GetKeyDown("e") && IS.squareShards >= 1)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && IS.squareShards >= 1)
         {
             //transformStateManager.currentPos.transform.position = transformStateManager.circleObject.transform.position;
             transformStateManager.SwitchState(transformStateManager.bear);

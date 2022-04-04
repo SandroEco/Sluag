@@ -31,7 +31,7 @@ public class Dash : MonoBehaviour
     {
         if(timeBtwDash <= 0)
         {
-            if (Input.GetKeyDown("w") && canDash)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
             {
                 movementScript.canMove = false;
                 isDashing = true;

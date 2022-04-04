@@ -282,7 +282,7 @@ MonoBehaviour:
   isFacingRight: 0
   playerFound: 0
   targetDirection: {x: 0, y: 0}
-  touchDamage: 5
+  touchDamage: 1
 --- !u!114 &8663804946147808710
 MonoBehaviour:
   m_ObjectHideFlags: 0

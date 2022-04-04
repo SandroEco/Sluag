@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 
     [Header("Components")]
     private Rigidbody2D rb;
-    private BoxCollider2D bc;
+    private PolygonCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
 
@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        bc = GetComponent<BoxCollider2D>();
+        bc = GetComponent<PolygonCollider2D>();
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
 

@@ -12,7 +12,7 @@ public class WallJumping : MonoBehaviour
     private bool onRightWall;
     public Movement movementScript;
 
-    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("w") && !Input.GetKeyDown("w");
+    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKeyDown("space");
     public bool sticksToWall;
 
     [Header("Wall Jump")]
@@ -29,15 +29,17 @@ public class WallJumping : MonoBehaviour
     void FixedUpdate()
     {
         CheckCollisions();
+        /*
         if (wallGrab)
         {
             WallGrab();
         }
+        */
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp("w") && sticksToWall && canWallJump)
+        if (Input.GetKeyUp("space") && canWallJump)
         {
             WallJump();
             canWallJump = false;
