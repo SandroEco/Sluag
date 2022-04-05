@@ -69,11 +69,19 @@ public class HealthAll : MonoBehaviour
         }
     }
 
-    private IEnumerator DeathTransition()
+    public IEnumerator DeathTransition()
     {
         yield return new WaitForSeconds(1);
         movementScript.canMove = true;
-        health = maxhealth;
+        if(health < 1)
+        {
+            health = maxhealth;
+        }
         player.transform.position = lastCheckPointPos;
+    }
+
+    public void toLastCheckpoint()
+    {
+        StartCoroutine(DeathTransition());
     }
 }
