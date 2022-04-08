@@ -19,13 +19,13 @@ public class WallRun : MonoBehaviour
     private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space") && !wallRun;
 
     [Header("Wall Run")]
-    public Movement movementScript;
+    public MovementSquirrel movementScript;
     public float wallRunModifier = 0.85f;
     private bool wallRun => onWall && Input.GetKey("w");
 
     private void Start()
     {
-        movementScript = GetComponent<Movement>();
+        movementScript = GetComponent<MovementSquirrel>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -41,6 +41,7 @@ public class WallRun : MonoBehaviour
         else
         {
             anim.SetBool("isWallRunning", false);
+            anim.SetBool("isRightWallRunning", false);
         }
 
     }
@@ -75,9 +76,18 @@ public class WallRun : MonoBehaviour
 
     void Wallrun()
     {
-        rb.velocity = new Vector2(rb.velocity.x, movementScript.maxMoveSpeed * wallRunModifier);
-        anim.SetBool("isWallRunning", true);
-        StickToWall();
+        if(onWall && !onRightWall)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, movementScript.maxMoveSpeed * wallRunModifier);
+            anim.SetBool("isWallRunning", true);
+            StickToWall();
+        }
+        else if(onWall && onRightWall)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, movementScript.maxMoveSpeed * wallRunModifier);
+            anim.SetBool("isRightWallRunning", true);
+            StickToWall();
+        }
     }
 
     void CheckCollisions()
