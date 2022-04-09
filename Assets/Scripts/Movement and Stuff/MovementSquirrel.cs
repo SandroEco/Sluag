@@ -292,4 +292,9 @@ public class MovementSquirrel : MonoBehaviour
         canMove = false;
         anim.SetTrigger("Dead");
     }
+
+    public void Damaged()
+    {
+        anim.SetTrigger("Damaged");
+    }
 }

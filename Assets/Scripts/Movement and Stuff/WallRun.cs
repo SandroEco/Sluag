@@ -8,6 +8,7 @@ public class WallRun : MonoBehaviour
     public Rigidbody2D rb;
     private Animator anim;
 
+
     [Header("LayerMask")]
     public LayerMask wallLayer;
 
@@ -19,13 +20,13 @@ public class WallRun : MonoBehaviour
     private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space") && !wallRun;
 
     [Header("Wall Run")]
-    public MovementSquirrel movementScript;
+    public Movement movementScript;
     public float wallRunModifier = 0.85f;
     private bool wallRun => onWall && Input.GetKey("w");
 
     private void Start()
     {
-        movementScript = GetComponent<MovementSquirrel>();
+        movementScript = GetComponent<Movement>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }

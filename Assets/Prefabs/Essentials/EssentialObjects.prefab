@@ -321,12 +321,13 @@ GameObject:
   - component: {fileID: 776020405843842671}
   - component: {fileID: 776020405843842670}
   - component: {fileID: 776020405843842704}
-  - component: {fileID: 8920824827811006705}
+  - component: {fileID: 4015268262883670160}
   - component: {fileID: 4430618495698368275}
   - component: {fileID: 8621195452189660907}
   - component: {fileID: 3657310012692097660}
   - component: {fileID: 8172029026589419669}
-  - component: {fileID: 379981443171930572}
+  - component: {fileID: 1127243167824331076}
+  - component: {fileID: 8597830899996542871}
   m_Layer: 7
   m_Name: FlyingSquirrel
   m_TagString: Player
@@ -422,8 +423,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8920824827811006705
-BoxCollider2D:
+--- !u!60 &4015268262883670160
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -435,7 +436,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -0.65}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -445,9 +446,12 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6, y: 0.7}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.9, y: -1}
+      - {x: 0.9, y: -0.3}
+      - {x: -0.7, y: -0.3}
+      - {x: -0.7, y: -1}
 --- !u!95 &4430618495698368275
 Animator:
   serializedVersion: 4
@@ -517,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAll: {fileID: 2771922871288175187}
---- !u!114 &379981443171930572
+--- !u!114 &1127243167824331076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -526,7 +530,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 776020405843842707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf21db480b5ea045aadb4f47364ba62, type: 3}
+  m_Script: {fileID: 11500000, guid: b31be2a15d5731b499391932f443cfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundLayer:
@@ -549,6 +553,24 @@ MonoBehaviour:
   edgeRaycastOffset: {x: 0, y: 0, z: 0}
   innerRaycastOffset: {x: 0, y: 0, z: 0}
   strength: 1
+--- !u!114 &8597830899996542871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405843842707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f733fd2b90da92a47862e01e47628526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAllScript: {fileID: 0}
+  knockback: 30
+  knockbackTime: 2
+  isKnockbacked: 0
+  timeBtwAttack: 0
+  cooldown: 0
 --- !u!1 &776020406215712386
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +587,7 @@ GameObject:
   - component: {fileID: 776020406215712384}
   - component: {fileID: 1064628905894302273}
   - component: {fileID: 7255683273131985949}
+  - component: {fileID: 3179651472224268774}
   m_Layer: 7
   m_Name: Bear
   m_TagString: Player
@@ -678,7 +701,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 8, y: 4}
     newSize: {x: 4, y: 3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -773,6 +796,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAll: {fileID: 2771922871288175187}
+--- !u!114 &3179651472224268774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020406215712386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f733fd2b90da92a47862e01e47628526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAllScript: {fileID: 0}
+  knockback: 30
+  knockbackTime: 2
+  isKnockbacked: 0
+  timeBtwAttack: 0
+  cooldown: 0
 --- !u!1 &776020406393474670
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776020406818552210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 208.2, y: -4.88, z: 0}
+  m_LocalPosition: {x: 187.98, y: -4.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2018,7 +2059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8890798243067683832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -208.2, y: 4.88, z: -10}
+  m_LocalPosition: {x: -187.98, y: 4.88, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2055,7 +2096,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

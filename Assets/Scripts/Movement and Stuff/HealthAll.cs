@@ -61,6 +61,12 @@ public class HealthAll : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        Debug.Log("Aua");
+        if(health > 0)
+        {
+            movementScript.Damaged();
+            StartCoroutine(DamageFreeze());
+        }
 
         if (health <= 0)
         {
@@ -83,5 +89,12 @@ public class HealthAll : MonoBehaviour
     public void toLastCheckpoint()
     {
         StartCoroutine(DeathTransition());
+    }
+
+    public IEnumerator DamageFreeze()
+    {
+        Time.timeScale = 0.0f;
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1f;
     }
 }
