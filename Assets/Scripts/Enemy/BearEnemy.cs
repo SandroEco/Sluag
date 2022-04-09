@@ -22,7 +22,7 @@ public class BearEnemy : MonoBehaviour
     public float walkSpeed;
     public float huntSpeed;
     public bool mustPatrol;
-    private bool mustFlip;
+    public bool mustFlip;
 
     [Header("RaycastStuff")]
     public float maxDistance;
@@ -71,7 +71,7 @@ public class BearEnemy : MonoBehaviour
     {
         mustFlip = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer);
 
-        if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer) && !enemyHealth.isKnockbacked)
+        if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer))
         {
             Flip();
         }
@@ -205,11 +205,13 @@ public class BearEnemy : MonoBehaviour
 
     private IEnumerator BonkTimer()
     {
+        playerFound = true;
         yield return new WaitForSeconds(1);
         rb.velocity = Vector3.zero;
     }
     private IEnumerator Stunned()
     {
+        playerFound = true;
         yield return new WaitForSeconds(4);
         anim.SetBool("MaxSpeedReached", false);
         anim.SetBool("isStunned", false);
