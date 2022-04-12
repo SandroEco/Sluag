@@ -457,6 +457,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "Flugh\xF6rnchen-Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69df580c4d2554443ac725602f8127d0
+      internalID: -1148993633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Flugh\xF6rnchen-Sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6855091d19f92448e68da30eab60d6
+      internalID: -1033812747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Flugh\xF6rnchen-Sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d2eb492da94da4dbcd9187939e4bac
+      internalID: -1278684116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Flugh\xF6rnchen-Sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0beb2675ca3cc044bd8602ab846aa72
+      internalID: 1044128502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -474,12 +558,16 @@ TextureImporter:
       "Flugh\xF6rnchen-Sheet_10": -2132666854
       "Flugh\xF6rnchen-Sheet_1": -769110788
       "Flugh\xF6rnchen-Sheet_5": 554746216
+      "Flugh\xF6rnchen-Sheet_15": -1033812747
       "Flugh\xF6rnchen-Sheet_12": 1742530983
       "Flugh\xF6rnchen-Sheet_7": -345995528
       "Flugh\xF6rnchen-Sheet_13": -881937499
       "Flugh\xF6rnchen-Sheet_3": -1527201053
+      "Flugh\xF6rnchen-Sheet_14": -1148993633
+      "Flugh\xF6rnchen-Sheet_17": 1044128502
       "Flugh\xF6rnchen-Sheet_11": 2102958312
       "Flugh\xF6rnchen-Sheet_9": 1942819244
+      "Flugh\xF6rnchen-Sheet_16": -1278684116
       "Flugh\xF6rnchen-Sheet_4": 1826507037
       "Flugh\xF6rnchen-Sheet_2": -1399257592
   spritePackingTag: 

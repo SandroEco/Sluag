@@ -93,14 +93,14 @@ public class WallRun : MonoBehaviour
 
     void CheckCollisions()
     {
-        onWall = Physics2D.Raycast(transform.position, Vector2.right, wallRaycastLength, wallLayer) || Physics2D.Raycast(transform.position, Vector2.left, wallRaycastLength, wallLayer);
-        onRightWall = Physics2D.Raycast(transform.position, Vector2.right, wallRaycastLength, wallLayer);
+        onWall = Physics2D.Raycast(transform.position + new Vector3(0f, -0.8f, 0f), Vector2.right, wallRaycastLength, wallLayer) || Physics2D.Raycast(transform.position + new Vector3(0f, -0.8f, 0f), Vector2.left, wallRaycastLength, wallLayer);
+        onRightWall = Physics2D.Raycast(transform.position + new Vector3(0f, -0.8f, 0f), Vector2.right, wallRaycastLength, wallLayer);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.right * wallRaycastLength);
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.left * wallRaycastLength);
+        Gizmos.DrawLine(transform.position + new Vector3(0f, -0.8f, 0f), transform.position + new Vector3(0f, -0.8f, 0f) + Vector3.right * wallRaycastLength);
+        Gizmos.DrawLine(transform.position + new Vector3(0f, -0.8f, 0f), transform.position + new Vector3(0f, -0.8f, 0f) + Vector3.left * wallRaycastLength);
     }
 
 }
