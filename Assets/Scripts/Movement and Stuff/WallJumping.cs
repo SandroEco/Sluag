@@ -7,18 +7,20 @@ public class WallJumping : MonoBehaviour
     public LayerMask wallLayer;
     public Rigidbody2D rb;
     public Animator anim;
-
-    public float wallRaycastLength;
-    public bool onWall;
-    private bool onRightWall;
     public Movement movementScript;
-
-    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKeyDown("space");
-    public bool sticksToWall;
 
     [Header("Wall Jump")]
     public float wallJumpForce;
     public bool canWallJump;
+    public float wallJumpDirection = -1f;
+    public Vector2 wallJumpAngle;
+
+    [Header("Wall Slide")]
+    public float wallSlideSpeed;
+    public bool isWallSliding;
+    public float wallRaycastLength;
+    public bool onWall;
+    private bool onRightWall;
 
     void Start()
     {
@@ -26,38 +28,51 @@ public class WallJumping : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canWallJump = true;
         anim = GetComponent<Animator>();
+        wallJumpAngle.Normalize();
     }
 
     void FixedUpdate()
     {
         CheckCollisions();
-        /*
-        if (wallGrab)
-        {
-            WallGrab();
-        }
-        */
+
+        WallSlide();
     }
 
     private void Update()
     {
-        if (onWall && !movementScript.isGrounded)
+        WallJump();
+    }
+
+    void WallSlide()
+    {
+        if(onWall && !movementScript.isGrounded && rb.velocity.y < 0)
         {
+            isWallSliding = true;
             anim.SetBool("OnWall", true);
         }
         else
         {
+            isWallSliding = false;
             anim.SetBool("OnWall", false);
         }
 
-        if (Input.GetKeyUp("space") && canWallJump)
+        if (isWallSliding && !movementScript.isGrounded)
         {
-            WallJump();
-            canWallJump = false;
+            rb.velocity = new Vector2(rb.velocity.x, wallSlideSpeed);
+            movementScript.canMove = false;
         }
-        if (movementScript.isGrounded)
+        else if(movementScript.isGrounded)
         {
-            canWallJump = true;
+            movementScript.canMove = true;
+        }
+    }
+
+    void WallJump()
+    {
+        if((isWallSliding || onWall) && Input.GetKeyDown("space"))
+        {
+            rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
+            StartCoroutine(AfterWallJump());
         }
     }
 
@@ -67,60 +82,17 @@ public class WallJumping : MonoBehaviour
         onRightWall = Physics2D.Raycast(transform.position, Vector2.right, wallRaycastLength, wallLayer);
     }
 
-    void WallGrab()
-    {
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        StickToWall();
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + Vector3.right * wallRaycastLength);
         Gizmos.DrawLine(transform.position, transform.position + Vector3.left * wallRaycastLength);
     }
 
-    void StickToWall()
+    private IEnumerator AfterWallJump()
     {
-        if(onRightWall && movementScript.horizontalDirection >= 0f)
-        {
-            rb.velocity = new Vector2(1f, rb.velocity.y);
-            sticksToWall = true;
-            anim.SetBool("OnWall", true);
-        }
-        else if(!onRightWall && movementScript.horizontalDirection <= 0f)
-        {
-            rb.velocity = new Vector2(-1f, rb.velocity.y);
-            sticksToWall = true;
-            anim.SetBool("OnWall", true);
-        }
-        else
-        {
-            sticksToWall = false;
-            anim.SetBool("OnWall", false);
-        }
-
-        if (onRightWall && !movementScript.isFacingRight)
-        {
-            movementScript.Flip();
-        }
-        else if(!onRightWall && movementScript.isFacingRight)
-        {
-            movementScript.Flip();
-        }
-    }
-
-    void WallJump()
-    {
-        if (onWall && !onRightWall)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce((Vector2.up + Vector2.right).normalized * wallJumpForce, ForceMode2D.Impulse);
-        }
-        if (onRightWall && onRightWall)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce((Vector2.left + Vector2.up).normalized * wallJumpForce, ForceMode2D.Impulse);
-        }
+        movementScript.canMove = false;
+        movementScript.Flip();
+        yield return new WaitForSeconds(0.3f);
+        movementScript.canMove = true;
     }
 }

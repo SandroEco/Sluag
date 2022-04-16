@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &776020405742515746
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   canMove: 1
   jumpForce: 19
   airLinearDrag: 4
-  fallMultiplier: 7
+  fallMultiplier: 8
   lowJumpFallMultiplier: 5
   groundRaycastLength: 0.1
   isGrounded: 1
@@ -242,15 +242,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   rb: {fileID: 0}
   anim: {fileID: 0}
+  movementScript: {fileID: 0}
+  wallJumpForce: 35
+  canWallJump: 0
+  wallJumpDirection: -1
+  wallJumpAngle: {x: 3, y: 2.5}
+  wallSlideSpeed: -1
+  isWallSliding: 0
   wallRaycastLength: 0.6
   onWall: 0
-  movementScript: {fileID: 0}
-  sticksToWall: 0
-  wallJumpForce: 40
-  canWallJump: 0
 --- !u!114 &583750729780602846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776020405843842671
 Transform:
   m_ObjectHideFlags: 0
@@ -489,7 +492,7 @@ MonoBehaviour:
   rb: {fileID: 776020405843842704}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   wallRaycastLength: 1.15
   onWall: 0
   onRightWall: 0
@@ -983,7 +986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776020406818552210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.9, y: -4.13, z: 0}
+  m_LocalPosition: {x: 197.41, y: -4.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2203,7 +2206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8890798243067683832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.9, y: 4.13, z: -10}
+  m_LocalPosition: {x: -197.41, y: 4.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2240,7 +2243,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

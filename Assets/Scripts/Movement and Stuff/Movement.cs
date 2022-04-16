@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private PolygonCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
+    private WallJumping wallJumping;
 
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -193,6 +194,10 @@ public class Movement : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        if(wallJumping = GetComponent<WallJumping>())
+        {
+            wallJumping.wallJumpDirection *= -1f;
+        }
     }
 
     public void ApplyAirLinearDrag()
