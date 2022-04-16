@@ -77,7 +77,7 @@ public class HealthAll : MonoBehaviour
 
     public IEnumerator DeathTransition()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.8f);
         movementScript.canMove = true;
         if(health < 1)
         {

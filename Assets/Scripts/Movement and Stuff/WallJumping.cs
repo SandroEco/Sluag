@@ -6,6 +6,7 @@ public class WallJumping : MonoBehaviour
 {
     public LayerMask wallLayer;
     public Rigidbody2D rb;
+    public Animator anim;
 
     public float wallRaycastLength;
     public bool onWall;
@@ -24,6 +25,7 @@ public class WallJumping : MonoBehaviour
         movementScript = GetComponent<Movement>();
         rb = GetComponent<Rigidbody2D>();
         canWallJump = true;
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -39,6 +41,15 @@ public class WallJumping : MonoBehaviour
 
     private void Update()
     {
+        if (onWall && !movementScript.isGrounded)
+        {
+            anim.SetBool("OnWall", true);
+        }
+        else
+        {
+            anim.SetBool("OnWall", false);
+        }
+
         if (Input.GetKeyUp("space") && canWallJump)
         {
             WallJump();
@@ -75,15 +86,18 @@ public class WallJumping : MonoBehaviour
         {
             rb.velocity = new Vector2(1f, rb.velocity.y);
             sticksToWall = true;
+            anim.SetBool("OnWall", true);
         }
         else if(!onRightWall && movementScript.horizontalDirection <= 0f)
         {
             rb.velocity = new Vector2(-1f, rb.velocity.y);
             sticksToWall = true;
+            anim.SetBool("OnWall", true);
         }
         else
         {
             sticksToWall = false;
+            anim.SetBool("OnWall", false);
         }
 
         if (onRightWall && !movementScript.isFacingRight)

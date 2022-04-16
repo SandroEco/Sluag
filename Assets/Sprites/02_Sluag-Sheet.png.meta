@@ -1087,6 +1087,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 02_Sluag-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131a63ae5d0437c46adebae1b7301c7e
+      internalID: 502321069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1122,6 +1143,7 @@ TextureImporter:
       02_Sluag-Sheet_40: 2104559682
       02_Sluag-Sheet_42: -513172632
       02_Sluag-Sheet_33: 1668038311
+      02_Sluag-Sheet_44: 502321069
       02_Sluag-Sheet_11: 1695853310
       02_Sluag-Sheet_41: -1581637746
       02_Sluag-Sheet_5: -1748230464

@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject drop;
     public GameObject goldDrop;
+    public BearEnemy bearEnemy;
 
     public float totalHP;
     private float HP;
@@ -18,6 +19,11 @@ public class EnemyHealth : MonoBehaviour
     void Awake()
     {
         HP = totalHP;
+    }
+
+    private void Start()
+    {
+        bearEnemy = GetComponent<BearEnemy>();
     }
 
     void Update()
@@ -33,13 +39,16 @@ public class EnemyHealth : MonoBehaviour
     {
         if(other.tag == "Hit")
         {
-            isKnockbacked = true;
-            Vector2 difference = (transform.position - other.transform.position).normalized;
-            Vector2 force = difference * knockback;
-            rb.AddForce(force, ForceMode2D.Impulse);
+            if (!bearEnemy.isStunned)
+            {
+                isKnockbacked = true;
+                Vector2 difference = (transform.position - other.transform.position).normalized;
+                Vector2 force = difference * knockback;
+                rb.AddForce(force, ForceMode2D.Impulse);
+                StartCoroutine(KnockbackCounter());
+            }
             HP -= CombatRelated.damage;
             Debug.Log(HP);
-            StartCoroutine(KnockbackCounter());
         }
     }
 

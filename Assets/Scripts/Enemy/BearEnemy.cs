@@ -32,6 +32,8 @@ public class BearEnemy : MonoBehaviour
     public Vector2 targetDirection;
     private bool checkForPlayer;
 
+    public bool isStunned = false;
+
     private bool once;
     enum EnemyState
     {
@@ -65,6 +67,11 @@ public class BearEnemy : MonoBehaviour
                 RunTowardsPlayer();
                 break;
         }
+
+        if (isStunned)
+        {
+            enemyHealth.isKnockbacked = true;
+        }
     }
 
     void Patrol()
@@ -76,7 +83,7 @@ public class BearEnemy : MonoBehaviour
             Flip();
         }
         anim.SetBool("MaxSpeedReached", false);
-        if (!enemyHealth.isKnockbacked)
+        if (!enemyHealth.isKnockbacked && !isStunned)
         {
             rb.velocity = new Vector2(walkSpeed * 25 * Time.fixedDeltaTime, rb.velocity.y);
         }
@@ -212,7 +219,9 @@ public class BearEnemy : MonoBehaviour
     private IEnumerator Stunned()
     {
         playerFound = true;
+        isStunned = true;
         yield return new WaitForSeconds(4);
+        isStunned = false;
         anim.SetBool("MaxSpeedReached", false);
         anim.SetBool("isStunned", false);
         enemyHealth.isKnockbacked = false;

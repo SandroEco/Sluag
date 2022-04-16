@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3422619621121936663}
   - component: {fileID: 3422619621121936660}
   - component: {fileID: 3323024732695023380}
+  - component: {fileID: -5697474448029397689}
   m_Layer: 0
   m_Name: SquareSoul
   m_TagString: squareShards
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.7843138, g: 0.8117648, b: 0.21176472, a: 1}
+  m_Sprite: {fileID: -2145093848, guid: db75edad5beb61a47a986381a66af17b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,7 +104,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 8, y: 4}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,10 +112,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.25}
-      - {x: -0.5, y: 0}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: 0}
+    - - {x: 1.5580587, y: -0.79515254}
+      - {x: 1.0623226, y: -0.13433361}
+      - {x: -0.17345858, y: 0.083479494}
+      - {x: -1.617075, y: -0.35385606}
+      - {x: -1.0129995, y: -1.5544107}
+      - {x: 0.56244564, y: -1.5403147}
 --- !u!114 &3323024732695023380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +130,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c126d13e3addfdd418b763a4f5c5da9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IS: {fileID: 0}
+--- !u!95 &-5697474448029397689
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422619621121936661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa19f7f353698454ca1af84794b79019, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

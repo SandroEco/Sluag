@@ -856,6 +856,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bear_33
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a673ac8ea2c74bd488beec6d88dafd46
+      internalID: -2145093848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_34
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b1b0a2a134bbc41be52eb1edce2694
+      internalID: 211831185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_35
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c069e3354290be4585986a275420f90
+      internalID: 1755722346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_36
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e0f10d839cf5b40b706fbd7036b00f
+      internalID: 2101111620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_37
+      rect:
+        serializedVersion: 2
+        x: 4736
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60cc87760ceb0b4f81c11086d44a4c2
+      internalID: 2058079680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_38
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e3dc8f701d94942ba07ffa3755a45a
+      internalID: -756776010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -867,7 +993,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bear_10: 973742486
+      Bear_37: 2058079680
+      Bear_23: -506795853
       Bear_16: -2029481806
       Bear_4: -1552679147
       Bear_24: -421398944
@@ -882,15 +1009,20 @@ TextureImporter:
       Bear_7: -1773603356
       Bear_3: 635586312
       Bear_19: 355695625
+      Bear_38: -756776010
       Bear_13: -1081467362
       Bear_17: 2007925107
+      Bear_36: 2101111620
       Bear_15: -622551816
       Bear_9: -1574573801
       Bear_6: -481152013
+      Bear_34: 211831185
       Bear_14: -1422946416
       Bear_28: 901274349
       Bear_25: -380042939
+      Bear_33: -2145093848
       Bear_21: 1128071420
+      Bear_35: 1755722346
       Bear_27: 1600256246
       Bear_1: 12859604
       Bear_11: 2133962943
@@ -898,7 +1030,7 @@ TextureImporter:
       Bear_30: -307211770
       Bear_29: -1992481156
       Bear_2: 510421572
-      Bear_23: -506795853
+      Bear_10: 973742486
       Bear_12: 1264455499
   spritePackingTag: 
   pSDRemoveMatte: 0

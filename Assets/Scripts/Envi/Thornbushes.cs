@@ -17,7 +17,6 @@ public class Thornbushes : MonoBehaviour
         if(other.tag == ("Player"))
         {
             movementScript = FindObjectOfType<Movement>();
-            Debug.Log("ups");
             healthAll.TakeDamage(1);
             movementScript.Die();
             healthAll.toLastCheckpoint();

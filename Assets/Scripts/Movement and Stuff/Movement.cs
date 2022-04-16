@@ -133,7 +133,7 @@ public class Movement : MonoBehaviour
             anim.SetBool("isJumping", true);
             FallMultiplier();
         }
-        if (canJump)
+        if (canJump && canMove)
         {
             jumpBufferCounter = 0f;
             anim.SetTrigger("takeOf");
