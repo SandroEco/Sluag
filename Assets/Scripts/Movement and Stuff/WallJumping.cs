@@ -34,18 +34,17 @@ public class WallJumping : MonoBehaviour
     void FixedUpdate()
     {
         CheckCollisions();
-
-        WallSlide();
     }
 
     private void Update()
     {
+        WallSlide();
         WallJump();
     }
 
     void WallSlide()
     {
-        if(onWall && !movementScript.isGrounded && rb.velocity.y < 0)
+        if(onWall && !movementScript.isGrounded && rb.velocity.y <= 0.1)
         {
             isWallSliding = true;
             anim.SetBool("OnWall", true);
@@ -69,7 +68,7 @@ public class WallJumping : MonoBehaviour
 
     void WallJump()
     {
-        if((isWallSliding || onWall) && Input.GetKeyDown("space"))
+        if((isWallSliding || onWall) && Input.GetKeyDown("space") && !movementScript.isGrounded)
         {
             rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
             StartCoroutine(AfterWallJump());

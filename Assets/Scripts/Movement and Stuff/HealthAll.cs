@@ -24,6 +24,20 @@ public class HealthAll : MonoBehaviour
     void Start()
     {
         movementScript = GetComponent<Movement>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        lastCheckPointPos = player.transform.position;
+
+        if (SaveManager.instance.hasLoaded)
+        {
+            lastCheckPointPos = SaveManager.instance.activeSave.respawnPosition;
+            player.transform.position = lastCheckPointPos;
+
+            health = SaveManager.instance.activeSave.lives;
+        }
+        else
+        {
+            SaveManager.instance.activeSave.lives = health;
+        }
     }
 
     private void Update()
@@ -61,6 +75,7 @@ public class HealthAll : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        SaveManager.instance.activeSave.lives = health;
         Debug.Log("Aua");
         if(health > 0)
         {

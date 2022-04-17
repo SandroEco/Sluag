@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class EssentialObjects : MonoBehaviour
 {
+
+    public static EssentialObjects instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

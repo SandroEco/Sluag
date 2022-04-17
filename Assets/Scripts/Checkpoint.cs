@@ -18,8 +18,12 @@ public class Checkpoint : MonoBehaviour
         if(other.CompareTag ("Player"))
         {
             healthAll = FindObjectOfType<HealthAll>();
-            healthAll.lastCheckPointPos = transform.position;
             anim.SetTrigger("LightUp");
+            healthAll.lastCheckPointPos = transform.position;
+
+            SaveManager.instance.activeSave.respawnPosition = transform.position;
+
+            SaveManager.instance.Save();
         }
     }
 }
