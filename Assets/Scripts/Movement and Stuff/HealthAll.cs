@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthAll : MonoBehaviour
@@ -19,24 +18,24 @@ public class HealthAll : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header("Checkpoint")]
-    public Vector2 lastCheckPointPos;
+    public Vector3 lastCheckPointPos;
 
     void Start()
     {
         movementScript = GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
-        lastCheckPointPos = player.transform.position;
 
         if (SaveManager.instance.hasLoaded)
         {
-            lastCheckPointPos = SaveManager.instance.activeSave.respawnPosition;
-            player.transform.position = lastCheckPointPos;
+            lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
+            transform.position = lastCheckPointPos;
+            Debug.Log("worked");
 
-            health = SaveManager.instance.activeSave.lives;
+            health = SaveManager.instance.activeSave.health;
         }
         else
         {
-            SaveManager.instance.activeSave.lives = health;
+            SaveManager.instance.activeSave.health = health;
         }
     }
 
@@ -75,7 +74,7 @@ public class HealthAll : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        SaveManager.instance.activeSave.lives = health;
+        SaveManager.instance.activeSave.health = health;
         Debug.Log("Aua");
         if(health > 0)
         {

@@ -5,22 +5,26 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
+
 public class SaveManager : MonoBehaviour
 {
+
     public static SaveManager instance;
 
     public SaveData activeSave;
 
     public bool hasLoaded;
+    private GameObject player;
+    private HealthAll healthAll;
 
-    public void Awake()
+    private void Awake()
     {
         instance = this;
 
         Load();
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -54,7 +58,7 @@ public class SaveManager : MonoBehaviour
     {
         string dataPath = Application.persistentDataPath;
 
-        if (System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
+        if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
             var serializer = new XmlSerializer(typeof(SaveData));
             var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Open);
@@ -62,7 +66,6 @@ public class SaveManager : MonoBehaviour
             stream.Close();
 
             Debug.Log("Loaded");
-
             hasLoaded = true;
         }
     }
@@ -71,7 +74,7 @@ public class SaveManager : MonoBehaviour
     {
         string dataPath = Application.persistentDataPath;
 
-        if (System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
+        if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
             File.Delete(dataPath + "/" + activeSave.saveName + ".save");
         }
@@ -83,9 +86,7 @@ public class SaveData
 {
     public string saveName;
 
-    public Vector2 respawnPosition;
+    public Vector3 lastCheckPointPos;
 
-    public bool doorOpen;
-
-    public int lives;
+    public int health;
 }

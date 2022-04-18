@@ -21,7 +21,7 @@ public class Checkpoint : MonoBehaviour
             anim.SetTrigger("LightUp");
             healthAll.lastCheckPointPos = transform.position;
 
-            SaveManager.instance.activeSave.respawnPosition = transform.position;
+            SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
 
             SaveManager.instance.Save();
         }
