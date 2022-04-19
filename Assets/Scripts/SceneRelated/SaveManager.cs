@@ -14,8 +14,6 @@ public class SaveManager : MonoBehaviour
     public SaveData activeSave;
 
     public bool hasLoaded;
-    private GameObject player;
-    private HealthAll healthAll;
 
     private void Awake()
     {
