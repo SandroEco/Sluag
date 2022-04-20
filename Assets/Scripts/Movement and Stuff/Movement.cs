@@ -72,6 +72,12 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if(DialogManager.isActive == true)
+        {
+            anim.SetFloat("speed", 0);
+            anim.SetBool("MaxSpeedReached", false);
+            canMove = false;
+        }
         #region Movement
         horizontalDirection = GetInput().x;
         #endregion 
@@ -288,6 +294,14 @@ public class Movement : MonoBehaviour
         Gizmos.DrawLine(transform.position + innerRaycastOffset + Vector3.up * topRaycastLength, transform.position + innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
     }
     */
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.tag == "NPC" && Input.GetKey(KeyCode.S))
+        {
+            other.GetComponent<DialogTrigger>().StartDialog();
+        }
+    }
 
     public void Die()
     {

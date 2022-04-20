@@ -12,13 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototyp.unity
     guid: 15ab65801105fa54e9eac3ce718afdfd
   - enabled: 1
-    path: Assets/Scenes/Forest 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Forest 2.unity
-    guid: b86d5e50787c47942ad6bcf8fa021811
-  - enabled: 1
-    path: Assets/Scenes/Forest 3.unity
-    guid: 8464a9ceb1a089840bdc4b033456befe
+    path: Assets/Scenes/01TutorialScene.unity
+    guid: 1435e3e35e446ea4783bc304d74e36b0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ea6f410d374470a429c9ae806e18c2ac, type: 2}

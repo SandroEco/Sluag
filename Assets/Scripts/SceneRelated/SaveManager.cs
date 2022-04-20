@@ -75,6 +75,8 @@ public class SaveManager : MonoBehaviour
         if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
             File.Delete(dataPath + "/" + activeSave.saveName + ".save");
+
+            Debug.Log("Deleted");
         }
     }
 }
