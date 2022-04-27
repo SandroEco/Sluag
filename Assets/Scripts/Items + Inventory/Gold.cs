@@ -19,6 +19,7 @@ public class Gold : MonoBehaviour
         if(collision.gameObject.tag == ("Player"))
         {
             IS.gold = IS.gold + goldValue;
+            SaveManager.instance.activeSave.gold = IS.gold;
             Destroy(gameObject);
         }
     }
@@ -28,6 +29,7 @@ public class Gold : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             IS.gold = IS.gold + goldValue;
+            SaveManager.instance.activeSave.gold = IS.gold;
             Destroy(bc);
         }
     }

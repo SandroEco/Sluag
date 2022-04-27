@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776020405830092886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8845682, y: -1.8350782, z: 9.870575}
+  m_LocalPosition: {x: 0, y: 0, z: 9.870575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,13 +438,14 @@ GameObject:
   - component: {fileID: 1127243167824331076}
   - component: {fileID: 8597830899996542871}
   - component: {fileID: 2140233372509723690}
+  - component: {fileID: 3528593002210508417}
   m_Layer: 7
   m_Name: FlyingSquirrel
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &776020405843842671
 Transform:
   m_ObjectHideFlags: 0
@@ -694,6 +695,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setMaxSpeedReached: 0
+--- !u!114 &3528593002210508417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405843842707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a96d09efe4ba5d45b967a287956fc9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776020406215712386
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,13 +724,14 @@ GameObject:
   - component: {fileID: 1064628905894302273}
   - component: {fileID: 7255683273131985949}
   - component: {fileID: 3179651472224268774}
+  - component: {fileID: 1206528881374541213}
   m_Layer: 7
   m_Name: Bear
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &776020406215712387
 Transform:
   m_ObjectHideFlags: 0
@@ -872,7 +886,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   movementAcceleration: 50
-  maxMoveSpeed: 6
+  maxMoveSpeed: 5
   movementDeceleration: 10
   horizontalDirection: 0
   isFacingRight: 1
@@ -937,6 +951,18 @@ MonoBehaviour:
   isKnockbacked: 0
   timeBtwAttack: 0
   cooldown: 0
+--- !u!114 &1206528881374541213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020406215712386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a96d09efe4ba5d45b967a287956fc9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776020406393474670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,7 +4570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8605219698486566703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1010.1611, y: 543.93994, z: 14.536669}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4567,6 +4593,9 @@ MonoBehaviour:
     saveName: save1
     lastCheckPointPos: {x: 0, y: 0, z: 0}
     health: 0
+    circleShards: 0
+    squareShards: 0
+    gold: 0
   hasLoaded: 0
 --- !u!1 &8890798243067683832
 GameObject:

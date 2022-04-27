@@ -37,6 +37,11 @@ public class HealthAll : MonoBehaviour
         {
             SaveManager.instance.activeSave.health = health;
         }
+
+        if(health == 0)
+        {
+            health = maxhealth;
+        }
     }
 
     private void Update()
@@ -91,12 +96,12 @@ public class HealthAll : MonoBehaviour
 
     public IEnumerator DeathTransition()
     {
-        yield return new WaitForSeconds(0.8f);
-        movementScript.canMove = true;
-        if(health < 1)
+        if (health < 1)
         {
             health = maxhealth;
         }
+        yield return new WaitForSeconds(0.8f);
+        movementScript.canMove = true;
         player.transform.position = lastCheckPointPos;
     }
 

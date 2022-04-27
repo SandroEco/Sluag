@@ -7,17 +7,30 @@ public class InventoryScript : MonoBehaviour
     public static InventoryScript instance;
 
     [Header("Soulshards")]
-    public int circleShards = 0;
-    public int squareShards = 0;
+    public int circleShards;
+    public int squareShards;
 
     [Header("Gold")]
-    public int gold = 0;
+    public int gold;
 
     private void Start()
     {
         if(instance == null)
         {
             instance = this;
+        }
+
+        if (SaveManager.instance.hasLoaded)
+        {
+            circleShards = SaveManager.instance.activeSave.circleShards;
+            squareShards = SaveManager.instance.activeSave.squareShards;
+            gold = SaveManager.instance.activeSave.gold;
+        }
+        else
+        {
+            SaveManager.instance.activeSave.circleShards = circleShards;
+            SaveManager.instance.activeSave.squareShards = squareShards;
+            SaveManager.instance.activeSave.gold = gold;
         }
     }
 }

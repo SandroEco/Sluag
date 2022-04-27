@@ -89,4 +89,9 @@ public class SaveData
     public Vector3 lastCheckPointPos;
 
     public int health;
+
+    public int circleShards;
+    public int squareShards;
+
+    public int gold;
 }

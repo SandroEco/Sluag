@@ -17,11 +17,13 @@ public class Soulshard : MonoBehaviour
             if(gameObject.tag == ("circleShards"))
             {
                 IS.circleShards++;
+                SaveManager.instance.activeSave.circleShards = IS.circleShards;
             }
 
             if (gameObject.tag == ("squareShards"))
             {
                 IS.squareShards++;
+                SaveManager.instance.activeSave.squareShards = IS.squareShards;
             }
             Destroy(gameObject);
         }

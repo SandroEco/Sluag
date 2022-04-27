@@ -172,7 +172,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -197,7 +197,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -222,7 +222,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -247,7 +247,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,7 +268,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,7 +289,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,12 +305,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 148
+        x: 96
+        y: 164
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -330,12 +330,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_7
       rect:
         serializedVersion: 2
-        x: 16
-        y: 148
+        x: 112
+        y: 164
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -351,19 +351,19 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_8
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 6, y: -8}
-        - {x: 6, y: 8}
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: a61c7ced7854e304b9829847844e1329
@@ -376,12 +376,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_9
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,15 +397,19 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_10
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 99015587af07b31449ea0a459939f0cd
@@ -418,12 +422,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_11
       rect:
         serializedVersion: 2
-        x: 80
+        x: 48
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -439,12 +443,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_12
       rect:
         serializedVersion: 2
-        x: 112
+        x: 64
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -460,12 +464,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 80
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -481,12 +485,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_14
       rect:
         serializedVersion: 2
-        x: 160
+        x: 96
         y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -506,12 +510,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 132
+        x: 112
+        y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -531,12 +535,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_16
       rect:
         serializedVersion: 2
-        x: 16
-        y: 132
+        x: 128
+        y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -556,12 +560,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 132
+        x: 144
+        y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -581,12 +585,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_18
       rect:
         serializedVersion: 2
-        x: 48
-        y: 132
+        x: 176
+        y: 148
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -602,15 +606,19 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 7372b63077876f94ba0413e419e510cc
@@ -623,15 +631,19 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_20
       rect:
         serializedVersion: 2
-        x: 80
+        x: 16
         y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: ae7b9fa1d4c3e414da1865c7751ea387
@@ -644,15 +656,19 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_21
       rect:
         serializedVersion: 2
-        x: 112
+        x: 32
         y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: 6, y: -6}
+        - {x: 6, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: c0e1d16828aa4254484a3ba533a56431
@@ -665,12 +681,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_22
       rect:
         serializedVersion: 2
-        x: 128
+        x: 48
         y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -686,12 +702,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_23
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -711,15 +727,21 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 116
+        x: 80
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
+        - {x: -8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 19015a7df2841344dbf6e29ce368618b
@@ -732,15 +754,22 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_25
       rect:
         serializedVersion: 2
-        x: 16
-        y: 116
+        x: 96
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: -8}
+        - {x: -6, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: -6, y: -6}
       tessellationDetail: 0
       bones: []
       spriteID: 4fd0cb5b51eaf474ea3e65b8861f0578
@@ -753,12 +782,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_26
       rect:
         serializedVersion: 2
-        x: 48
-        y: 116
+        x: 112
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -774,12 +803,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_27
       rect:
         serializedVersion: 2
-        x: 64
-        y: 116
+        x: 128
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -795,12 +824,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_28
       rect:
         serializedVersion: 2
-        x: 112
-        y: 116
+        x: 144
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -816,12 +845,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_29
       rect:
         serializedVersion: 2
-        x: 128
-        y: 116
+        x: 176
+        y: 132
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -837,12 +866,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_30
       rect:
         serializedVersion: 2
-        x: 160
+        x: 0
         y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -862,12 +891,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 100
+        x: 16
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -889,12 +918,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_32
       rect:
         serializedVersion: 2
-        x: 16
-        y: 100
+        x: 32
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -917,11 +946,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 100
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -938,11 +967,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 100
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -958,12 +987,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_35
       rect:
         serializedVersion: 2
-        x: 0
-        y: 84
+        x: 80
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -983,12 +1012,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_36
       rect:
         serializedVersion: 2
-        x: 16
-        y: 84
+        x: 96
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -1008,12 +1037,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_37
       rect:
         serializedVersion: 2
-        x: 32
-        y: 84
+        x: 112
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -1033,12 +1062,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_38
       rect:
         serializedVersion: 2
-        x: 48
-        y: 84
+        x: 128
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -1060,12 +1089,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_39
       rect:
         serializedVersion: 2
-        x: 64
-        y: 84
+        x: 144
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -1087,12 +1116,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 68
+        x: 176
+        y: 116
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1108,15 +1137,21 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_41
       rect:
         serializedVersion: 2
-        x: 16
-        y: 68
+        x: 0
+        y: 100
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 793ad1906ee096e4898f514fbb90cb05
@@ -1129,15 +1164,21 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_42
       rect:
         serializedVersion: 2
-        x: 32
-        y: 68
+        x: 16
+        y: 100
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: -6, y: -6}
+        - {x: -6, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: f16c5f148fb4fb04d93dd187515b5390
@@ -1150,12 +1191,12 @@ TextureImporter:
       name: SoSe22_Game_1_Tileset_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 68
+        x: 64
+        y: 100
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1163,6 +1204,123 @@ TextureImporter:
       bones: []
       spriteID: 20cd3709568b5924da6ea678f334154e
       internalID: 37668345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SoSe22_Game_1_Tileset_44
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77db83253eaacea4284eb542893a2687
+      internalID: -1668657446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SoSe22_Game_1_Tileset_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 6, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 5}
+        - {x: 6, y: 5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b9d7aa36fa4604e81f6b00993dc2a2
+      internalID: 231020674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SoSe22_Game_1_Tileset_46
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: 8}
+        - {x: -6, y: 5}
+        - {x: -8, y: 5}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376046499a97871428e6f986acb9ffc3
+      internalID: 1824014558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SoSe22_Game_1_Tileset_47
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a8b3700ff420144ae1ef34b9d0d26a
+      internalID: 1023334553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SoSe22_Game_1_Tileset_48
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c39ffb42ea417458bad054c7c89b34
+      internalID: 396075426
       vertices: []
       indices: 
       edges: []
@@ -1187,10 +1345,12 @@ TextureImporter:
       SoSe22_Game_1_Tileset_18: -2108714333
       SoSe22_Game_1_Tileset_3: -399451079
       SoSe22_Game_1_Tileset_31: -494826214
+      SoSe22_Game_1_Tileset_44: -1668657446
       SoSe22_Game_1_Tileset_39: -2026375924
       SoSe22_Game_1_Tileset_19: -1759658646
       SoSe22_Game_1_Tileset_35: -1136055261
       SoSe22_Game_1_Tileset_4: 504546757
+      SoSe22_Game_1_Tileset_45: 231020674
       SoSe22_Game_1_Tileset_16: -1565449313
       SoSe22_Game_1_Tileset_26: -667828013
       SoSe22_Game_1_Tileset_1: -801125585
@@ -1210,6 +1370,8 @@ TextureImporter:
       SoSe22_Game_1_Tileset_15: 1490279469
       SoSe22_Game_1_Tileset_8: -1354471622
       SoSe22_Game_1_Tileset_42: 306878559
+      SoSe22_Game_1_Tileset_48: 396075426
+      SoSe22_Game_1_Tileset_46: 1824014558
       SoSe22_Game_1_Tileset_14: -1893932283
       SoSe22_Game_1_Tileset_32: 2146174617
       SoSe22_Game_1_Tileset_23: -973387020
@@ -1218,6 +1380,7 @@ TextureImporter:
       SoSe22_Game_1_Tileset_43: 37668345
       SoSe22_Game_1_Tileset_21: -1929366231
       SoSe22_Game_1_Tileset_17: -685971982
+      SoSe22_Game_1_Tileset_47: 1023334553
       SoSe22_Game_1_Tileset_30: -1954567516
       SoSe22_Game_1_Tileset_24: 1553979701
       SoSe22_Game_1_Tileset_28: -1313929087
