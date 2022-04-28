@@ -6,6 +6,7 @@ public class Block : MonoBehaviour
 {
     public Movement movementScript;
     private Rigidbody2D rb;
+    private Animator anim;
 
     private void Start()
     {
@@ -16,14 +17,25 @@ public class Block : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             movementScript = other.gameObject.GetComponent<Movement>();
-            if(movementScript.strength < 20f)
+            if(movementScript.strength >= 20f)
             {
-                rb.mass = 20f;
+                rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             }
-            else
+            else if(movementScript.strength < 20f)
             {
-                rb.mass = 1f;
+                rb.constraints = RigidbodyConstraints2D.None;
+                anim = other.gameObject.GetComponent<Animator>();
+                anim.SetBool("isPushing", true);
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            anim = other.gameObject.GetComponent<Animator>();
+            anim.SetBool("isPushing", false);
         }
     }
 }

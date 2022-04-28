@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8663804946147808705}
   - component: {fileID: 8663804946147808704}
   - component: {fileID: 8663804946147808710}
+  - component: {fileID: 5232530968708785660}
   m_Layer: 8
   m_Name: Demon_Bear
   m_TagString: BearBody
@@ -297,13 +298,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
-  drop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
-  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
   bearEnemy: {fileID: 0}
   totalHP: 10
   knockback: 12
   knockbackTime: 0.3
   isKnockbacked: 0
+--- !u!114 &5232530968708785660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663804946147808767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17c80b9c8506374ea9db132e47facb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 0}
+  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
+  numOfGold: 4
 --- !u!1 &8663804946905710122
 GameObject:
   m_ObjectHideFlags: 0

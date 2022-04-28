@@ -289,7 +289,7 @@ MonoBehaviour:
   topRaycastLength: 1.25
   edgeRaycastOffset: {x: 0.35, y: 0, z: 0}
   innerRaycastOffset: {x: 0.14, y: 0, z: 0}
-  strength: 5
+  strength: 20
 --- !u!114 &2223686474021643924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +419,7 @@ MonoBehaviour:
   circleShards: 0
   squareShards: 0
   gold: 0
+  key: 0
 --- !u!1 &776020405843842707
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ MonoBehaviour:
   topRaycastLength: 0
   edgeRaycastOffset: {x: 0, y: 0, z: 0}
   innerRaycastOffset: {x: 0, y: 0, z: 0}
-  strength: 1
+  strength: 25
 --- !u!114 &8597830899996542871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +902,7 @@ MonoBehaviour:
   topRaycastLength: 1.7
   edgeRaycastOffset: {x: 1.65, y: 0, z: 0}
   innerRaycastOffset: {x: 1.2, y: 0, z: 0}
-  strength: 20
+  strength: 5
 --- !u!114 &1064628905894302273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4596,6 +4597,7 @@ MonoBehaviour:
     circleShards: 0
     squareShards: 0
     gold: 0
+    key: 0
   hasLoaded: 0
 --- !u!1 &8890798243067683832
 GameObject:

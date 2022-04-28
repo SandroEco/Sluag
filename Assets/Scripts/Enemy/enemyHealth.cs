@@ -6,9 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Components")]
     public Rigidbody2D rb;
-    public GameObject drop;
-    public GameObject goldDrop;
     public BearEnemy bearEnemy;
+    private ItemDrop iD;
 
     public float totalHP;
     private float HP;
@@ -61,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
     private void Dead()
     {
         //play death anim
-        Instantiate(drop, transform.position, Quaternion.identity);
-        Instantiate(goldDrop, transform.position, Quaternion.identity);
+        iD = GetComponent<ItemDrop>();
+        iD.Drop();
     }
 }

@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8663804946147808705}
   - component: {fileID: 8663804946147808704}
   - component: {fileID: 8663804946147808710}
+  - component: {fileID: 3246458253662598305}
   m_Layer: 8
   m_Name: Bear
   m_TagString: BearBody
@@ -283,6 +284,7 @@ MonoBehaviour:
   isFacingRight: 0
   playerFound: 0
   targetDirection: {x: 0, y: 0}
+  isStunned: 0
 --- !u!114 &8663804946147808710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,12 +298,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
-  drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
-  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
+  bearEnemy: {fileID: 0}
   totalHP: 10
   knockback: 12
   knockbackTime: 0.3
   isKnockbacked: 0
+--- !u!114 &3246458253662598305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663804946147808767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17c80b9c8506374ea9db132e47facb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
+  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
 --- !u!1 &8663804946905710122
 GameObject:
   m_ObjectHideFlags: 0
