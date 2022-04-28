@@ -17,6 +17,7 @@ TagManager:
   - Boundary
   - CurrentPos
   - NPC
+  - Gate
   layers:
   - Default
   - TransparentFX

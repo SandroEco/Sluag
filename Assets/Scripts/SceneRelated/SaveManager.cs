@@ -94,4 +94,5 @@ public class SaveData
     public int squareShards;
 
     public int gold;
+    public int key;
 }
