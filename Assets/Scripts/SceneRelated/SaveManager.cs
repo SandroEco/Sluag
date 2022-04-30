@@ -49,7 +49,6 @@ public class SaveManager : MonoBehaviour
         serializer.Serialize(stream, activeSave);
         stream.Close();
 
-        Debug.Log("Saved");
     }
 
     public void Load()
@@ -63,7 +62,6 @@ public class SaveManager : MonoBehaviour
             activeSave = serializer.Deserialize(stream) as SaveData;
             stream.Close();
 
-            Debug.Log("Loaded");
             hasLoaded = true;
         }
     }
@@ -75,8 +73,6 @@ public class SaveManager : MonoBehaviour
         if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
             File.Delete(dataPath + "/" + activeSave.saveName + ".save");
-
-            Debug.Log("Deleted");
         }
     }
 }
@@ -92,6 +88,7 @@ public class SaveData
 
     public int circleShards;
     public int squareShards;
+    public int frogShards;
 
     public int gold;
     public int key;

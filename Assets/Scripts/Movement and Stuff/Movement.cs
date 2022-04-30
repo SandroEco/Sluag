@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private Animator anim;
     private Acceleration accelerationScript;
     private WallJumping wallJumping;
+    public DoubleJump doubleJump;
 
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -45,12 +46,6 @@ public class Movement : MonoBehaviour
     [Header("Particles")]
     public Transform dustJump;
     private bool spawnDust;
-
-    [Header("Corner Correction Variables")]
-    [SerializeField] private float topRaycastLength;
-    [SerializeField] private Vector3 edgeRaycastOffset;
-    [SerializeField] private Vector3 innerRaycastOffset;
-    private bool canCornerCorrect;
 
     [Header("Others")]
     public float strength;
@@ -154,12 +149,6 @@ public class Movement : MonoBehaviour
             Jump();
         }
         #endregion
-        /*
-        if (canCornerCorrect)
-        {
-            CornerCorrect(rb.velocity.y);
-        }
-        */
     }
 
     public void SetCurrentScene(SceneDetails currScene)
@@ -254,39 +243,12 @@ public class Movement : MonoBehaviour
         }
     }
 
-    /*
-    void CornerCorrect(float Yvelocity)
-    {
-        //Push player to left
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - innerRaycastOffset + Vector3.up * topRaycastLength, Vector3.left, topRaycastLength, groundLayer);
-        if(hit.collider != null)
-        {
-            float newPos = Vector3.Distance(new Vector3(hit.point.x, transform.position.y, 0f) + Vector3.up * topRaycastLength, transform.position - edgeRaycastOffset + Vector3.up * topRaycastLength);
-            transform.position = new Vector3(transform.position.x + newPos, transform.position.y, transform.position.z);
-            rb.velocity = new Vector2(rb.velocity.x, Yvelocity);
-            return;
-        }
-
-        //Push player to right
-
-        hit = Physics2D.Raycast(transform.position + innerRaycastOffset + Vector3.up * topRaycastLength, Vector3.right, topRaycastLength, groundLayer);
-        if (hit.collider != null)
-        {
-            float newPos = Vector3.Distance(new Vector3(hit.point.x, transform.position.y, 0f) + Vector3.up * topRaycastLength, transform.position + edgeRaycastOffset + Vector3.up * topRaycastLength);
-            transform.position = new Vector3(transform.position.x - newPos, transform.position.y, transform.position.z);
-            rb.velocity = new Vector2(rb.velocity.x, Yvelocity);
-        }
-    }
-    */
-
     private void CheckCollisions()
     {
         isGrounded = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, groundRaycastLength, Vector2.down, groundRaycastLength, groundLayer);
         Debug.DrawRay(bc.bounds.center + new Vector3(bc.bounds.extents.x, 0), Vector2.down * (bc.bounds.extents.y + groundRaycastLength), Color.red);
         Debug.DrawRay(bc.bounds.center - new Vector3(bc.bounds.extents.x, 0), Vector2.down * (bc.bounds.extents.y + groundRaycastLength), Color.red);
         Debug.DrawRay(bc.bounds.center - new Vector3(bc.bounds.extents.x, bc.bounds.extents.y + 0.1f), Vector2.right * (bc.bounds.extents.x + groundRaycastLength), Color.red);
-
-        canCornerCorrect = Physics2D.Raycast(transform.position + edgeRaycastOffset, Vector2.up, topRaycastLength, groundLayer) && !Physics2D.Raycast(transform.position + innerRaycastOffset, Vector2.up, topRaycastLength, groundLayer) || Physics2D.Raycast(transform.position - edgeRaycastOffset, Vector2.up, topRaycastLength, groundLayer) && !Physics2D.Raycast(transform.position - innerRaycastOffset, Vector2.up, topRaycastLength, groundLayer);
     }
 
     /*

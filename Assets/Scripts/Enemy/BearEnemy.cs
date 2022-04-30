@@ -7,6 +7,7 @@ public class BearEnemy : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public Transform groundCheckPos;
+    public Transform airCheckPos;
     public Animator anim;
     public PolygonCollider2D bodyCollider;
     public BoxCollider2D antlers;
@@ -23,6 +24,7 @@ public class BearEnemy : MonoBehaviour
     public float huntSpeed;
     public bool mustPatrol;
     public bool mustFlip;
+    public bool inAir;
 
     [Header("RaycastStuff")]
     public float maxDistance;
@@ -53,6 +55,15 @@ public class BearEnemy : MonoBehaviour
         once = true;
         mustPatrol = true;
         oldPos = transform.position.x;
+
+    }
+
+    private void OnEnable()
+    {
+        currentState = EnemyState.Patrol;
+        CheckForPlayer();
+        enemyHealth.isKnockbacked = false;
+        playerFound = false;
     }
 
     void Update()
@@ -68,7 +79,6 @@ public class BearEnemy : MonoBehaviour
                 RunTowardsPlayer();
                 break;
             case EnemyState.Stunned:
-                //Bonk();
                 Stunned();
                 break;
         }
@@ -84,8 +94,9 @@ public class BearEnemy : MonoBehaviour
     void Patrol()
     {
         mustFlip = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer);
+        inAir = !Physics2D.OverlapCircle(airCheckPos.position, 0.1f, groundLayer);
 
-        if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer))
+        if (mustFlip && !inAir || bodyCollider.IsTouchingLayers(groundLayer))
         {
             Flip();
         }
@@ -228,7 +239,7 @@ public class BearEnemy : MonoBehaviour
     {
         playerFound = true;
         //isStunned = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3.5f);
         //isStunned = false;
         anim.SetBool("MaxSpeedReached", false);
         anim.SetBool("isStunned", false);

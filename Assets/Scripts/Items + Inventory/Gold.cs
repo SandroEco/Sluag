@@ -7,6 +7,7 @@ public class Gold : MonoBehaviour
     public InventoryScript IS;
     private BoxCollider2D bc;
     private Rigidbody2D rb;
+    public AudioSource coinCollectSource;
 
     public int goldValue;
     private void Start()
@@ -14,6 +15,7 @@ public class Gold : MonoBehaviour
         IS = FindObjectOfType<InventoryScript>();
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        coinCollectSource = GameObject.Find("CoinCollectSource").GetComponent<AudioSource>();
 
         float directionX = Random.Range(-2f, 2f);
         float directionY = Random.Range(1f, 3f);
@@ -27,6 +29,7 @@ public class Gold : MonoBehaviour
         if(collision.gameObject.tag == ("Player"))
         {
             IS.gold = IS.gold + goldValue;
+            coinCollectSource.Play();
             SaveManager.instance.activeSave.gold = IS.gold;
             IS.text.text = IS.gold.ToString();
             Destroy(gameObject);

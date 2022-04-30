@@ -33,7 +33,7 @@ public class CombatRelated : MonoBehaviour
             if (Input.GetKeyDown("q"))
             {
                 rb.velocity = Vector3.zero;
-                anim.SetBool("isHitting", true);
+                anim.SetTrigger("isHitting");
                 damage = 5f;
 
                 if(timeBtwAttack <= 0f)
@@ -44,7 +44,6 @@ public class CombatRelated : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isHitting", false);
             timeBtwAttack -= Time.deltaTime;
         }
     }

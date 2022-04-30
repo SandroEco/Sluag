@@ -10,11 +10,13 @@ public class TransformStateManager : MonoBehaviour
     public GameObject sluagObject;
     public GameObject circleObject;
     public GameObject bearObject;
+    public GameObject frogObject;
 
     TransformBaseState currentState;
     public Sluag sluag = new Sluag();
-    public Circle circle = new Circle();
+    public Squirrel squirrel = new Squirrel();
     public Bear bear = new Bear();
+    public Frog frog = new Frog();
 
     void Start()
     {

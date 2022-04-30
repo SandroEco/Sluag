@@ -29,7 +29,6 @@ public class HealthAll : MonoBehaviour
         {
             lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
             transform.position = lastCheckPointPos;
-            Debug.Log("worked");
 
             health = SaveManager.instance.activeSave.health;
         }

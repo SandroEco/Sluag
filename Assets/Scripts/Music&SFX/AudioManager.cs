@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public void FootstepSFX()
     {
-        AudioClip clip = footstepClips[Random.Range(0, footstepClips.Count)];
+        AudioClip clip = footstepClips[Random.Range(0,3)];
 
         footstepSource.PlayOneShot(clip);
     }

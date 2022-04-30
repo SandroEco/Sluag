@@ -46,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
             StartCoroutine(KnockbackCounter());
 
             HP -= CombatRelated.damage;
-            Debug.Log(HP);
+            //Debug.Log(HP);
         }
     }
 
