@@ -28,16 +28,18 @@ public class Gold : MonoBehaviour
         {
             IS.gold = IS.gold + goldValue;
             SaveManager.instance.activeSave.gold = IS.gold;
+            IS.text.text = IS.gold.ToString();
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.tag == "Player")
         {
             IS.gold = IS.gold + goldValue;
             SaveManager.instance.activeSave.gold = IS.gold;
+            IS.text.text = IS.gold.ToString();
             Destroy(bc);
         }
     }

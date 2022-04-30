@@ -18,6 +18,7 @@ TagManager:
   - CurrentPos
   - NPC
   - Gate
+  - InstantDeath
   layers:
   - Default
   - TransparentFX

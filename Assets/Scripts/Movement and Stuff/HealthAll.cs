@@ -80,8 +80,7 @@ public class HealthAll : MonoBehaviour
     {
         health -= amount;
         SaveManager.instance.activeSave.health = health;
-        Debug.Log("Aua");
-        if(health > 0)
+        if(health >= 1)
         {
             movementScript.Damaged();
             StartCoroutine(DamageFreeze());
@@ -100,8 +99,8 @@ public class HealthAll : MonoBehaviour
         {
             health = maxhealth;
         }
-        yield return new WaitForSeconds(0.8f);
-        movementScript.canMove = true;
+        yield return new WaitForSeconds(1f);
+        movementScript.isDying = false;
         player.transform.position = lastCheckPointPos;
     }
 

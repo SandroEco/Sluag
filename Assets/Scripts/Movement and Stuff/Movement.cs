@@ -54,6 +54,7 @@ public class Movement : MonoBehaviour
 
     [Header("Others")]
     public float strength;
+    public bool isDying;
 
     private void Awake()
     {
@@ -121,6 +122,12 @@ public class Movement : MonoBehaviour
             spawnDust = true;
         }
         #endregion
+
+        if (isDying)
+        {
+            canMove = false;
+            rb.velocity = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
@@ -312,8 +319,7 @@ public class Movement : MonoBehaviour
 
     public void Die()
     {
-        rb.velocity = Vector2.zero;
-        canMove = false;
+        isDying = true; ;
         anim.SetTrigger("Dead");
     }
 

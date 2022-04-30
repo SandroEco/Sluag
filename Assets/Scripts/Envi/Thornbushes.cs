@@ -17,7 +17,8 @@ public class Thornbushes : MonoBehaviour
         if(other.tag == ("Player"))
         {
             movementScript = FindObjectOfType<Movement>();
-            healthAll.TakeDamage(1);
+            healthAll.health -= 1;
+            SaveManager.instance.activeSave.health = healthAll.health;
             movementScript.Die();
             healthAll.toLastCheckpoint();
         }

@@ -38,14 +38,13 @@ public class EnemyHealth : MonoBehaviour
     {
         if(other.tag == "Hit")
         {
-            if (!bearEnemy.isStunned)
-            {
-                isKnockbacked = true;
-                Vector2 difference = (transform.position - other.transform.position).normalized;
-                Vector2 force = difference * knockback;
-                rb.AddForce(force, ForceMode2D.Impulse);
-                StartCoroutine(KnockbackCounter());
-            }
+
+            isKnockbacked = true;
+            Vector2 difference = (transform.position - other.transform.position).normalized;
+            Vector2 force = difference * knockback;
+            rb.AddForce(force, ForceMode2D.Impulse);
+            StartCoroutine(KnockbackCounter());
+
             HP -= CombatRelated.damage;
             Debug.Log(HP);
         }

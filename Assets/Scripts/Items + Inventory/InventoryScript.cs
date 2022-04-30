@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class InventoryScript : MonoBehaviour
 
     [Header("Gold")]
     public int gold;
+    public TextMeshProUGUI text;
 
     [Header("Keys")]
     public int key;
