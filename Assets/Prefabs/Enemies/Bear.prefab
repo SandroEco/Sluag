@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1250364100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250364101}
+  m_Layer: 8
+  m_Name: AirCheckPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250364101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250364100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 102.0529, y: 14.639325, z: 9.805987}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8663804946147808709}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8663804945825078863
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +160,7 @@ Transform:
   m_Children:
   - {fileID: 8663804945825078864}
   - {fileID: 8663804946905710123}
+  - {fileID: 1250364101}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,7 +232,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 4f460316e5a4a9b419777cb67c572b9b, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -265,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
   groundCheckPos: {fileID: 8663804946905710123}
+  airCheckPos: {fileID: 1250364101}
   anim: {fileID: 8663804946147808705}
   bodyCollider: {fileID: 8663804945825078865}
   antlers: {fileID: 5111498656739385955}
@@ -280,11 +313,11 @@ MonoBehaviour:
   huntSpeed: 6
   mustPatrol: 0
   mustFlip: 0
+  inAir: 0
   maxDistance: 8
   isFacingRight: 0
   playerFound: 0
   targetDirection: {x: 0, y: 0}
-  isStunned: 0
 --- !u!114 &8663804946147808710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,8 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
   bearEnemy: {fileID: 0}
-  totalHP: 10
-  knockback: 12
+  totalHP: 20
+  knockback: 6
   knockbackTime: 0.3
   isKnockbacked: 0
 --- !u!114 &3246458253662598305
@@ -317,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
   goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
+  numOfGold: 0
 --- !u!1 &8663804946905710122
 GameObject:
   m_ObjectHideFlags: 0
