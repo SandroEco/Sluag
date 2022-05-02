@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 1435e3e35e446ea4783bc304d74e36b0
+  - enabled: 1
+    path: Assets/Scenes/Sluag Home.unity
+    guid: b0436bdc2e520b045acdac0cf9933b90
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ea6f410d374470a429c9ae806e18c2ac, type: 2}

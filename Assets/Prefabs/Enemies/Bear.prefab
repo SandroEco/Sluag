@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250364100}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 102.0529, y: 14.639325, z: 9.805987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drop: {fileID: 3422619621121936661, guid: c5dc1764a63a7b94a849bb93ac91516b, type: 3}
   goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
-  numOfGold: 0
+  numOfGold: 4
 --- !u!1 &8663804946905710122
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8663804946905710122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7999992, y: -1.5, z: 0}
+  m_LocalPosition: {x: 1.8, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

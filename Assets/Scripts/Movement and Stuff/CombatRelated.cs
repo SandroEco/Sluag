@@ -69,7 +69,7 @@ public class CombatRelated : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (other.gameObject.tag == "BearBody")
         {
-            CinemachineShake.ShakeInstance.ShakeCamera(4f, .1f);
+            CinemachineShake.ShakeInstance.ShakeCamera(5f, .15f);
             isKnockbacked = true;
             Vector2 difference = (transform.position - other.transform.position);
             difference.y = 0.4f;
