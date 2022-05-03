@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &951710471
 Transform:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
   horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
-  jumpForce: 19
+  jumpForce: 20
   airLinearDrag: 4
   fallMultiplier: 8
   lowJumpFallMultiplier: 5
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
-  jumpForce: 10
+  jumpForce: 11
   airLinearDrag: 2.5
   fallMultiplier: 7
   lowJumpFallMultiplier: 5

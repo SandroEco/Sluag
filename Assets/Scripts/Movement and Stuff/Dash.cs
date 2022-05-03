@@ -41,7 +41,16 @@ public class Dash : MonoBehaviour
                 rb.gravityScale = 0f;
                 dashingDir = (int)Input.GetAxisRaw("Horizontal");
 
-                if(timeBtwDash <= 0)
+                if (movementScript.isFacingRight)
+                {
+                    dashingDir = (1);
+                }
+                if (!movementScript.isFacingRight)
+                {
+                    dashingDir = (-1);
+                }
+
+                if (timeBtwDash <= 0)
                 {
                     timeBtwDash = dashCooldown;
                 }
