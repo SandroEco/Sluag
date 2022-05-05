@@ -5,8 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public static Movement Instance { get; private set; }
-    public SceneDetails CurrentScene { get; private set; }
-    public SceneDetails PrevScene { get; private set; }
 
     [Header("Components")]
     private Rigidbody2D rb;
@@ -149,12 +147,6 @@ public class Movement : MonoBehaviour
             Jump();
         }
         #endregion
-    }
-
-    public void SetCurrentScene(SceneDetails currScene)
-    {
-        PrevScene = CurrentScene;
-        CurrentScene = currScene;
     }
 
     private Vector2 GetInput()

@@ -18,15 +18,15 @@ public class Bear : TransformBaseState
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IS.circleShards >= 1)
+        if (Input.GetKeyDown(KeyCode.W) && IS.circleShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.squirrel);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && IS.frogShards >= 1)
+        if (Input.GetKeyDown(KeyCode.D) && IS.frogShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.frog);
         }

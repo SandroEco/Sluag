@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthAll : MonoBehaviour
 {
@@ -24,8 +25,12 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
+        Scene currentScene = SceneManager.GetActiveScene();
 
-        if (SaveManager.instance.hasLoaded)
+        string sceneName = currentScene.name;
+
+
+        if (SaveManager.instance.hasLoaded && sceneName == "Game")
         {
             lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
             transform.position = lastCheckPointPos;

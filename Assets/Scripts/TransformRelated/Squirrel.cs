@@ -18,15 +18,15 @@ public class Squirrel : TransformBaseState
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             transformStateManager.SwitchState(transformStateManager.sluag);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && IS.squareShards >= 1)
+        if (Input.GetKeyDown(KeyCode.A) && IS.squareShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.bear);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && IS.frogShards >= 1)
+        if (Input.GetKeyDown(KeyCode.D) && IS.frogShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.frog);
         }

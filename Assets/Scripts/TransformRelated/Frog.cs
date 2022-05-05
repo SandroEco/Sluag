@@ -18,16 +18,16 @@ public class Frog : TransformBaseState
 
     public override void UpdateState(TransformStateManager transformStateManager)
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IS.circleShards >= 1)
+        if (Input.GetKeyDown(KeyCode.W) && IS.circleShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.squirrel);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && IS.squareShards >= 1)
+        if (Input.GetKeyDown(KeyCode.A) && IS.squareShards >= 1)
         {
             transformStateManager.SwitchState(transformStateManager.bear);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             transformStateManager.SwitchState(transformStateManager.sluag);
         }

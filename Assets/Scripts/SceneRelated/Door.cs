@@ -5,13 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    private HealthAll healthAll;
+
+    private void Start()
+    {
+        healthAll = GameObject.FindGameObjectWithTag("Respawn").GetComponent<HealthAll>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.W))
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (Input.GetKey(KeyCode.UpArrow) && sceneName == "Game")
         {
-            Debug.Log("EnterScene");
-            SceneManager.LoadScene(2);
+            healthAll = FindObjectOfType<HealthAll>();
+            healthAll.lastCheckPointPos = transform.position;
+            SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
+            SaveManager.instance.Save();
+            SceneManager.LoadScene("Sluag Home");
+        }
+        else if(Input.GetKey(KeyCode.UpArrow) && sceneName == "Sluag Home")
+        {
+            SceneManager.LoadScene("Game");
         }
     }
 }

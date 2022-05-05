@@ -33,6 +33,7 @@ public class InventoryScript : MonoBehaviour
             frogShards = SaveManager.instance.activeSave.frogShards;
             gold = SaveManager.instance.activeSave.gold;
             key = SaveManager.instance.activeSave.key;
+            text.text = gold.ToString();
         }
         else
         {
