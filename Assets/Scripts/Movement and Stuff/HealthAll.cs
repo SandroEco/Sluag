@@ -53,6 +53,15 @@ public class HealthAll : MonoBehaviour
         movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        if(DialogManager.isActive == true)
+        {
+            movementScript.enabled = false;
+        }
+        else
+        {
+            movementScript.enabled = true;
+        }
+
         if(health > maxhealth)
         {
             health = maxhealth;

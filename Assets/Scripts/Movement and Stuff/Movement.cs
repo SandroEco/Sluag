@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -61,17 +59,18 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
 
-        canMove = true;
+        //canMove = true;
     }
 
     void Update()
     {
         if(DialogManager.isActive == true)
         {
+            //canMove = false;
             anim.SetFloat("speed", 0);
             anim.SetBool("MaxSpeedReached", false);
-            canMove = false;
         }
+
         #region Movement
         horizontalDirection = GetInput().x;
         #endregion 

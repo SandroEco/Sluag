@@ -12,6 +12,7 @@ public class CutsceneDontMove : MonoBehaviour
         {
             movement = other.GetComponent<Movement>();
             movement.canMove = false;
+            Debug.Log("cant move");
         }
     }
 }
