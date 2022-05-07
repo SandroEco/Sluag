@@ -41,7 +41,8 @@ public class BearEnemy : MonoBehaviour
     {
         Patrol,
         Hunt,
-        Stunned
+        Stunned,
+        Dead
     }
 
     EnemyState currentState = EnemyState.Patrol;
@@ -81,6 +82,8 @@ public class BearEnemy : MonoBehaviour
             case EnemyState.Stunned:
                 Stunned();
                 break;
+            case EnemyState.Dead:
+                break;
         }
         /*
         if (isStunned)
@@ -89,6 +92,10 @@ public class BearEnemy : MonoBehaviour
         }
         */
 
+        if(enemyHealth.HP <= 0)
+        {
+            currentState = EnemyState.Dead;
+        }
     }
 
     void Patrol()

@@ -333,6 +333,7 @@ MonoBehaviour:
   rb: {fileID: 8663804946147808707}
   bearEnemy: {fileID: 0}
   totalHP: 20
+  HP: 0
   knockback: 6
   knockbackTime: 0.3
   isKnockbacked: 0

@@ -8,9 +8,10 @@ public class EnemyHealth : MonoBehaviour
     public Rigidbody2D rb;
     public BearEnemy bearEnemy;
     private ItemDrop iD;
+    private Animator anim;
 
     public float totalHP;
-    private float HP;
+    public float HP;
     public float knockback;
     public float knockbackTime;
     public bool isKnockbacked;
@@ -23,14 +24,14 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         bearEnemy = GetComponent<BearEnemy>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         if(HP <= 0)
         {
-            Dead();
-            Destroy(gameObject);
+            StartCoroutine(Dead());
         }
     }
 
@@ -56,10 +57,13 @@ public class EnemyHealth : MonoBehaviour
         isKnockbacked = false;
     }
 
-    private void Dead()
+    private IEnumerator Dead()
     {
-        //play death anim
+        rb.velocity = new Vector2(0, 0);
+        anim.SetTrigger("Dead");
+        yield return new WaitForSeconds(2f);
         iD = GetComponent<ItemDrop>();
         iD.Drop();
+        Destroy(gameObject);
     }
 }

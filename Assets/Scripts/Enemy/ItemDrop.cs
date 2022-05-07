@@ -23,6 +23,5 @@ public class ItemDrop : MonoBehaviour
         {
             Instantiate(drop, transform.position, Quaternion.identity);
         }
-        //Instantiate(drop, transform.position, Quaternion.identity);
     }
 }

@@ -332,7 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
   bearEnemy: {fileID: 0}
-  totalHP: 20
+  totalHP: 10
+  HP: 0
   knockback: 6
   knockbackTime: 0.3
   isKnockbacked: 0
