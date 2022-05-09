@@ -20,6 +20,7 @@ TagManager:
   - Gate
   - InstantDeath
   - frogShards
+  - CantTransform
   layers:
   - Default
   - TransparentFX

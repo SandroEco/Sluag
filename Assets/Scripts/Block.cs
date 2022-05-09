@@ -14,14 +14,14 @@ public class Block : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
             movementScript = other.gameObject.GetComponent<Movement>();
-            if(movementScript.strength >= 20f)
+            if(movementScript.strength != 20f)
             {
                 rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             }
-            else if(movementScript.strength < 20f)
+            else if(movementScript.strength == 20f)
             {
                 rb.constraints = RigidbodyConstraints2D.None;
                 anim = other.gameObject.GetComponent<Animator>();

@@ -22,7 +22,7 @@ public class WallRun : MonoBehaviour
     [Header("Wall Run")]
     public Movement movementScript;
     public float wallRunModifier = 0.85f;
-    private bool wallRun => onWall && Input.GetKey("w");
+    private bool wallRun => onWall && Input.GetKey(KeyCode.UpArrow);
 
     private void Start()
     {

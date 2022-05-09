@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 951710477}
   - component: {fileID: 951710478}
   - component: {fileID: 5311817262306142916}
+  - component: {fileID: 194519537}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Player
@@ -318,7 +319,7 @@ MonoBehaviour:
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
-  strength: 25
+  strength: 5
   isDying: 0
 --- !u!114 &951710477
 MonoBehaviour:
@@ -360,6 +361,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementScript: {fileID: 0}
   doubleJumping: 0
+--- !u!114 &194519537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951710470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b959173575d44d428ac4d4fa6a0d1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tSM: {fileID: 0}
+  pC: {fileID: 0}
 --- !u!1 &746889404190670181
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +486,7 @@ GameObject:
   - component: {fileID: 6917044877100072720}
   - component: {fileID: 583750729780602846}
   - component: {fileID: 5658428266580477030}
+  - component: {fileID: 1820205886}
   m_Layer: 7
   m_Name: Sluag
   m_TagString: Player
@@ -647,7 +663,7 @@ MonoBehaviour:
   groundRaycastLength: 0.1
   isGrounded: 1
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
-  strength: 20
+  strength: 10
   isDying: 0
 --- !u!114 &2223686474021643924
 MonoBehaviour:
@@ -731,6 +747,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a96d09efe4ba5d45b967a287956fc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1820205886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405742515750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b959173575d44d428ac4d4fa6a0d1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tSM: {fileID: 0}
+  pC: {fileID: 0}
 --- !u!1 &776020405830092886
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +831,7 @@ GameObject:
   - component: {fileID: 8597830899996542871}
   - component: {fileID: 2140233372509723690}
   - component: {fileID: 3528593002210508417}
+  - component: {fileID: 639875349}
   m_Layer: 7
   m_Name: FlyingSquirrel
   m_TagString: Player
@@ -1023,7 +1054,7 @@ MonoBehaviour:
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
-  strength: 25
+  strength: 5
   isDying: 0
 --- !u!114 &8597830899996542871
 MonoBehaviour:
@@ -1068,6 +1099,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a96d09efe4ba5d45b967a287956fc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &639875349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020405843842707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b959173575d44d428ac4d4fa6a0d1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tSM: {fileID: 0}
+  pC: {fileID: 0}
 --- !u!1 &776020406215712386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,13 +1131,14 @@ GameObject:
   - component: {fileID: 7255683273131985949}
   - component: {fileID: 3179651472224268774}
   - component: {fileID: 1206528881374541213}
+  - component: {fileID: 1237021030}
   m_Layer: 7
   m_Name: Bear
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776020406215712387
 Transform:
   m_ObjectHideFlags: 0
@@ -1260,7 +1306,7 @@ MonoBehaviour:
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
-  strength: 5
+  strength: 20
   isDying: 0
 --- !u!114 &1064628905894302273
 MonoBehaviour:
@@ -1323,6 +1369,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a96d09efe4ba5d45b967a287956fc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1237021030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776020406215712386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b959173575d44d428ac4d4fa6a0d1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tSM: {fileID: 0}
+  pC: {fileID: 0}
 --- !u!1 &776020406393474670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPos: {fileID: 776020406393474670}
+  canTransform: 0
   sluagObject: {fileID: 776020405742515750}
   circleObject: {fileID: 776020405843842707}
   bearObject: {fileID: 776020406215712386}
@@ -5163,7 +5224,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

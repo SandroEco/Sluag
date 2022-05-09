@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1278123948236670073}
   - component: {fileID: 1278123948236670078}
   - component: {fileID: 1278123948236670079}
-  - component: {fileID: 1278123948236670076}
   - component: {fileID: 8067324526881103987}
+  - component: {fileID: 1428517297}
+  - component: {fileID: 1428517298}
   m_Layer: 0
   m_Name: Gold_Chest
   m_TagString: Untagged
@@ -113,21 +114,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &1278123948236670076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278123948236670077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2dc52ce76080a479f886cc48e212cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IS: {fileID: 0}
-  coinCollectSource: {fileID: 0}
-  goldValue: 5
 --- !u!50 &8067324526881103987
 Rigidbody2D:
   serializedVersion: 4
@@ -149,3 +135,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1428517297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278123948236670077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17c80b9c8506374ea9db132e47facb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 0}
+  goldDrop: {fileID: 7909932025019897546, guid: 6a4a72a0abe57f94fad982813a384022, type: 3}
+  numOfGold: 6
+--- !u!114 &1428517298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278123948236670077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46fa804755ae5b44a922b0949ad8f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

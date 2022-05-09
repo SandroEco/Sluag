@@ -158,4 +158,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IS: {fileID: 0}
+  coinCollectSource: {fileID: 0}
   goldValue: 1

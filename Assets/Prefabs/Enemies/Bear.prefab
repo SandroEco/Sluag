@@ -273,7 +273,7 @@ Animator:
   m_GameObject: {fileID: 8663804946147808767}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97540db74eac8314d97ee6c7d352585b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2616ed2de89234a4f96d0aba741e7cbf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8663804946147808707}
   bearEnemy: {fileID: 0}
-  totalHP: 10
+  totalHP: 15
   HP: 0
   knockback: 6
   knockbackTime: 0.3

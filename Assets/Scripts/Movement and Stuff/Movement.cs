@@ -58,8 +58,6 @@ public class Movement : MonoBehaviour
         bc = GetComponent<PolygonCollider2D>();
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
-
-        //canMove = true;
     }
 
     void Update()
@@ -257,12 +255,12 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "NPC" && Input.GetKey(KeyCode.S))
+        if(other.tag == "NPC" && Input.GetKey(KeyCode.UpArrow))
         {
             other.GetComponent<DialogTrigger>().StartDialog();
         }
 
-        if(other.tag == "Gate" && Input.GetKey(KeyCode.S) && InventoryScript.instance.key >= 1)
+        if(other.tag == "Gate" && Input.GetKey(KeyCode.UpArrow) && InventoryScript.instance.key >= 1)
         {
             InventoryScript.instance.key--;
             SaveManager.instance.activeSave.key = InventoryScript.instance.key;

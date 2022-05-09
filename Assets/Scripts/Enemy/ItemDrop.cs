@@ -7,21 +7,28 @@ public class ItemDrop : MonoBehaviour
     public GameObject drop;
     public GameObject goldDrop;
     public int numOfGold;
+    private bool once = true;
+
 
     public void Drop()
     {
-        for (int i = 0; i < numOfGold; i++)
+        if (once)
         {
-            goldDrop = Instantiate(goldDrop, transform.position, Quaternion.identity);
-        }
+            for (int i = 0; i < numOfGold; i++)
+            {
+                goldDrop = Instantiate(goldDrop, transform.position, Quaternion.identity);
+            }
 
-        if (!drop)
-        {
-            return;
+            if (!drop)
+            {
+                return;
+            }
+            else
+            {
+                Instantiate(drop, transform.position, Quaternion.identity);
+            }
         }
-        else
-        {
-            Instantiate(drop, transform.position, Quaternion.identity);
-        }
+        once = false;
+        
     }
 }

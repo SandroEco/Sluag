@@ -115,6 +115,7 @@ public class HealthAll : MonoBehaviour
         yield return new WaitForSeconds(1f);
         movementScript.isDying = false;
         player.transform.position = lastCheckPointPos;
+        movementScript.canMove = true;
     }
 
     public void toLastCheckpoint()

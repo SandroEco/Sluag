@@ -5,6 +5,7 @@ using UnityEngine;
 public class TransformStateManager : MonoBehaviour
 {
     public GameObject currentPos;
+    public bool canTransform;
 
     [Header("Souls")]
     public GameObject sluagObject;
@@ -23,6 +24,8 @@ public class TransformStateManager : MonoBehaviour
         currentState = sluag;
 
         currentState.EnterState(this);
+
+        canTransform = true;
     }
 
     void Update()
