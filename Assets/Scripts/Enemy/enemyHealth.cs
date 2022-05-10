@@ -62,8 +62,8 @@ public class EnemyHealth : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         anim.SetTrigger("Dead");
         yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
         iD = GetComponent<ItemDrop>();
         iD.Drop();
-        Destroy(gameObject);
     }
 }

@@ -6,8 +6,11 @@ public class Goldchest : MonoBehaviour
 {
 
     private ItemDrop iD;
+    private bool once;
+
     private void Start()
     {
+        once = true;
         iD = GetComponent<ItemDrop>();
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -16,7 +19,11 @@ public class Goldchest : MonoBehaviour
         {
             Debug.Log("goodjob");
             //play anim
-            iD.Drop();
+            if (once)
+            {
+                iD.Drop();
+                once = false;
+            }
         }
     }
 }

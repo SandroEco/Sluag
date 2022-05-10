@@ -7,8 +7,12 @@ public class ItemDrop : MonoBehaviour
     public GameObject drop;
     public GameObject goldDrop;
     public int numOfGold;
-    private bool once = true;
+    private bool once;
 
+    private void Start()
+    {
+        once = true;
+    }
 
     public void Drop()
     {
