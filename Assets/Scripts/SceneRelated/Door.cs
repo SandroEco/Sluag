@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     private HealthAll healthAll;
+    public string nameOfScene;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Door : MonoBehaviour
             healthAll.lastCheckPointPos = transform.position;
             SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
             SaveManager.instance.Save();
-            SceneManager.LoadScene("Sluag Home");
+            SceneManager.LoadScene(nameOfScene);
         }
         else if(Input.GetKey(KeyCode.UpArrow) && sceneName == "Sluag Home")
         {

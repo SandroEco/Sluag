@@ -5,16 +5,16 @@ using UnityEngine;
 public class Gold : MonoBehaviour
 {
     public InventoryScript IS;
-    private BoxCollider2D bc;
     private Rigidbody2D rb;
+    private CircleCollider2D cc;
     public AudioSource coinCollectSource;
 
     public int goldValue;
     private void Start()
     {
         IS = FindObjectOfType<InventoryScript>();
-        bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        cc = GetComponent<CircleCollider2D>();
         coinCollectSource = GameObject.Find("CoinCollectSource").GetComponent<AudioSource>();
 
         float directionX = Random.Range(-2f, 2f);
@@ -36,6 +36,7 @@ public class Gold : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -43,7 +44,8 @@ public class Gold : MonoBehaviour
             IS.gold = IS.gold + goldValue;
             SaveManager.instance.activeSave.gold = IS.gold;
             IS.text.text = IS.gold.ToString();
-            Destroy(bc);
+            Destroy(cc);
         }
     }
+    */
 }

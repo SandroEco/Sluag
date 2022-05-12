@@ -12,9 +12,15 @@ public class Block : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void Update()
+    {
+        rb.freezeRotation = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "BearAntlers")
+        if (other.gameObject.tag == "BearAntlers" || other.gameObject.tag == "Player")
         {
             movementScript = other.gameObject.GetComponentInParent(typeof(Movement)) as Movement;
             if(movementScript.strength != 20f)

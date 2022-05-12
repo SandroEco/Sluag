@@ -3,15 +3,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public static Movement Instance { get; private set; }
-
+    
     [Header("Components")]
     private Rigidbody2D rb;
     private PolygonCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
     private WallJumping wallJumping;
-    public DoubleJump doubleJump;
-
+    public Camera cam;
+    Animator camAnim;
+    
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
 
@@ -58,6 +59,7 @@ public class Movement : MonoBehaviour
         bc = GetComponent<PolygonCollider2D>();
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
+        camAnim = cam.GetComponent<Animator>();
     }
 
     void Update()
@@ -270,8 +272,9 @@ public class Movement : MonoBehaviour
 
     public void Die()
     {
-        isDying = true; ;
+        isDying = true;
         anim.SetTrigger("Dead");
+        camAnim.SetTrigger("Dead");
     }
 
     public void Damaged()

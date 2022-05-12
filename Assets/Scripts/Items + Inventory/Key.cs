@@ -12,9 +12,9 @@ public class Key : MonoBehaviour
         cc = GetComponent<CapsuleCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
             IS.key++;
             SaveManager.instance.activeSave.key = IS.key;
