@@ -261,13 +261,6 @@ public class Movement : MonoBehaviour
         {
             other.GetComponent<DialogTrigger>().StartDialog();
         }
-
-        if(other.tag == "Gate" && Input.GetKey(KeyCode.UpArrow) && InventoryScript.instance.key >= 1)
-        {
-            InventoryScript.instance.key--;
-            SaveManager.instance.activeSave.key = InventoryScript.instance.key;
-            Destroy(other.gameObject);
-        }
     }
 
     public void Die()

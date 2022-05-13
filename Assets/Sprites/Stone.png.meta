@@ -167,9 +167,9 @@ TextureImporter:
       name: Stone_0
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 16
-        width: 32
+        width: 35
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -188,9 +188,9 @@ TextureImporter:
       name: Stone_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 79
         y: 16
-        width: 32
+        width: 35
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
