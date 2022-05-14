@@ -22,17 +22,23 @@ public class Frog : TransformBaseState
     {
         if (tSM.canTransform)
         {
-            if (Input.GetKeyDown(KeyCode.W) && IS.circleShards >= 1)
+            if (Input.GetButtonDown("Transformation2") && IS.circleShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.squirrel);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
-            if (Input.GetKeyDown(KeyCode.A) && IS.squareShards >= 1)
+            if (Input.GetButtonDown("Transformation1") && IS.squareShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.bear);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetButtonDown("Transformation3") || Input.GetAxisRaw("Transformation3Controller") == 1)
             {
                 transformStateManager.SwitchState(transformStateManager.sluag);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
         }  
     }

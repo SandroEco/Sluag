@@ -20,7 +20,11 @@ public class CantTransform : MonoBehaviour
         {
             tSM.canTransform = false;
         }
-        else
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "CantTransform")
         {
             tSM.canTransform = true;
         }

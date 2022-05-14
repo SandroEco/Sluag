@@ -22,17 +22,21 @@ public class Bear : TransformBaseState
     {
         if (tSM.canTransform)
         {
-            if (Input.GetKeyDown(KeyCode.W) && IS.circleShards >= 1)
+            if (Input.GetButtonDown("Transformation2") && IS.circleShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.squirrel);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetButtonDown("Transformation1"))
             {
                 transformStateManager.SwitchState(transformStateManager.sluag);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
             }
-            if (Input.GetKeyDown(KeyCode.D) && IS.frogShards >= 1)
+            if (Input.GetButtonDown("Transformation3") && IS.frogShards >= 1 || Input.GetAxisRaw("Transformation3Controller") == 1 && IS.frogShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.frog);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
         }
     }

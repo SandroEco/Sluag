@@ -257,7 +257,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "NPC" && Input.GetKey(KeyCode.UpArrow))
+        if(other.tag == "NPC" && Input.GetButton("Interact"))
         {
             other.GetComponent<DialogTrigger>().StartDialog();
         }

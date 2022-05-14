@@ -22,17 +22,23 @@ public class Squirrel : TransformBaseState
     {
         if (tSM.canTransform)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetButtonDown("Transformation2"))
             {
                 transformStateManager.SwitchState(transformStateManager.sluag);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
-            if (Input.GetKeyDown(KeyCode.A) && IS.squareShards >= 1)
+            if (Input.GetButtonDown("Transformation1") && IS.squareShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.bear);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
-            if (Input.GetKeyDown(KeyCode.D) && IS.frogShards >= 1)
+            if (Input.GetButtonDown("Transformation3") && IS.frogShards >= 1 || Input.GetAxisRaw("Transformation3Controller") == 1 && IS.frogShards >= 1)
             {
                 transformStateManager.SwitchState(transformStateManager.frog);
+                tSM.StartCoroutine(tSM.TransformationCooldown());
+
             }
         }
     }

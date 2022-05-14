@@ -19,6 +19,8 @@ public class TransformStateManager : MonoBehaviour
     public Bear bear = new Bear();
     public Frog frog = new Frog();
 
+
+
     void Start()
     {
         currentState = sluag;
@@ -37,5 +39,12 @@ public class TransformStateManager : MonoBehaviour
     {
         currentState = transformBaseState;
         transformBaseState.EnterState(this);
+    }
+
+    public IEnumerator TransformationCooldown()
+    {
+        canTransform = false;
+        yield return new WaitForSeconds(2f);
+        canTransform = true;
     }
 }

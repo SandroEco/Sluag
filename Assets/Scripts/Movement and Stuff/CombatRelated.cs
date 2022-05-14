@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,7 +30,7 @@ public class CombatRelated : MonoBehaviour
     {
         if(timeBtwAttack <= 0)
         {
-            if (Input.GetKeyDown("q"))
+            if (Input.GetButtonDown("Punch"))
             {
                 rb.velocity = Vector3.zero;
                 anim.SetTrigger("isHitting");
