@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Jump") && isActive == true)
+        if (Input.GetButtonDown("Jump") && isActive == true)
         {
             NextMessage();
         }
