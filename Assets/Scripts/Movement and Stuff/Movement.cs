@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -23,7 +24,7 @@ public class Movement : MonoBehaviour
     public float horizontalDirection;
     private bool changingDirection => (rb.velocity.x > 0f && horizontalDirection < 0f) || (rb.velocity.x < 0f && horizontalDirection > 0f);
     public bool isFacingRight = true;
-    public bool canMove = true;
+    public bool canMove;
        
     [Header("Jump Variables")]
     public float jumpForce = 12f;
@@ -263,6 +264,23 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Key")
+        {
+            canMove = false;
+            StartCoroutine(WaitForAnim());
+        }
+    }
+
+    private IEnumerator WaitForAnim()
+    {
+        anim.SetTrigger("Win");
+        canMove = false;
+        yield return new WaitForSeconds(1.7f);
+        canMove = true;
+    }
+
     public void Die()
     {
         isDying = true;
@@ -274,4 +292,5 @@ public class Movement : MonoBehaviour
     {
         anim.SetTrigger("Damaged");
     }
+
 }

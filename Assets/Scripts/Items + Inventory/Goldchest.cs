@@ -16,7 +16,7 @@ public class Goldchest : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && Input.GetKey(KeyCode.UpArrow))
+        if(other.tag == "Player" && Input.GetAxisRaw("Vertical") == 1f)
         {
             anim.SetTrigger("Open");
             if (once)

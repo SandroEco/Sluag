@@ -17,12 +17,12 @@ public class WallRun : MonoBehaviour
     public bool onWall;
     public bool onRightWall;
 
-    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetKey("space") && !wallRun;
+    private bool wallGrab => onWall && !movementScript.isGrounded && Input.GetButton("Jump") && !wallRun;
 
     [Header("Wall Run")]
     public Movement movementScript;
     public float wallRunModifier = 0.85f;
-    private bool wallRun => onWall && Input.GetKey(KeyCode.UpArrow);
+    private bool wallRun => onWall && Input.GetAxis("Vertical") == 1f;
 
     private void Start()
     {

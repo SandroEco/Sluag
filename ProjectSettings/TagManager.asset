@@ -21,6 +21,7 @@ TagManager:
   - InstantDeath
   - frogShards
   - CantTransform
+  - Key
   layers:
   - Default
   - TransparentFX

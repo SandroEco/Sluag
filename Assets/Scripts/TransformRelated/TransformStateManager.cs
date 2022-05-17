@@ -44,7 +44,7 @@ public class TransformStateManager : MonoBehaviour
     public IEnumerator TransformationCooldown()
     {
         canTransform = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         canTransform = true;
     }
 }

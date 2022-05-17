@@ -60,7 +60,7 @@ public class WallJumping : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, wallSlideSpeed);
             movementScript.canMove = false;
         }
-        else if(movementScript.isGrounded)
+        else if(movementScript.isGrounded && !isWallSliding && onWall)
         {
             movementScript.canMove = true;
         }
@@ -68,7 +68,7 @@ public class WallJumping : MonoBehaviour
 
     void WallJump()
     {
-        if((isWallSliding || onWall) && Input.GetKeyDown("space") && !movementScript.isGrounded)
+        if((isWallSliding || onWall) && Input.GetButtonDown("Jump") && !movementScript.isGrounded)
         {
             rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
             StartCoroutine(AfterWallJump());

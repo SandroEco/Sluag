@@ -13,12 +13,11 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && Input.GetKey(KeyCode.UpArrow) && InventoryScript.instance.key >= 1)
+        if(other.tag == "Player" && Input.GetAxisRaw("Vertical") == 1f && InventoryScript.instance.key >= 1)
         {
             anim.SetTrigger("Opened");
             InventoryScript.instance.key-= 1;
             SaveManager.instance.activeSave.key = InventoryScript.instance.key;
-            Debug.Log("perfect");
         }
     }
 }

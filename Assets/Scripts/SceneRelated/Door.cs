@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (Input.GetKey(KeyCode.UpArrow) && sceneName == "Game")
+        if (Input.GetButton("Interact") && sceneName == "Game")
         {
             healthAll = FindObjectOfType<HealthAll>();
             healthAll.lastCheckPointPos = transform.position;
@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
             SaveManager.instance.Save();
             SceneManager.LoadScene(nameOfScene);
         }
-        else if(Input.GetKey(KeyCode.UpArrow) && sceneName == "Sluag Home")
+        else if(Input.GetButton("Interact") && sceneName == "Sluag Home")
         {
             SceneManager.LoadScene("Game");
         }

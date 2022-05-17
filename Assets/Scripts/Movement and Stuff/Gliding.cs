@@ -27,7 +27,7 @@ public class Gliding : MonoBehaviour
 
     private void Glide()
     {
-        if (Input.GetKey("space") && rb.velocity.y <= 0f)
+        if (Input.GetButton("Jump") && rb.velocity.y <= 0f)
         {
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
