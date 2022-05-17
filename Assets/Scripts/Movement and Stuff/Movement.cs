@@ -48,6 +48,7 @@ public class Movement : MonoBehaviour
     [Header("Others")]
     public float strength;
     public bool isDying;
+    public bool isPlayingAnimation;
 
     private void Awake()
     {
@@ -61,6 +62,7 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();
         accelerationScript = GetComponent<Acceleration>();
         camAnim = cam.GetComponent<Animator>();
+        isPlayingAnimation = false;
     }
 
     void Update()
@@ -269,6 +271,7 @@ public class Movement : MonoBehaviour
         if(other.gameObject.tag == "Key")
         {
             canMove = false;
+            isPlayingAnimation = true;
             StartCoroutine(WaitForAnim());
         }
     }
@@ -278,6 +281,7 @@ public class Movement : MonoBehaviour
         anim.SetTrigger("Win");
         canMove = false;
         yield return new WaitForSeconds(1.7f);
+        isPlayingAnimation = false;
         canMove = true;
     }
 

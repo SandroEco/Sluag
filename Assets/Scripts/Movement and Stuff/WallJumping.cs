@@ -60,7 +60,7 @@ public class WallJumping : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, wallSlideSpeed);
             movementScript.canMove = false;
         }
-        else if(movementScript.isGrounded && !isWallSliding && onWall)
+        else if (movementScript.isGrounded && !isWallSliding && onWall || movementScript.isGrounded && !isWallSliding && !onWall && !movementScript.isPlayingAnimation)
         {
             movementScript.canMove = true;
         }
