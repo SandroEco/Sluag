@@ -15,6 +15,10 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Color clr = this.GetComponent<SpriteRenderer>().color;
+        clr.a = 0.5f;
+        this.GetComponent<SpriteRenderer>().color = clr;
+
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
@@ -24,11 +28,24 @@ public class Door : MonoBehaviour
             healthAll.lastCheckPointPos = transform.position;
             SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
             SaveManager.instance.Save();
-            SceneManager.LoadScene(nameOfScene);
+            StartCoroutine(WaitForLoad());
         }
         else if(Input.GetButton("Interact") && sceneName == "Sluag Home")
         {
             SceneManager.LoadScene("Game");
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Color clr = this.GetComponent<SpriteRenderer>().color;
+        clr.a = 1f;
+        this.GetComponent<SpriteRenderer>().color = clr;
+    }
+
+    private IEnumerator WaitForLoad()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(nameOfScene);
     }
 }

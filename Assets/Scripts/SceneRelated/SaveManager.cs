@@ -92,4 +92,10 @@ public class SaveData
 
     public int gold;
     public int key;
+    public int waterBottle;
+
+    public int readLetter;
+    public int talkedAboutLetter;
+
+    public bool enableWalljump = false;
 }

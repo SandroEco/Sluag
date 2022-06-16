@@ -34,8 +34,6 @@ public class BearEnemy : MonoBehaviour
     public Vector2 targetDirection;
     private bool checkForPlayer;
 
-    //public bool isStunned = false;
-
     private bool once;
     enum EnemyState
     {
@@ -85,12 +83,6 @@ public class BearEnemy : MonoBehaviour
             case EnemyState.Dead:
                 break;
         }
-        /*
-        if (isStunned)
-        {
-            enemyHealth.isKnockbacked = true;
-        }
-        */
 
         if(enemyHealth.HP <= 0)
         {
@@ -154,7 +146,6 @@ public class BearEnemy : MonoBehaviour
                     if (once && playerFound)
                     {
                         StartCoroutine(Timer());
-
                     }
                     playerFound = false;
                 }

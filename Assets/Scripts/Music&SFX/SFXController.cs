@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class SFXController : MonoBehaviour
 {
-    //public AudioSource footstep;
+    public AudioSource jumpSound;
+    public AudioSource punchSound;
 
     private void Footstep()
     {
         //footstep.Play();
         AudioManager.instance.FootstepSFX();
     }
+
+    public void JumpSound()
+    {
+        jumpSound.Play();
+    }
+
+    public void PunchSound()
+    {
+        punchSound.Play();
+    }
+
 }

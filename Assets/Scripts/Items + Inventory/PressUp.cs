@@ -5,12 +5,23 @@ using UnityEngine;
 public class PressUp : MonoBehaviour
 {
     public GameObject pressUp;
+    private InventoryScript inventory;
+
+    [Header("Optional")]
+    public bool needsKey;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !needsKey)
         {
             pressUp.SetActive(true);
+        }
+        if(other.tag == "Player" && needsKey)
+        {
+            if(InventoryScript.instance.key >= 1)
+            {
+                pressUp.SetActive(true);
+            }
         }
     }
 

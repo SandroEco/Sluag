@@ -50,6 +50,10 @@ public class Movement : MonoBehaviour
     public bool isDying;
     public bool isPlayingAnimation;
 
+    [Header("NPC Stuff")]
+    public int readLetter;
+    public int talkedAboutLetter;
+
     private void Awake()
     {
         Instance = this;
@@ -63,15 +67,25 @@ public class Movement : MonoBehaviour
         accelerationScript = GetComponent<Acceleration>();
         camAnim = cam.GetComponent<Animator>();
         isPlayingAnimation = false;
+
+        if (SaveManager.instance.hasLoaded)
+        {
+            readLetter = SaveManager.instance.activeSave.readLetter;
+            talkedAboutLetter = SaveManager.instance.activeSave.talkedAboutLetter;
+        }
+        else
+        {
+            SaveManager.instance.activeSave.readLetter = readLetter;
+            SaveManager.instance.activeSave.talkedAboutLetter = talkedAboutLetter;
+        }
     }
 
     void Update()
     {
         if(DialogManager.isActive == true)
         {
-            //canMove = false;
-            anim.SetFloat("speed", 0);
-            anim.SetBool("MaxSpeedReached", false);
+            horizontalDirection = 0;
+            return;
         }
 
         #region Movement
@@ -90,6 +104,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
+
             coyoteTimeCounter = 0f;
         }
 
@@ -260,7 +275,26 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "NPC" && Input.GetButton("Interact"))
+        if(other.tag == "NPC" && Input.GetButton("Interact") && other.GetComponent("DialogTrigger") as DialogTrigger == null)
+        {
+            if(other.transform.Find("Dialog1").GetComponent<DialogTrigger>().interactable == true)
+                {
+                if (readLetter == 0)
+                {
+                    other.transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+                }
+                else if (readLetter == 1 && talkedAboutLetter == 0)
+                {
+                    other.transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+                    StartCoroutine(Wait());
+                }
+                else if (talkedAboutLetter == 1)
+                {
+                    other.transform.Find("Dialog3").GetComponent<DialogTrigger>().StartDialog();
+                }
+            }
+        }
+        else if (other.tag == "NPC" && Input.GetButton("Interact") && other.GetComponent("DialogTrigger") as DialogTrigger != null)
         {
             other.GetComponent<DialogTrigger>().StartDialog();
         }
@@ -297,4 +331,11 @@ public class Movement : MonoBehaviour
         anim.SetTrigger("Damaged");
     }
 
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.1f);
+        talkedAboutLetter = 1;
+        SaveManager.instance.activeSave.talkedAboutLetter = talkedAboutLetter;
+        SaveManager.instance.Save();
+    }
 }

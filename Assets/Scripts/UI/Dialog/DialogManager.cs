@@ -12,7 +12,7 @@ public class DialogManager : MonoBehaviour
     Message[] currentMessages;
     Actor[] currentActors;
     int activeMessage = 0;
-    public static bool isActive = false;
+    public static bool isActive;
 
     public void NextMessage()
     {
@@ -23,17 +23,17 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            backgroundBox.LeanScale(Vector3.zero, 0.3f).setEaseInOutExpo();
             isActive = false;
+            backgroundBox.LeanScale(Vector3.zero, 0.3f).setEaseInOutExpo();
         }
     }
 
     public void OpenDialog(Message[] messages, Actor[] actors)
     {
+        isActive = true;
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
-        isActive = true;
         DisplayMessage();
         backgroundBox.LeanScale(Vector3.one, 0.3f);
     }

@@ -29,17 +29,19 @@ public class HealthAll : MonoBehaviour
 
         string sceneName = currentScene.name;
 
-
-        if (SaveManager.instance.hasLoaded && sceneName == "Game")
+        if (SaveManager.instance.hasLoaded)
         {
-            lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
-            transform.position = lastCheckPointPos;
-
             health = SaveManager.instance.activeSave.health;
         }
         else
         {
             SaveManager.instance.activeSave.health = health;
+        }
+
+        if (SaveManager.instance.hasLoaded && sceneName == "Game")
+        {
+            lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
+            transform.position = lastCheckPointPos;
         }
 
         if(health == 0)
@@ -52,15 +54,6 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
-
-        if(DialogManager.isActive == true)
-        {
-            movementScript.enabled = false;
-        }
-        else
-        {
-            movementScript.enabled = true;
-        }
 
         if(health > maxhealth)
         {
@@ -93,7 +86,8 @@ public class HealthAll : MonoBehaviour
     {
         health -= amount;
         SaveManager.instance.activeSave.health = health;
-        if(health >= 1)
+
+        if (health >= 1)
         {
             movementScript.Damaged();
             StartCoroutine(DamageFreeze());

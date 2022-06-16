@@ -18,6 +18,7 @@ public class InventoryScript : MonoBehaviour
 
     [Header("Keys")]
     public int key;
+    public int waterBottle;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class InventoryScript : MonoBehaviour
             frogShards = SaveManager.instance.activeSave.frogShards;
             gold = SaveManager.instance.activeSave.gold;
             key = SaveManager.instance.activeSave.key;
+            waterBottle = SaveManager.instance.activeSave.waterBottle;
             text.text = gold.ToString();
         }
         else
@@ -42,6 +44,7 @@ public class InventoryScript : MonoBehaviour
             SaveManager.instance.activeSave.frogShards = frogShards;
             SaveManager.instance.activeSave.gold = gold;
             SaveManager.instance.activeSave.key = key;
+            SaveManager.instance.activeSave.waterBottle = waterBottle;
         }
     }
 }
