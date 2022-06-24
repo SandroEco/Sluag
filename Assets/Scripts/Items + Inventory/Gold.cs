@@ -22,6 +22,7 @@ public class Gold : MonoBehaviour
 
         float force = Random.Range(2, 3);
         rb.AddForce(new Vector2 (directionX, directionY) * force, ForceMode2D.Impulse);
+        StartCoroutine(Wait());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,16 +37,10 @@ public class Gold : MonoBehaviour
         }
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator Wait()
     {
-        if(collision.tag == "Player")
-        {
-            IS.gold = IS.gold + goldValue;
-            SaveManager.instance.activeSave.gold = IS.gold;
-            IS.text.text = IS.gold.ToString();
-            Destroy(cc);
-        }
+        Physics2D.IgnoreLayerCollision(7, 9, true);
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(7, 9, false);
     }
-    */
 }

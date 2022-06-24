@@ -11,10 +11,14 @@ public class DialogTrigger : MonoBehaviour
     private Movement movement;
     public DialogManager dM;
 
+    public GameObject drop;
+
     [Header("NPC")]
-    public bool interactable;
+    public bool sign;
     public bool tim;
     public bool mysteriousMan;
+    public bool chronos;
+    public bool sluagsMom;
 
     private void Start()
     {
@@ -23,32 +27,62 @@ public class DialogTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!interactable)
-        {
-            movement = other.GetComponent<Movement>();
-            if (tim && other.tag == "Player")
-            {
-                if (movement.talkedAboutLetter == 0)
-                {
-                    rb = other.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.right * 100, ForceMode2D.Impulse);
-                    StartDialog();
-                }
-            }
+        movement = other.GetComponent<Movement>();
 
-            if (mysteriousMan && other.tag == "Player")
+        if (tim && other.tag == "Player")
+        {
+            if (movement.talkedAboutLetter == 0)
             {
-                if (InventoryScript.instance.waterBottle == 0)
-                {
-                    rb = other.GetComponent<Rigidbody2D>();
-                    rb.AddForce(-transform.right * 100, ForceMode2D.Impulse);
-                    transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
-                }
-                if (InventoryScript.instance.waterBottle >= 1)
-                {
-                    transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
-                }
+                rb = other.GetComponent<Rigidbody2D>();
+                rb.AddForce(transform.right * 100, ForceMode2D.Impulse);
+                StartDialog();
             }
+        }
+
+        if (mysteriousMan && other.tag == "Player")
+        {
+            if (InventoryScript.instance.waterBottle == 0)
+            {
+                rb = other.GetComponent<Rigidbody2D>();
+                rb.AddForce(-transform.right * 100, ForceMode2D.Impulse);
+                transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+            }
+            if (InventoryScript.instance.waterBottle >= 1)
+            {
+                transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        movement = other.GetComponent<Movement>();
+
+        if(sign && other.tag == "Player" && Input.GetButton("Interact"))
+        {
+            StartDialog();
+        }
+
+        if (sluagsMom && other.tag == "Player" && Input.GetButton("Interact"))
+        {
+            if (movement.readLetter == 0)
+            {
+                transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+            }
+            else if (movement.readLetter == 1 && movement.talkedAboutLetter == 0)
+            {
+                transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+                StartCoroutine(Wait());
+            }
+            else if (movement.talkedAboutLetter == 1)
+            {
+                transform.Find("Dialog3").GetComponent<DialogTrigger>().StartDialog();
+            }
+        }
+
+        if (chronos && other.tag == "Player" && Input.GetButton("Interact"))
+        {
+            transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
         }
     }
 
@@ -66,6 +100,14 @@ public class DialogTrigger : MonoBehaviour
     public void StartDialog()
     {
         FindObjectOfType<DialogManager>().OpenDialog(messages, actors);
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.1f);
+        movement.talkedAboutLetter = 1;
+        SaveManager.instance.activeSave.talkedAboutLetter = movement.talkedAboutLetter;
+        SaveManager.instance.Save();
     }
 }
 

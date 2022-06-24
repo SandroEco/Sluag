@@ -451,9 +451,12 @@ MonoBehaviour:
   actors:
   - name: Letter
   dM: {fileID: 0}
-  interactable: 0
+  drop: {fileID: 0}
+  sign: 1
   tim: 0
   mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 0
 --- !u!61 &348097894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -542,9 +545,12 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  interactable: 1
+  drop: {fileID: 0}
+  sign: 0
   tim: 0
   mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 0
 --- !u!1 &889428343
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,9 +601,12 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  interactable: 1
+  drop: {fileID: 0}
+  sign: 0
   tim: 0
   mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 0
 --- !u!1001 &932663480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16712,6 +16721,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: orthographic size
+      value: 6.75
+      objectReference: {fileID: 0}
     - target: {fileID: 776020407613059900, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -16981,9 +16994,12 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  interactable: 1
+  drop: {fileID: 0}
+  sign: 0
   tim: 0
   mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 0
 --- !u!1 &2124301116
 GameObject:
   m_ObjectHideFlags: 0
@@ -16996,6 +17012,7 @@ GameObject:
   - component: {fileID: 2124301121}
   - component: {fileID: 2124301120}
   - component: {fileID: 2124301119}
+  - component: {fileID: 2124301123}
   m_Layer: 0
   m_Name: Sluag_Mother
   m_TagString: NPC
@@ -17120,3 +17137,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124301123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124301116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6962b83446b23754a928b6e9ec9974f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages: []
+  actors: []
+  dM: {fileID: 0}
+  drop: {fileID: 0}
+  sign: 0
+  tim: 0
+  mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 1

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6269655014207314267
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6473220588707310733}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -255,14 +255,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: It's getting late
-  - actorId: 0
-    message: I think I should head home now
-  - actorId: 1
-    message: Bup!
+    message: This is the Prototype Area
   actors:
-  - name: Sluag
-  - name: Alfred
+  - name: Sign
+  dM: {fileID: 0}
+  drop: {fileID: 0}
+  sign: 1
+  tim: 0
+  mysteriousMan: 0
+  chronos: 0
+  sluagsMom: 0
 --- !u!114 &2587957053392358267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +278,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressUp: {fileID: 3119791127159106210}
+  needsKey: 0

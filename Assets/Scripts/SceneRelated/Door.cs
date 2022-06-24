@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
             SaveManager.instance.Save();
             StartCoroutine(WaitForLoad());
         }
-        else if(Input.GetButton("Interact") && sceneName == "Sluag Home")
+        else if(Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home")
         {
             SceneManager.LoadScene("Game");
         }

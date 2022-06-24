@@ -31,6 +31,7 @@ public class Soulshard : MonoBehaviour
                 IS.frogShards++;
                 SaveManager.instance.activeSave.frogShards = IS.frogShards;
             }
+            SaveManager.instance.Save();
             Destroy(gameObject);
         }
     }

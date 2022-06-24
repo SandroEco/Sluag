@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7909932025019897521}
   - component: {fileID: 7909932025019897550}
   - component: {fileID: 4744504377146674620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Goldnugget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
