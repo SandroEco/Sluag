@@ -12,6 +12,8 @@ public class EnemyStateManager : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask playerLayer;
     public Collider2D col;
+    public Animator anim;
+    public bool isFacingRight;
 
     EnemyBaseState currentState;
     public EnemyPatrolState PatrolState = new EnemyPatrolState();
@@ -22,8 +24,6 @@ public class EnemyStateManager : MonoBehaviour
         currentState = PatrolState;
 
         currentState.EnterState(this);
-
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)

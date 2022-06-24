@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class EnemyChaseState : EnemyBaseState
 {
+    private float speed = 5;
+    private float runDur = 3;
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Hello from the ChaseState");
+        enemy.anim.SetBool("isChasing", true);
+        runDur = 3;
     }
 
     public override void UpdateState(EnemyStateManager enemy)
     {
+        if(runDur > 0)
+        {
+            runDur -= Time.deltaTime;
+        }
+        else
+        {
+            enemy.SwitchState(enemy.PatrolState);
+        }
 
+        if (enemy.isFacingRight)
+        {
+            enemy.transform.position = enemy.transform.position + (enemy.transform.right * speed * Time.deltaTime);
+        }
+        else if (!enemy.isFacingRight)
+        {
+            enemy.transform.position = enemy.transform.position + (-enemy.transform.right * speed * Time.deltaTime);
+        }
     }
 
     public override void FixedUpdateState(EnemyStateManager enemy)

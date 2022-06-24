@@ -8,12 +8,13 @@ public class EnemyPatrolState : EnemyBaseState
     private bool mustFlip;
     private bool mustPatrol;
     public float oldPos = 0.0f;
-    private bool isFacingRight;
     private float castDist = 5;
     private bool inAir;
 
     public override void EnterState(EnemyStateManager enemy)
     {
+        enemy.anim.SetBool("isChasing", false);
+
         oldPos = enemy.transform.position.x;
     }
 
@@ -31,15 +32,15 @@ public class EnemyPatrolState : EnemyBaseState
 
         if(enemy.transform.position.x > oldPos)
         {
-            isFacingRight = true;
+            enemy.isFacingRight = true;
         }
         else if(enemy.transform.position.x < oldPos)
         {
-            isFacingRight = false;
+            enemy.isFacingRight = false;
         }
         oldPos = enemy.transform.position.x;
 
-        if (isFacingRight)
+        if (enemy.isFacingRight)
         {
             Debug.DrawRay(enemy.transform.position, Vector3.right * castDist, Color.green);
             if (Physics2D.Raycast(enemy.transform.position, Vector3.right, castDist, enemy.playerLayer))
@@ -47,7 +48,7 @@ public class EnemyPatrolState : EnemyBaseState
                 enemy.SwitchState(enemy.ChaseState);
             }
         }
-        else if (!isFacingRight)
+        else if (!enemy.isFacingRight)
         {
             Debug.DrawRay(enemy.transform.position, Vector3.right * -castDist, Color.green);
             if (Physics2D.Raycast(enemy.transform.position, Vector3.right, -castDist, enemy.playerLayer))
