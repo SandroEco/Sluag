@@ -447,7 +447,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: You Stupid
+    message: Dear Sluag
+  - actorId: 0
+    message: This is a very important message so I won't beat around the bush.
+  - actorId: 0
+    message: I know that you have many questions about your origin.
+  - actorId: 0
+    message: '"Who are my parents? Who brought you to that village when you were
+      a baby? What voices do I hear?"'
+  - actorId: 0
+    message: I think now you are old enough to find out the truth, and I can give
+      you answers.
+  - actorId: 0
+    message: If you want to find out more, then come to the dark forest in the east
+      of the village.
+  - actorId: 0
+    message: But be careful!
+  - actorId: 0
+    message: It's very dangerous out there these days.
+  - actorId: 0
+    message: It's very dangerous out there these days.
+  - actorId: 0
+    message: Don't forget to tell your mom first before you go on your journey.
+  - actorId: 0
+    message: Trust me, she will know what's going on.
+  - actorId: 0
+    message: See you soon Sluag!
   actors:
   - name: Letter
   dM: {fileID: 0}
@@ -541,7 +566,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Oh, you read the Letter
+    message: Hey, what did the letter say?
+  - actorId: 0
+    message: ....
+  - actorId: 0
+    message: 'Oh, yeah, I knew this day would come. '
+  - actorId: 0
+    message: ...
+  - actorId: 0
+    message: You are a young grown man, you deserve to know the truth
+  - actorId: 0
+    message: But please promise me that you take care of yourself!
+  - actorId: 0
+    message: Time flies so fast...
+  - actorId: 0
+    message: No time to get sad, go ahead and good luck on your journey!
+  - actorId: 0
+    message: Love you!
   actors:
   - name: Mom
   dM: {fileID: 0}
@@ -16668,7 +16709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fff1223f7550e4881e0530e07225ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfScene: 
+  nameOfScene: Game
 --- !u!61 &1714913083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16991,6 +17032,13 @@ MonoBehaviour:
   messages:
   - actorId: 0
     message: Hello Dear!
+  - actorId: 0
+    message: I have been waiting for you.
+  - actorId: 0
+    message: 'You got a letter, but there''s no name on it so I don''t know who it
+      is from. '
+  - actorId: 0
+    message: I put it on your table.
   actors:
   - name: Mom
   dM: {fileID: 0}

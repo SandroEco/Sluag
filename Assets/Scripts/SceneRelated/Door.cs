@@ -7,10 +7,12 @@ public class Door : MonoBehaviour
 {
     private HealthAll healthAll;
     public string nameOfScene;
+    private bool canInteract;
 
     private void Start()
     {
         healthAll = GameObject.FindGameObjectWithTag("Respawn").GetComponent<HealthAll>();
+        canInteract = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -22,17 +24,20 @@ public class Door : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (Input.GetButton("Interact") && sceneName == "Game")
+        if (canInteract)
         {
-            healthAll = FindObjectOfType<HealthAll>();
-            healthAll.lastCheckPointPos = transform.position;
-            SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
-            SaveManager.instance.Save();
-            StartCoroutine(WaitForLoad());
-        }
-        else if(Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home")
-        {
-            SceneManager.LoadScene("Game");
+            if (Input.GetButton("Interact") && sceneName == "Game")
+            {
+                healthAll = FindObjectOfType<HealthAll>();
+                healthAll.lastCheckPointPos = transform.position;
+                SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
+                SaveManager.instance.Save();
+                StartCoroutine(LoadScene());
+            }
+            else if (Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home" || Input.GetButton("Interact") && sceneName == "Bar")
+            {
+                StartCoroutine(LoadScene());
+            }
         }
     }
 
@@ -43,9 +48,12 @@ public class Door : MonoBehaviour
         this.GetComponent<SpriteRenderer>().color = clr;
     }
 
-    private IEnumerator WaitForLoad()
+    private IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(0.2f);
+        Movement.Instance.canMove = false;
+        canInteract = false;
+        Fade.instance.FadeIn();
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(nameOfScene);
     }
 }

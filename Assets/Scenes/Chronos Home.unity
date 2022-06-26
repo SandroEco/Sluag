@@ -16476,7 +16476,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1714913082
@@ -16491,7 +16491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fff1223f7550e4881e0530e07225ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfScene: 
+  nameOfScene: Game
 --- !u!61 &1714913083
 BoxCollider2D:
   m_ObjectHideFlags: 0

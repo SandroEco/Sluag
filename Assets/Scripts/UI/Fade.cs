@@ -6,9 +6,11 @@ public class Fade : MonoBehaviour
 {
     public Animator anim;
     public GameObject fade;
+    public static Fade instance;
 
     private void Awake()
     {
+        instance = this;
         anim.SetTrigger("FadeOut");
         StartCoroutine(Disable());
     }
