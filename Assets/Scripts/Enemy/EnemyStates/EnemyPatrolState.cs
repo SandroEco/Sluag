@@ -6,10 +6,9 @@ public class EnemyPatrolState : EnemyBaseState
 {
     private float speed = 3;
     private bool mustFlip;
-    private bool mustPatrol;
+    private bool inAir;
     public float oldPos = 0.0f;
     private float castDist = 5;
-    private bool inAir;
 
     public override void EnterState(EnemyStateManager enemy)
     {
@@ -22,10 +21,10 @@ public class EnemyPatrolState : EnemyBaseState
     {
         if (mustFlip && !inAir || enemy.col.IsTouchingLayers(enemy.groundLayer))
         {
-            mustPatrol = false;
+            enemy.mustPatrol = false;
             enemy.transform.localScale = new Vector2(enemy.transform.localScale.x * -1, enemy.transform.localScale.y);
             speed *= -1;
-            mustPatrol = true;
+            enemy.mustPatrol = true;
         }
 
         enemy.rb.velocity = new Vector2(speed * 25 * Time.fixedDeltaTime, enemy.rb.velocity.y);
@@ -60,7 +59,7 @@ public class EnemyPatrolState : EnemyBaseState
 
     public override void FixedUpdateState(EnemyStateManager enemy)
     {
-        if (mustPatrol)
+        if (enemy.mustPatrol)
         {
             mustFlip = !Physics2D.OverlapCircle(enemy.groundCheckPos.position, 0.1f, enemy.groundLayer);
             inAir = !Physics2D.OverlapCircle(enemy.airCheckPos.position, 0.1f, enemy.groundLayer);
@@ -69,6 +68,39 @@ public class EnemyPatrolState : EnemyBaseState
     }
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D other)
+    {
+
+    }
+    public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D other)
+    {
+        if (other.tag == "Hit")
+        {
+            enemy.player = GameObject.FindGameObjectWithTag("Player").transform;
+            if (enemy.player.transform.position.x > enemy.transform.position.x)
+            {
+                if (!enemy.isFacingRight)
+                {
+                    enemy.mustPatrol = false;
+                    enemy.transform.localScale = new Vector2(enemy.transform.localScale.x * -1, enemy.transform.localScale.y);
+                    speed *= -1;
+                    enemy.mustPatrol = true;
+                }
+            }
+            else if (enemy.player.transform.position.x < enemy.transform.position.x)
+            {
+                if (enemy.isFacingRight)
+                {
+                    enemy.mustPatrol = false;
+                    enemy.transform.localScale = new Vector2(enemy.transform.localScale.x * -1, enemy.transform.localScale.y);
+                    speed *= -1;
+                    enemy.mustPatrol = true;
+                }
+            }
+            enemy.SwitchState(enemy.HurtState);
+        }
+    }
+
+    public override void LateUpdateState(EnemyStateManager enemy)
     {
 
     }

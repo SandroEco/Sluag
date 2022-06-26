@@ -78,6 +78,8 @@ public class Movement : MonoBehaviour
             SaveManager.instance.activeSave.readLetter = readLetter;
             SaveManager.instance.activeSave.talkedAboutLetter = talkedAboutLetter;
         }
+
+        Physics2D.IgnoreLayerCollision(2, 7, true);
     }
 
     void Update()

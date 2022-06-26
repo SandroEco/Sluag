@@ -42,4 +42,17 @@ public class EnemyChaseState : EnemyBaseState
     {
 
     }
+    public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D other)
+    {
+        if (other.tag == "Hit")
+        {
+            enemy.player = GameObject.FindGameObjectWithTag("Player").transform;
+            enemy.SwitchState(enemy.HurtState);
+        }
+    }
+
+    public override void LateUpdateState(EnemyStateManager enemy)
+    {
+
+    }
 }

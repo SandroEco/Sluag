@@ -23,6 +23,7 @@ TagManager:
   - CantTransform
   - Key
   - Flower
+  - Demon
   layers:
   - Default
   - TransparentFX

@@ -67,7 +67,7 @@ public class CombatRelated : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         rb = GetComponent<Rigidbody2D>();
-        if (other.gameObject.tag == "BearBody")
+        if (other.gameObject.tag == "Demon")
         {
             CinemachineShake.ShakeInstance.ShakeCamera(5f, .15f);
             isKnockbacked = true;
