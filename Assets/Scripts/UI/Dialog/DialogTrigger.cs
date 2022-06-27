@@ -23,6 +23,10 @@ public class DialogTrigger : MonoBehaviour
     private void Start()
     {
         dM = FindObjectOfType<DialogManager>().GetComponent<DialogManager>();
+        if (tim && SaveManager.instance.activeSave.talkedAboutLetter != 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
