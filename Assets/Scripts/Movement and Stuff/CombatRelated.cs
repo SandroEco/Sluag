@@ -8,6 +8,7 @@ public class CombatRelated : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     public HealthAll healthAllScript;
+    private Movement movement;
 
     [Header("Knockback")]
     public float knockback;
@@ -17,6 +18,7 @@ public class CombatRelated : MonoBehaviour
     public static float damage;
     public float timeBtwAttack;
     public float cooldown;
+    public bool isAttacking;
 
     private void Start()
     {
@@ -24,14 +26,17 @@ public class CombatRelated : MonoBehaviour
         healthAllScript = GameObject.FindObjectOfType<HealthAll>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        movement = GetComponent<Movement>();
     }
 
     private void Update()
     {
         if(timeBtwAttack <= 0)
         {
+            isAttacking = false;
             if (Input.GetButtonDown("Punch"))
             {
+                isAttacking = true;
                 rb.velocity = Vector3.zero;
                 anim.SetTrigger("isHitting");
                 damage = 5f;
@@ -45,6 +50,15 @@ public class CombatRelated : MonoBehaviour
         else
         {
             timeBtwAttack -= Time.deltaTime;
+        }
+
+        if (isAttacking)
+        {
+            movement.canMove = false;
+        }
+        else
+        {
+            movement.canMove = true;
         }
     }
 
@@ -84,5 +98,19 @@ public class CombatRelated : MonoBehaviour
     {
         yield return new WaitForSeconds(knockbackTime);
         isKnockbacked = false;
+    }
+
+    public void PunchPush()
+    {
+        if (movement.isFacingRight)
+        {
+            rb.AddForce(new Vector2(2, 0), ForceMode2D.Impulse);
+
+        }
+        else if (!movement.isFacingRight)
+        {
+            rb.AddForce(new Vector2(-2, 0), ForceMode2D.Impulse);
+
+        }
     }
 }
