@@ -23,23 +23,23 @@ public class EnemyDeadState : EnemyBaseState
         {
             if (once)
             {
+
                 for (int i = 0; i < enemy.numOfGold; i++)
                 {
                     enemy.Gold = EnemyStateManager.Instantiate(enemy.Gold, enemy.transform.position, Quaternion.identity);
                 }
-                /*
-                if (!drop)
-                {
-                    return;
-                }
-                else
-                {
-                    Instantiate(drop, transform.position, Quaternion.identity);
-                }
-                */
             }
             once = false;
-            EnemyStateManager.Destroy(enemy.gameObject);
+
+            if (!enemy.drop)
+            {
+                EnemyStateManager.Destroy(enemy.gameObject);
+            }
+            else
+            {
+                enemy.drop = EnemyStateManager.Instantiate(enemy.drop, enemy.transform.position, Quaternion.identity);
+                EnemyStateManager.Destroy(enemy.gameObject);
+            }
         }
     }
 

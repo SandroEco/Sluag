@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FlyingHurtState : FlyingEnemyBaseState
 {
-    float knockbackForce = 10;
-    float timer = 1f;
+    float knockbackForce = 1;
+    float knockbackTime = 0.5f;
 
     public override void EnterState(FlyEnemyStateManager enemy)
     {
@@ -17,19 +17,19 @@ public class FlyingHurtState : FlyingEnemyBaseState
         }
         else
         {
-            timer = 0.2f;
+            knockbackTime = 0.5f;
             enemy.anim.SetTrigger("Hurt");
             Vector2 difference = (enemy.transform.position - enemy.player.transform.position).normalized;
-            Vector2 force = Vector2.down * difference * knockbackForce;
+            Vector2 force = difference * knockbackForce;
             enemy.rb.AddForce(force, ForceMode2D.Impulse);
         }
     }
 
     public override void UpdateState(FlyEnemyStateManager enemy)
     {
-        if(timer > 0)
+        if(knockbackTime > 0)
         {
-            timer -= Time.deltaTime;
+            knockbackTime -= Time.deltaTime;
         }
         else
         {
@@ -54,7 +54,23 @@ public class FlyingHurtState : FlyingEnemyBaseState
 
     public override void OnTriggerEnter2D(FlyEnemyStateManager enemy, Collider2D other)
     {
-
+        if (other.tag == "Hit 2")
+        {
+            enemy.health -= 1;
+            if (enemy.health <= 0)
+            {
+                enemy.anim.SetBool("Hurt", false);
+                enemy.SwitchState(enemy.DeadState);
+            }
+            else
+            {
+                knockbackTime = 0.7f;
+                enemy.anim.SetBool("Hurt", true);
+                Vector2 difference = (enemy.transform.position - enemy.player.transform.position).normalized;
+                Vector2 force = difference * knockbackForce * 2f;
+                enemy.rb.AddForce(force, ForceMode2D.Impulse);
+            }
+        }
     }
 
     public override void OnTriggerExit2D(FlyEnemyStateManager enemy, Collider2D other)

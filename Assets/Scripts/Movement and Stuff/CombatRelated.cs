@@ -105,7 +105,6 @@ public class CombatRelated : MonoBehaviour
         if (movement.isFacingRight)
         {
             rb.AddForce(new Vector2(2, 0), ForceMode2D.Impulse);
-
         }
         else if (!movement.isFacingRight)
         {

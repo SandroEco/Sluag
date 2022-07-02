@@ -45,7 +45,7 @@ public class EnemyPatrolState : EnemyBaseState
             Debug.DrawRay(enemy.transform.position, Vector3.right * castDist, Color.green);
             if (Physics2D.Raycast(enemy.transform.position, Vector3.right, castDist, enemy.playerLayer))
             {
-                enemy.SwitchState(enemy.ChaseState);
+                enemy.SwitchState(enemy.FoundState);
             }
         }
         else if (!enemy.isFacingRight)
@@ -53,7 +53,7 @@ public class EnemyPatrolState : EnemyBaseState
             Debug.DrawRay(enemy.transform.position, Vector3.right * -castDist, Color.green);
             if (Physics2D.Raycast(enemy.transform.position, Vector3.right, -castDist, enemy.playerLayer))
             {
-                enemy.SwitchState(enemy.ChaseState);
+                enemy.SwitchState(enemy.FoundState);
             }
         }
     }
@@ -73,7 +73,7 @@ public class EnemyPatrolState : EnemyBaseState
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D other)
     {
-        if (other.tag == "Hit")
+        if (other.tag == "Hit" || other.tag == "Hit 2")
         {
             enemy.player = GameObject.FindGameObjectWithTag("Player").transform;
             if (enemy.player.transform.position.x > enemy.transform.position.x)

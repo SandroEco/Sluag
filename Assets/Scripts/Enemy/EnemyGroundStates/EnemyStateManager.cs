@@ -15,22 +15,27 @@ public class EnemyStateManager : MonoBehaviour
     public Animator anim;
     public LayerMask groundLayer;
     public LayerMask playerLayer;
+    public GameObject playerFound;
 
     public bool mustPatrol;
+    public bool animationEnded;
 
     [Header("Stats")]
     public int health;
     public bool isFacingRight;
+    public float knockbackForce;
 
     [Header("Drop")]
     public int numOfGold;
     public GameObject Gold;
+    public GameObject drop;
 
     EnemyBaseState currentState;
     public EnemyPatrolState PatrolState = new EnemyPatrolState();
     public EnemyChaseState ChaseState = new EnemyChaseState();
     public EnemyDeadState DeadState = new EnemyDeadState();
     public EnemyHurtState HurtState = new EnemyHurtState();
+    public EnemyFoundState FoundState = new EnemyFoundState();
 
     void Start()
     {
