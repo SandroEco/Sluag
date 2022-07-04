@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
     public static Movement Instance { get; private set; }
     
     [Header("Components")]
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private PolygonCollider2D bc;
     private Animator anim;
     private Acceleration accelerationScript;
@@ -261,19 +261,6 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(bc.bounds.center - new Vector3(bc.bounds.extents.x, 0), Vector2.down * (bc.bounds.extents.y + groundRaycastLength), Color.red);
         Debug.DrawRay(bc.bounds.center - new Vector3(bc.bounds.extents.x, bc.bounds.extents.y + 0.1f), Vector2.right * (bc.bounds.extents.x + groundRaycastLength), Color.red);
     }
-
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position + edgeRaycastOffset, transform.position + edgeRaycastOffset + Vector3.up * topRaycastLength);
-        Gizmos.DrawLine(transform.position - edgeRaycastOffset, transform.position - edgeRaycastOffset + Vector3.up * topRaycastLength);
-        Gizmos.DrawLine(transform.position + innerRaycastOffset, transform.position + innerRaycastOffset + Vector3.up * topRaycastLength);
-        Gizmos.DrawLine(transform.position - innerRaycastOffset, transform.position - innerRaycastOffset + Vector3.up * topRaycastLength);
-
-        Gizmos.DrawLine(transform.position - innerRaycastOffset + Vector3.up * topRaycastLength, transform.position - innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
-        Gizmos.DrawLine(transform.position + innerRaycastOffset + Vector3.up * topRaycastLength, transform.position + innerRaycastOffset + Vector3.up * topRaycastLength + Vector3.left * topRaycastLength);
-    }
-    */
 
     private void OnCollisionEnter2D(Collision2D other)
     {

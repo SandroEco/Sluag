@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
 {
     private HealthAll healthAll;
     public string nameOfScene;
-    private bool canInteract;
+    public static bool canInteract;
 
     private void Start()
     {
