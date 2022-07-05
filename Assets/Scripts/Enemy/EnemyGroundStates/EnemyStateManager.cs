@@ -16,6 +16,7 @@ public class EnemyStateManager : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask playerLayer;
     public GameObject playerFound;
+    public SFXController sfx;
 
     public bool mustPatrol;
     public bool animationEnded;

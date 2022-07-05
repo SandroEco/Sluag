@@ -10,6 +10,7 @@ public class EnemyChaseState : EnemyBaseState
     {
         enemy.anim.SetBool("isChasing", true);
         runDur = 3;
+        enemy.sfx.Tier1DemonSnarl();
     }
 
     public override void UpdateState(EnemyStateManager enemy)

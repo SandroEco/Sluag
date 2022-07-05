@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Village_Tileset_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2066710597, guid: f5cf430fb4a7d2246ab1a68d5ce642a9, type: 3}
+  m_Sprite: {fileID: -1280047147, guid: 5309b8ca1dc54254da3d4231432b7f5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

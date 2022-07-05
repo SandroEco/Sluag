@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private WallJumping wallJumping;
     public Camera cam;
     Animator camAnim;
+    SFXController sfx;
     
     [Header("Layer Masks")]
     [SerializeField]private LayerMask groundLayer;
@@ -67,6 +68,7 @@ public class Movement : MonoBehaviour
         accelerationScript = GetComponent<Acceleration>();
         camAnim = cam.GetComponent<Animator>();
         isPlayingAnimation = false;
+        sfx = GetComponent<SFXController>();
 
         if (SaveManager.instance.hasLoaded)
         {
@@ -115,6 +117,10 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
+            if (isGrounded)
+            {
+                sfx.JumpSound();
+            }
         }
         else
         {

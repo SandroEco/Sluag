@@ -120,7 +120,7 @@ public class HealthAll : MonoBehaviour
     public IEnumerator DamageFreeze()
     {
         Time.timeScale = 0.0f;
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.4f);
         Time.timeScale = 1f;
     }
 }

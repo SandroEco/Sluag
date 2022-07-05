@@ -31,7 +31,8 @@ public class CombatRelated : MonoBehaviour
 
     private void Update()
     {
-        if(timeBtwAttack <= 0)
+
+        if (timeBtwAttack <= 0)
         {
             isAttacking = false;
             if (Input.GetButtonDown("Punch"))
