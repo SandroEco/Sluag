@@ -80,6 +80,8 @@ public class Movement : MonoBehaviour
         }
 
         Physics2D.IgnoreLayerCollision(2, 7, true);
+        Physics2D.IgnoreLayerCollision(8, 8, true);
+
     }
 
     void Update()

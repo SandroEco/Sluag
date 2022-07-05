@@ -49,6 +49,12 @@ public class EnemyChaseState : EnemyBaseState
             enemy.player = GameObject.FindGameObjectWithTag("Player").transform;
             enemy.SwitchState(enemy.HurtState);
         }
+
+
+        if (other.tag == "InstantDeath")
+        {
+            enemy.SwitchState(enemy.DeadState);
+        }
     }
 
     public override void LateUpdateState(EnemyStateManager enemy)

@@ -59,11 +59,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 984828061
+  - name: BackgroundImages
+    uniqueID: 9199001
     locked: 0
   - name: BackgroundStone
     uniqueID: 3995130587
+    locked: 0
+  - name: Background
+    uniqueID: 984828061
     locked: 0
   - name: Default
     uniqueID: 0

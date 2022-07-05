@@ -98,6 +98,12 @@ public class EnemyPatrolState : EnemyBaseState
             }
             enemy.SwitchState(enemy.HurtState);
         }
+
+
+        if (other.tag == "InstantDeath")
+        {
+            enemy.SwitchState(enemy.DeadState);
+        }
     }
 
     public override void LateUpdateState(EnemyStateManager enemy)

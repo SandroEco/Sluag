@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class FlyingPatrolState : FlyingEnemyBaseState
 {
+
+    private float range = 10;
+
     public override void EnterState(FlyEnemyStateManager enemy)
     {
-
+        
     }
 
     public override void UpdateState(FlyEnemyStateManager enemy)
     {
-
+        Collider2D collider = Physics2D.OverlapCircle(enemy.transform.position, range, enemy.playerLayer);
+        if(collider != null)
+        {
+            enemy.SwitchState(enemy.AttackState);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public override void FixedUpdateState(FlyEnemyStateManager enemy)
@@ -25,10 +36,7 @@ public class FlyingPatrolState : FlyingEnemyBaseState
     }
     public override void OnTriggerEnter2D(FlyEnemyStateManager enemy, Collider2D other)
     {
-        if(other.tag == "Player")
-        {
-            enemy.SwitchState(enemy.AttackState);
-        }
+
     }
     public override void OnTriggerExit2D(FlyEnemyStateManager enemy, Collider2D other)
     {
@@ -39,4 +47,5 @@ public class FlyingPatrolState : FlyingEnemyBaseState
     {
 
     }
+   
 }

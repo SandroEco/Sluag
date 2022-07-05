@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8392162443558988328}
   - component: {fileID: 8392162443558988329}
   - component: {fileID: 8392162443558988327}
-  - component: {fileID: 8392162443558988326}
   m_Layer: 0
   m_Name: Demon_Tier1_Flying
   m_TagString: Demon
@@ -139,7 +138,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 0.8
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -162,9 +161,12 @@ MonoBehaviour:
   seeker: {fileID: 8392162443558988327}
   rb: {fileID: 8392162443558988328}
   enemySprite: {fileID: 8392162443558988324}
-  bc: {fileID: 8392162443558988326}
+  bc: {fileID: 0}
   anim: {fileID: 8392162443558988330}
   player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
   health: 3
   speed: 400
   numOfGold: 2
@@ -200,29 +202,3 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!61 &8392162443558988326
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392162443558988334}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 20}
-  m_EdgeRadius: 0

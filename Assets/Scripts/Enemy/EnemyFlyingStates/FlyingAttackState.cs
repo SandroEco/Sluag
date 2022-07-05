@@ -6,6 +6,7 @@ using Pathfinding;
 public class FlyingAttackState : FlyingEnemyBaseState
 {
     bool reachedEndOfPath = false;
+    private float range = 10;
 
     public override void EnterState(FlyEnemyStateManager enemy)
     {
@@ -15,7 +16,15 @@ public class FlyingAttackState : FlyingEnemyBaseState
 
     public override void UpdateState(FlyEnemyStateManager enemy)
     {
-
+        Collider2D collider = Physics2D.OverlapCircle(enemy.transform.position, range, enemy.playerLayer);
+        if(collider == null)
+        {
+            enemy.SwitchState(enemy.PatrolState);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public override void FixedUpdateState(FlyEnemyStateManager enemy)
@@ -63,17 +72,14 @@ public class FlyingAttackState : FlyingEnemyBaseState
     }
     public override void OnTriggerEnter2D(FlyEnemyStateManager enemy, Collider2D other)
     {
-        if(other.tag == "Hit")
+        if (other.gameObject.tag == "Hit")
         {
             enemy.SwitchState(enemy.HurtState);
         }
     }
     public override void OnTriggerExit2D(FlyEnemyStateManager enemy, Collider2D other)
     {
-        if(other.tag == "Player")
-        {
-            enemy.SwitchState(enemy.PatrolState);
-        }
+
     }
 
     public override void LateUpdateState(FlyEnemyStateManager enemy)

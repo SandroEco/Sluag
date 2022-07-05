@@ -14,6 +14,7 @@ public class FlyEnemyStateManager : MonoBehaviour
     public BoxCollider2D bc;
     public Animator anim;
     public Transform player;
+    public LayerMask playerLayer;
 
     [Header("Stats")]
     public int health;
@@ -93,5 +94,10 @@ public class FlyEnemyStateManager : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        
     }
 }
