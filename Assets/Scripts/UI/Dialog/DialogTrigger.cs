@@ -16,6 +16,7 @@ public class DialogTrigger : MonoBehaviour
     [Header("NPC")]
     public bool sign;
     public bool tim;
+    public bool jim;
     public bool mysteriousMan;
     public bool chronos;
     public bool sluagsMom;
@@ -43,15 +44,15 @@ public class DialogTrigger : MonoBehaviour
             }
         }
 
-        if (mysteriousMan && other.tag == "Player")
+        if (jim && other.tag == "Player")
         {
-            if (InventoryScript.instance.waterBottle == 0)
+            if (InventoryScript.instance.demonsHorn == 0)
             {
                 rb = other.GetComponent<Rigidbody2D>();
                 rb.AddForce(-transform.right * 100, ForceMode2D.Impulse);
                 transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
             }
-            if (InventoryScript.instance.waterBottle >= 1)
+            if (InventoryScript.instance.demonsHorn >= 1)
             {
                 transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
             }
@@ -92,13 +93,7 @@ public class DialogTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(mysteriousMan && other.tag == "Player")
-        {
-            if(InventoryScript.instance.waterBottle >= 1)
-            {
-                Destroy(gameObject);
-            }
-        }
+
     }
 
     public void StartDialog()

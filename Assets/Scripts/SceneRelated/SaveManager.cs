@@ -92,7 +92,7 @@ public class SaveData
 
     public int gold;
     public int key;
-    public int waterBottle;
+    public int demonsHorn;
 
     public int readLetter;
     public int talkedAboutLetter;

@@ -72,7 +72,7 @@ public class FlyingAttackState : FlyingEnemyBaseState
     }
     public override void OnTriggerEnter2D(FlyEnemyStateManager enemy, Collider2D other)
     {
-        if (other.gameObject.tag == "Hit")
+        if (other.gameObject.tag == "Hit" || other.gameObject.tag == "Hit 2")
         {
             enemy.SwitchState(enemy.HurtState);
         }
