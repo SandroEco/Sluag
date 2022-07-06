@@ -557,32 +557,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Dear Sluag
+    message: This is a very important message so I'll get straight to the point.
   - actorId: 0
-    message: This is a very important message so I won't beat around the bush.
+    message: We both know that your origin has been a mystery... until now
   - actorId: 0
-    message: I know that you have many questions about your origin.
+    message: Because I'll tell you everything you want to know.
   - actorId: 0
-    message: '"Who are my parents? Who brought you to that village when you were
-      a baby? What voices do I hear?"'
-  - actorId: 0
-    message: I think now you are old enough to find out the truth, and I can give
-      you answers.
-  - actorId: 0
-    message: If you want to find out more, then come to the dark forest in the east
-      of the village.
+    message: Just come to my house on the cliff in the Bushy Forest.
   - actorId: 0
     message: But be careful!
   - actorId: 0
-    message: It's very dangerous out there these days.
+    message: But be careful! It's very dangerous out there.
   - actorId: 0
-    message: It's very dangerous out there these days.
+    message: But remember to tell your mom what you are about to do.
   - actorId: 0
-    message: Don't forget to tell your mom first before you go on your journey.
+    message: Just tell her about a "mysterious man in a dark blue coat"
   - actorId: 0
-    message: Trust me, she will know what's going on.
-  - actorId: 0
-    message: See you soon Sluag!
+    message: She will know who I am.
   actors:
   - name: Letter
   dM: {fileID: 0}
@@ -900,15 +891,10 @@ MonoBehaviour:
   - actorId: 0
     message: ....
   - actorId: 0
-    message: 'Oh, yeah, I knew this day would come. '
+    message: Oh... yeah..., I know this man, he told me about it when...
   - actorId: 0
-    message: ...
-  - actorId: 0
-    message: You are a young grown man, you deserve to know the truth
-  - actorId: 0
-    message: But please promise me that you take care of yourself!
-  - actorId: 0
-    message: Time flies so fast...
+    message: Forget it, we know nothing about your origin, so I know how important
+      this is to you.
   - actorId: 0
     message: No time to get sad, go ahead and good luck on your journey!
   - actorId: 0
@@ -17416,11 +17402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003072273
+      value: -0.000000031222953
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: orthographic size
-      value: 6.75
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 776020407613059900, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_RootOrder
