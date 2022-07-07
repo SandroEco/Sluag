@@ -85,9 +85,13 @@ public class DialogTrigger : MonoBehaviour
             }
         }
 
-        if (chronos && other.tag == "Player" && Input.GetButton("Interact"))
+        if (chronos && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.circleShards == 0)
         {
             transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+        }
+        else if (chronos && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.circleShards <= 1)
+        {
+            transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
         }
     }
 

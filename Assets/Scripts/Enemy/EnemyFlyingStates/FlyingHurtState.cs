@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyingHurtState : FlyingEnemyBaseState
 {
-    float knockbackForce = 1;
+    float knockbackForce = 3;
     float knockbackTime = 0.5f;
 
     public override void EnterState(FlyEnemyStateManager enemy)

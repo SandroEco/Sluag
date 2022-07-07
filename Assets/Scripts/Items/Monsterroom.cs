@@ -6,10 +6,12 @@ public class Monsterroom : MonoBehaviour
 {
     public List <GameObject> enemies = new List<GameObject>();
     BoxCollider2D bc;
+    Animator anim;
 
     void Start()
     {
         bc = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -24,7 +26,7 @@ public class Monsterroom : MonoBehaviour
 
         if(enemies.Count == 0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("Open");
         }
     }
 }
