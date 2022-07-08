@@ -9,10 +9,12 @@ public class PressUp : MonoBehaviour
 
     [Header("Optional")]
     public bool needsKey;
+    public bool chest;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && !needsKey)
+
+        if(other.tag == "Player" && !needsKey && pressUp != null)
         {
             pressUp.SetActive(true);
         }
@@ -25,9 +27,17 @@ public class PressUp : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(chest && other.tag == "Player" && Input.GetAxisRaw("Vertical") == 1f)
+        {
+            Destroy(pressUp);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && pressUp != null)
         {
             pressUp.SetActive(false);
         }

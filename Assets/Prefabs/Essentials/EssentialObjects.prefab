@@ -1879,7 +1879,7 @@ MonoBehaviour:
     m_Bits: 8
   movementAcceleration: 75
   maxMoveSpeed: 8
-  movementDeceleration: 10
+  movementDeceleration: 12.5
   horizontalDirection: 0
   isFacingRight: 1
   canMove: 1
