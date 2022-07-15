@@ -34,8 +34,12 @@ public class Door : MonoBehaviour
                 SaveManager.instance.Save();
                 StartCoroutine(LoadScene());
             }
-            else if (Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home" || Input.GetButton("Interact") && sceneName == "Bar")
+            else if (Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home" || Input.GetButton("Interact") && sceneName == "Bar" || Input.GetButton("Interact") && sceneName == "Forest")
             {
+                healthAll = FindObjectOfType<HealthAll>();
+                healthAll.lastCheckPointPos = transform.position;
+                SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
+                SaveManager.instance.Save();
                 StartCoroutine(LoadScene());
             }
         }

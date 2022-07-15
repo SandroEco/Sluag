@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour
     public float strength;
     public bool isDying;
     public bool isPlayingAnimation;
+    public bool changingScene;
 
     [Header("NPC Stuff")]
     public int readLetter;
@@ -84,6 +85,7 @@ public class Movement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(2, 7, true);
         Physics2D.IgnoreLayerCollision(8, 8, true);
 
+        changingScene = false;
     }
 
     void Update()
@@ -147,6 +149,11 @@ public class Movement : MonoBehaviour
         {
             canMove = false;
             rb.velocity = Vector2.zero;
+        }
+
+        if (changingScene)
+        {
+            canMove = false;
         }
     }
 

@@ -98,4 +98,5 @@ public class SaveData
     public int talkedAboutLetter;
 
     public bool enableWalljump = false;
+    public bool gotHorn = false;
 }

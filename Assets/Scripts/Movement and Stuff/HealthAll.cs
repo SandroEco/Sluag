@@ -9,6 +9,7 @@ public class HealthAll : MonoBehaviour
     [Header("Components")]
     public Movement movementScript;
     public GameObject player;
+    public Invulnerability invulnerability;
 
     [Header("Health")]
     public int health;
@@ -25,6 +26,7 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
+        invulnerability =   GetComponent<Invulnerability>();
         Scene currentScene = SceneManager.GetActiveScene();
 
         string sceneName = currentScene.name;

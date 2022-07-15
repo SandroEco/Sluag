@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &4283414945289657876
 BoxCollider2D:
@@ -375,6 +375,7 @@ MonoBehaviour:
   landSound: {fileID: 0}
   demonSnarl: {fileID: 5580758659589886819}
   torchesOnSound: {fileID: 0}
+  openChestSound: {fileID: 0}
 --- !u!1 &4283414946299386388
 GameObject:
   m_ObjectHideFlags: 0

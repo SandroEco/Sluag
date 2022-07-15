@@ -9,6 +9,7 @@ public class CombatRelated : MonoBehaviour
     private Rigidbody2D rb;
     public HealthAll healthAllScript;
     private Movement movement;
+    public Invulnerability invulnerability;
 
     [Header("Knockback")]
     public float knockback;
@@ -27,6 +28,7 @@ public class CombatRelated : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         movement = GetComponent<Movement>();
+        invulnerability = GetComponent<Invulnerability>();
     }
 
     private void Update()
@@ -91,6 +93,7 @@ public class CombatRelated : MonoBehaviour
             Vector2 force = difference * knockback;
             rb.AddForce(force, ForceMode2D.Impulse);
             StartCoroutine(KnockbackCounter());
+            StartCoroutine(invulnerability.GetInvulnerable());
             healthAllScript.TakeDamage(1);
         }
     }

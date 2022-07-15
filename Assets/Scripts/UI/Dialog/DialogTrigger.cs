@@ -10,6 +10,7 @@ public class DialogTrigger : MonoBehaviour
     private Rigidbody2D rb;
     private Movement movement;
     public DialogManager dM;
+    public bool gotHorn;
 
     public GameObject drop;
 
@@ -25,6 +26,11 @@ public class DialogTrigger : MonoBehaviour
     {
         dM = FindObjectOfType<DialogManager>().GetComponent<DialogManager>();
         if (tim && SaveManager.instance.activeSave.talkedAboutLetter != 0f)
+        {
+            Destroy(gameObject);
+        }
+
+        if (jim && SaveManager.instance.activeSave.gotHorn == true)
         {
             Destroy(gameObject);
         }
@@ -55,6 +61,9 @@ public class DialogTrigger : MonoBehaviour
             if (InventoryScript.instance.demonsHorn >= 1)
             {
                 transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+                gotHorn = true;
+                SaveManager.instance.activeSave.gotHorn = gotHorn;
+                SaveManager.instance.Save();
             }
         }
     }
