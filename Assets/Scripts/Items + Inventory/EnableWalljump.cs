@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnableWalljump : MonoBehaviour
 {
+    /*
     private void Awake()
     {
         if (SaveManager.instance.activeSave.enableWalljump)
@@ -22,4 +23,5 @@ public class EnableWalljump : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    */
 }

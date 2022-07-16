@@ -32,8 +32,8 @@ public class Movement : MonoBehaviour
     public float airLinearDrag = 2.5f;
     public float fallMultiplier = 8f;
     public float lowJumpFallMultiplier = 5f;
-    private float coyoteTime = 0.05f;
-    private float coyoteTimeCounter;
+    private float coyoteTime = 0.14f;
+    public float coyoteTimeCounter;
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
     private bool canJump => jumpBufferCounter > 0f && coyoteTimeCounter > 0f;

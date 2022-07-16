@@ -12,8 +12,6 @@ public class DialogTrigger : MonoBehaviour
     public DialogManager dM;
     public bool gotHorn;
 
-    public GameObject drop;
-
     [Header("NPC")]
     public bool sign;
     public bool tim;
@@ -21,6 +19,7 @@ public class DialogTrigger : MonoBehaviour
     public bool mysteriousMan;
     public bool chronos;
     public bool sluagsMom;
+    public bool steven;
 
     private void Start()
     {
@@ -31,6 +30,11 @@ public class DialogTrigger : MonoBehaviour
         }
 
         if (jim && SaveManager.instance.activeSave.gotHorn == true)
+        {
+            Destroy(gameObject);
+        }
+
+        if (steven && SaveManager.instance.activeSave.enableWalljump == true)
         {
             Destroy(gameObject);
         }
@@ -101,6 +105,18 @@ public class DialogTrigger : MonoBehaviour
         else if (chronos && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.circleShards <= 1)
         {
             transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+        }
+
+
+        if (steven && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.gold < 10)
+        {
+            transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+        }
+        else if(steven && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.gold >= 10)
+        {
+            transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
+            FindObjectOfType<WallJumping>().enabled = true;
+            SaveManager.instance.activeSave.enableWalljump = true;
         }
     }
 

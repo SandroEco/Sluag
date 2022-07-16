@@ -1062,6 +1062,7 @@ MonoBehaviour:
   airLinearDrag: 2.5
   fallMultiplier: 8
   lowJumpFallMultiplier: 5
+  coyoteTimeCounter: 0
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
@@ -2434,6 +2435,7 @@ MonoBehaviour:
   airLinearDrag: 6
   fallMultiplier: 12
   lowJumpFallMultiplier: 14
+  coyoteTimeCounter: 0
   groundRaycastLength: 0.1
   isGrounded: 1
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
@@ -2840,6 +2842,7 @@ MonoBehaviour:
   airLinearDrag: 2.5
   fallMultiplier: 8
   lowJumpFallMultiplier: 5
+  coyoteTimeCounter: 0
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
@@ -3106,6 +3109,7 @@ MonoBehaviour:
   airLinearDrag: 2.5
   fallMultiplier: 7
   lowJumpFallMultiplier: 5
+  coyoteTimeCounter: 0
   groundRaycastLength: 0.1
   isGrounded: 0
   dustJump: {fileID: 2479224085629584432, guid: 19bd1a71ae2128d46b75e6fb95bd3c99, type: 3}
@@ -3559,7 +3563,7 @@ MonoBehaviour:
   m_AssetsPPU: 16
   m_RefResolutionX: 384
   m_RefResolutionY: 216
-  m_CropFrame: 0
+  m_CropFrame: 1
   m_GridSnapping: 0
   m_UpscaleRT: 0
   m_PixelSnapping: 0

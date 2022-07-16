@@ -684,13 +684,14 @@ MonoBehaviour:
   actors:
   - name: Letter
   dM: {fileID: 0}
-  drop: {fileID: 0}
+  gotHorn: 0
   sign: 1
   tim: 0
   jim: 0
   mysteriousMan: 0
   chronos: 0
   sluagsMom: 0
+  steven: 0
 --- !u!61 &348097894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1025,13 +1026,14 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  drop: {fileID: 0}
+  gotHorn: 0
   sign: 0
   tim: 0
   jim: 0
   mysteriousMan: 0
   chronos: 0
   sluagsMom: 0
+  steven: 0
 --- !u!1 &889428343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,13 +1084,14 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  drop: {fileID: 0}
+  gotHorn: 0
   sign: 0
   tim: 0
   jim: 0
   mysteriousMan: 0
   chronos: 0
   sluagsMom: 0
+  steven: 0
 --- !u!1001 &932663480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17627,6 +17630,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1982666515, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2035715438, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -17648,16 +17655,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.066465e-17
+      value: -9.107299e-17
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000036308847
+      value: -0.00000003705827
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: orthographic size
-      value: 6.75
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.06666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.44444445
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776020407613059900, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_RootOrder
@@ -17813,7 +17856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131442239599234653, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2594638e-24
+      value: 1.2854646e-24
       objectReference: {fileID: 0}
     - target: {fileID: 6131442239599234653, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18071,13 +18114,14 @@ MonoBehaviour:
   actors:
   - name: Mom
   dM: {fileID: 0}
-  drop: {fileID: 0}
+  gotHorn: 0
   sign: 0
   tim: 0
   jim: 0
   mysteriousMan: 0
   chronos: 0
   sluagsMom: 0
+  steven: 0
 --- !u!1 &2101339602
 GameObject:
   m_ObjectHideFlags: 0
@@ -18337,13 +18381,14 @@ MonoBehaviour:
   messages: []
   actors: []
   dM: {fileID: 0}
-  drop: {fileID: 0}
+  gotHorn: 0
   sign: 0
   tim: 0
   jim: 0
   mysteriousMan: 0
   chronos: 0
   sluagsMom: 1
+  steven: 0
 --- !u!114 &2124301124
 MonoBehaviour:
   m_ObjectHideFlags: 0
