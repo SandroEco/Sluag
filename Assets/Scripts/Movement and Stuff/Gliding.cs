@@ -12,6 +12,8 @@ public class Gliding : MonoBehaviour
     public float glidingSpeed;
     private float initialGravityScale;
 
+    public bool canGlide = false;
+
     void Start()
     {
         movementScript = GetComponent<Movement>();

@@ -11,6 +11,8 @@ public class SFXController : MonoBehaviour
     public AudioSource demonSnarl;
     public AudioSource torchesOnSound;
     public AudioSource openChestSound;
+    public AudioSource gotHitSound;
+    public AudioSource lostSource;
 
     private void Footstep()
     {
@@ -51,5 +53,15 @@ public class SFXController : MonoBehaviour
     public void OpenChestSound()
     {
         openChestSound.Play();
+    }
+
+    public void GotHitSound()
+    {
+        gotHitSound.Play();
+    }
+
+    public void LostSound()
+    {
+        lostSource.Play();
     }
 }

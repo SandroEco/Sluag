@@ -120,11 +120,6 @@ public class DialogTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-
-    }
-
     public void StartDialog()
     {
         FindObjectOfType<DialogManager>().OpenDialog(messages, actors);

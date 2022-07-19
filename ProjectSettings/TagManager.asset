@@ -25,6 +25,7 @@ TagManager:
   - Flower
   - Demon
   - Hit 2
+  - GameMusic
   layers:
   - Default
   - TransparentFX

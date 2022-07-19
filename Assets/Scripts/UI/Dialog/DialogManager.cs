@@ -30,12 +30,15 @@ public class DialogManager : MonoBehaviour
 
     public void OpenDialog(Message[] messages, Actor[] actors)
     {
-        isActive = true;
-        currentMessages = messages;
-        currentActors = actors;
-        activeMessage = 0;
-        DisplayMessage();
-        backgroundBox.LeanScale(Vector3.one, 0.3f);
+        if (!isActive)
+        {
+            isActive = true;
+            currentMessages = messages;
+            currentActors = actors;
+            activeMessage = 0;
+            DisplayMessage();
+            backgroundBox.LeanScale(Vector3.one, 0.3f);
+        }
     }
 
     void DisplayMessage()

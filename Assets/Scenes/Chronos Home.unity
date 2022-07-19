@@ -17227,7 +17227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fff1223f7550e4881e0530e07225ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfScene: Game
+  nameOfScene: Forest
 --- !u!61 &1714913083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17326,23 +17326,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000007900417
+      value: -0.00000007946983
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: orthographic size
-      value: 7.5
+      value: 6.75
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.06666667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.20000002
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.44444445
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 776020407137322592, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalPosition.x

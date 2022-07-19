@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
 
         if (canInteract)
         {
-            if (Input.GetButton("Interact") && sceneName == "Game")
+            if (Input.GetButton("Interact") && sceneName == "Game" || Input.GetButton("Interact") && sceneName == "Forest")
             {
                 healthAll = FindObjectOfType<HealthAll>();
                 healthAll.lastCheckPointPos = transform.position;
@@ -34,14 +34,23 @@ public class Door : MonoBehaviour
                 SaveManager.instance.Save();
                 StartCoroutine(LoadScene());
             }
-            else if (Input.GetButton("Interact") && sceneName == "Sluag Home" || Input.GetButton("Interact") && sceneName == "Chronos Home" || Input.GetButton("Interact") && sceneName == "Bar" || Input.GetButton("Interact") && sceneName == "Forest")
+            else if (Input.GetButton("Interact") && sceneName != "Game" && sceneName != "Forest")
             {
-                healthAll = FindObjectOfType<HealthAll>();
+                SaveManager.instance.Save();
+                StartCoroutine(LoadScene());
+            }
+
+            /*
+            if(Input.GetButton("Interact") && sceneName == "Forest")
+            {
+                //healthAll = FindObjectOfType<HealthAll>();
                 healthAll.lastCheckPointPos = transform.position;
                 SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
                 SaveManager.instance.Save();
                 StartCoroutine(LoadScene());
             }
+            */
+
         }
     }
 

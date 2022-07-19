@@ -23,7 +23,7 @@ public class Fade : MonoBehaviour
 
     private IEnumerator Disable()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.2f);
         fade.gameObject.SetActive(false); 
     }
 }

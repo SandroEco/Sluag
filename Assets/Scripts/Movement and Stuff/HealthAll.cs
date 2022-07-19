@@ -10,6 +10,7 @@ public class HealthAll : MonoBehaviour
     public Movement movementScript;
     public GameObject player;
     public Invulnerability invulnerability;
+    public SFXController sfx;
 
     [Header("Health")]
     public int health;
@@ -40,7 +41,7 @@ public class HealthAll : MonoBehaviour
             SaveManager.instance.activeSave.health = health;
         }
 
-        if (SaveManager.instance.hasLoaded && sceneName == "Game")
+        if (SaveManager.instance.hasLoaded && sceneName == "Game" || SaveManager.instance.hasLoaded && sceneName == "Forest")
         {
             lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
             transform.position = lastCheckPointPos;
@@ -91,6 +92,7 @@ public class HealthAll : MonoBehaviour
 
         if (health >= 1)
         {
+            sfx.GotHitSound();
             movementScript.Damaged();
             StartCoroutine(DamageFreeze());
         }
