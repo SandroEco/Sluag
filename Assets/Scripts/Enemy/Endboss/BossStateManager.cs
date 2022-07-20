@@ -7,6 +7,8 @@ public class BossStateManager : MonoBehaviour
     public static BossBaseState instance;
 
     public BossFightTrigger bossFightTrigger;
+    public Animator anim;
+    public GameObject shoot;
 
     BossBaseState currentState;
     public BossFirstState FirstState = new BossFirstState();
@@ -18,6 +20,8 @@ public class BossStateManager : MonoBehaviour
         currentState = FirstState;
 
         currentState.EnterState(this);
+
+        anim = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -49,5 +53,15 @@ public class BossStateManager : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void ShootProjectile()
+    {
+        Instantiate(shoot, transform.position, Quaternion.identity);
+    }
+
+    public void SwitchToAttack()
+    {
+        SwitchState(SecondState);
     }
 }

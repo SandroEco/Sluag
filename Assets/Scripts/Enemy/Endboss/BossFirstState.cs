@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class BossFirstState : BossBaseState
 {
+    float switchToSecondState = 3;
+
     public override void EnterState(BossStateManager boss)
     {
-
+        switchToSecondState = 3;
     }
 
     public override void UpdateState(BossStateManager boss)
     {
+
         if(boss.bossFightTrigger.startBossFight == true)
         {
             boss.transform.localScale = new Vector2(-1, 1);
-            //flip, ScreamAnim, changeState, cameraPosition
-            Debug.Log("worked");
+            //, changeState, cameraPosition
+
+            if (switchToSecondState > 0)
+            {
+                switchToSecondState -= Time.deltaTime;
+            }
+            else
+            {
+                boss.SwitchState(boss.SecondState);
+            }
         }
     }
 

@@ -6,7 +6,7 @@ public class BossSecondState : BossBaseState
 {
     public override void EnterState(BossStateManager boss)
     {
-
+        boss.anim.SetTrigger("Attack");
     }
 
     public override void UpdateState(BossStateManager boss)

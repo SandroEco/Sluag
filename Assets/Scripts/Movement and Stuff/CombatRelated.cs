@@ -79,6 +79,20 @@ public class CombatRelated : MonoBehaviour
             healthAllScript.TakeDamage(1);
             StartCoroutine(KnockbackCounter());
         }
+
+        rb = GetComponent<Rigidbody2D>();
+        if (other.gameObject.tag == "Demon")
+        {
+            CinemachineShake.ShakeInstance.ShakeCamera(5f, .15f);
+            isKnockbacked = true;
+            Vector2 difference = (transform.position - other.transform.position);
+            difference.y = 0.4f;
+            Vector2 force = difference * knockback;
+            rb.AddForce(force, ForceMode2D.Impulse);
+            StartCoroutine(KnockbackCounter());
+            StartCoroutine(invulnerability.GetInvulnerable());
+            healthAllScript.TakeDamage(1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
