@@ -99,4 +99,6 @@ public class SaveData
 
     public bool enableWalljump = false;
     public bool gotHorn = false;
+
+    public bool tpToCaveForest;
 }

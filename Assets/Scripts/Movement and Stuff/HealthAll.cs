@@ -45,6 +45,12 @@ public class HealthAll : MonoBehaviour
         {
             lastCheckPointPos = SaveManager.instance.activeSave.lastCheckPointPos;
             transform.position = lastCheckPointPos;
+            if (sceneName == "Forest" && SaveManager.instance.activeSave.tpToCaveForest == true)
+            {
+                Debug.Log("worked");
+                transform.position = new Vector2(224.5f, -23);
+                SaveManager.instance.activeSave.tpToCaveForest = false;
+            }
         }
 
         if(health == 0)

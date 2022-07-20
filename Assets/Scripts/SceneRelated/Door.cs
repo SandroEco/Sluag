@@ -8,6 +8,13 @@ public class Door : MonoBehaviour
     private HealthAll healthAll;
     public string nameOfScene;
     public static bool canInteract;
+    public bool caveForest;
+
+    private void Awake()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+    }
 
     private void Start()
     {
@@ -28,6 +35,10 @@ public class Door : MonoBehaviour
         {
             if (Input.GetButton("Interact") && sceneName == "Game" || Input.GetButton("Interact") && sceneName == "Forest")
             {
+                if (caveForest)
+                {
+                    SaveManager.instance.activeSave.tpToCaveForest = true;
+                }
                 healthAll = FindObjectOfType<HealthAll>();
                 healthAll.lastCheckPointPos = transform.position;
                 SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
@@ -39,18 +50,6 @@ public class Door : MonoBehaviour
                 SaveManager.instance.Save();
                 StartCoroutine(LoadScene());
             }
-
-            /*
-            if(Input.GetButton("Interact") && sceneName == "Forest")
-            {
-                //healthAll = FindObjectOfType<HealthAll>();
-                healthAll.lastCheckPointPos = transform.position;
-                SaveManager.instance.activeSave.lastCheckPointPos = transform.position;
-                SaveManager.instance.Save();
-                StartCoroutine(LoadScene());
-            }
-            */
-
         }
     }
 
