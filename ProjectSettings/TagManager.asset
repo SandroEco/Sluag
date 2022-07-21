@@ -26,6 +26,7 @@ TagManager:
   - Demon
   - Hit 2
   - GameMusic
+  - Stone
   layers:
   - Default
   - TransparentFX

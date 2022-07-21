@@ -361,6 +361,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Boss_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a780d9059ca6145b268b7d5b4c149f
+      internalID: 505978833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710908c9dee1ca04c9f8796b9d2fcba3
+      internalID: -376291533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f45d35d97bfcfc4bba224cb7783ae10
+      internalID: 802454004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40af7b1c7e22a0e44b927d420c91a46a
+      internalID: -1045945625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -374,6 +458,7 @@ TextureImporter:
     nameFileIdTable:
       Boss_0: -1325716497
       Boss_4: -1838921644
+      Boss_12: 802454004
       Boss_2: 1126862948
       Boss_8: 783501100
       Boss_1: -752826442
@@ -381,6 +466,9 @@ TextureImporter:
       Boss_7: -991572152
       Boss_9: 1607033548
       Boss_3: 1779721011
+      Boss_13: -1045945625
+      Boss_11: -376291533
+      Boss_10: 505978833
       Boss_6: -231181064
   spritePackingTag: 
   pSDRemoveMatte: 0

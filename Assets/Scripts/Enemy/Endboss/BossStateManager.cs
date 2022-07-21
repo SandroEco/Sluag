@@ -9,6 +9,9 @@ public class BossStateManager : MonoBehaviour
     public BossFightTrigger bossFightTrigger;
     public Animator anim;
     public GameObject shoot;
+    public GameObject stone;
+    public int count = 0;
+    public int health = 3;
 
     BossBaseState currentState;
     public BossFirstState FirstState = new BossFirstState();
@@ -57,11 +60,11 @@ public class BossStateManager : MonoBehaviour
 
     public void ShootProjectile()
     {
-        Instantiate(shoot, transform.position, Quaternion.identity);
+        Instantiate(shoot, new Vector2(transform.position.x -2, transform.position.y), Quaternion.identity);
     }
 
-    public void SwitchToAttack()
+    public void ThrowRock()
     {
-        SwitchState(SecondState);
+        Instantiate(stone, new Vector2(transform.position.x - 2, transform.position.y + 1), Quaternion.identity);
     }
 }

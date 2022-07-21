@@ -47,6 +47,10 @@ public class BossFirstState : BossBaseState
 
     public override void OnTriggerEnter2D(BossStateManager boss, Collider2D other)
     {
+        if(other.tag == "Stone")
+        {
+            boss.health -= 1;
 
+        }
     }
 }

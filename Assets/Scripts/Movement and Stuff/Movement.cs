@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
         camAnim = cam.GetComponent<Animator>();
         isPlayingAnimation = false;
         sfx = GetComponent<SFXController>();
+        wallJumping = GetComponent<WallJumping>();
 
         if (SaveManager.instance.hasLoaded)
         {
@@ -80,6 +81,15 @@ public class Movement : MonoBehaviour
         {
             SaveManager.instance.activeSave.readLetter = readLetter;
             SaveManager.instance.activeSave.talkedAboutLetter = talkedAboutLetter;
+        }
+
+        if(SaveManager.instance.activeSave.enableWalljump == true)
+        {
+            wallJumping.enabled = true;
+        }
+        else
+        {
+            return;
         }
 
         Physics2D.IgnoreLayerCollision(2, 7, true);

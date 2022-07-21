@@ -8,6 +8,7 @@ public class WallJumping : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public Movement movementScript;
+    private WallJumping wallJumpScript;
 
     [Header("Wall Jump")]
     public float wallJumpForce;

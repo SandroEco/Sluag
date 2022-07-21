@@ -18,4 +18,12 @@ public class BossProjectile : MonoBehaviour
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

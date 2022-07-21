@@ -27,7 +27,6 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
-        invulnerability =   GetComponent<Invulnerability>();
         Scene currentScene = SceneManager.GetActiveScene();
 
         string sceneName = currentScene.name;
@@ -63,8 +62,9 @@ public class HealthAll : MonoBehaviour
     {
         movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         player = GameObject.FindGameObjectWithTag("Player");
+        invulnerability = GameObject.FindGameObjectWithTag("Player").GetComponent<Invulnerability>();
 
-        if(health > maxhealth)
+        if (health > maxhealth)
         {
             health = maxhealth;
         }
@@ -95,6 +95,7 @@ public class HealthAll : MonoBehaviour
     {
         health -= amount;
         SaveManager.instance.activeSave.health = health;
+        StartCoroutine(invulnerability.GetInvulnerable());
 
         if (health >= 1)
         {
