@@ -67,7 +67,7 @@ public class WallJumping : MonoBehaviour
         if((isWallSliding || onWall) && Input.GetButtonDown("Jump") && !movementScript.isGrounded)
         {
             rb.AddForce(new Vector2(wallJumpForce * wallJumpDirection * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
-            StartCoroutine(AfterWallJump());
+            movementScript.Flip();
         }
     }
 
@@ -83,11 +83,4 @@ public class WallJumping : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + Vector3.left * wallRaycastLength);
     }
 
-    private IEnumerator AfterWallJump()
-    {
-        movementScript.canMove = false;
-        movementScript.Flip();
-        yield return new WaitForSeconds(0.3f);
-        movementScript.canMove = true;
-    }
 }

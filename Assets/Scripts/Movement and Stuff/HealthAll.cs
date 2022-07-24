@@ -56,6 +56,9 @@ public class HealthAll : MonoBehaviour
         {
             health = maxhealth;
         }
+
+        Physics2D.IgnoreLayerCollision(8, 8, true);
+
     }
 
     private void Update()

@@ -6,6 +6,8 @@ public class TransformStateManager : MonoBehaviour
 {
     public GameObject currentPos;
     public bool canTransform;
+    public Animator anim;
+    public Rigidbody2D rb;
 
     [Header("Souls")]
     public GameObject sluagObject;
@@ -46,5 +48,51 @@ public class TransformStateManager : MonoBehaviour
         canTransform = false;
         yield return new WaitForSeconds(0.5f);
         canTransform = true;
+    }
+
+    public void TransformTransition()
+    {
+        StartCoroutine(TransformationTransition());
+    }
+
+    public void TransformTransitionBack()
+    {
+        StartCoroutine(TransformTransitionBackwards());
+    }
+
+    public void TransformTransitionBackBear()
+    {
+        StartCoroutine(TransformTransitionBackwardsBear());
+    }
+
+    private IEnumerator TransformationTransition()
+    {
+        anim.SetTrigger("Transform");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private IEnumerator TransformTransitionBackwards()
+    {
+        anim.SetTrigger("TransformBack");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        SwitchState(squirrel);
+        StartCoroutine(TransformationCooldown());
+    }
+
+    private IEnumerator TransformTransitionBackwardsBear()
+    {
+        anim.SetTrigger("TransformBack");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        SwitchState(bear);
+        StartCoroutine(TransformationCooldown());
     }
 }

@@ -2463,10 +2463,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   anim: {fileID: 0}
   movementScript: {fileID: 0}
-  wallJumpForce: 35
+  wallJumpForce: 200
   canWallJump: 0
   wallJumpDirection: -1
-  wallJumpAngle: {x: 3, y: 2.5}
+  wallJumpAngle: {x: 3, y: 0.5}
   wallSlideSpeed: -1
   isWallSliding: 0
   wallRaycastLength: 0.6
@@ -3610,6 +3610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPos: {fileID: 776020406393474670}
   canTransform: 0
+  anim: {fileID: 7052001703354935946}
+  rb: {fileID: 776020405742515751}
   sluagObject: {fileID: 776020405742515750}
   circleObject: {fileID: 776020405843842707}
   bearObject: {fileID: 776020406215712386}
