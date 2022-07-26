@@ -124,6 +124,7 @@ public class HealthAll : MonoBehaviour
         movementScript.isDying = false;
         player.transform.position = lastCheckPointPos;
         movementScript.canMove = true;
+        StartCoroutine(invulnerability.GetInvulnerable());
     }
 
     public void toLastCheckpoint()

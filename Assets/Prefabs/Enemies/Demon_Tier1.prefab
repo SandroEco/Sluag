@@ -269,7 +269,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4283414945289658347
 BoxCollider2D:
@@ -376,6 +376,8 @@ MonoBehaviour:
   demonSnarl: {fileID: 5580758659589886819}
   torchesOnSound: {fileID: 0}
   openChestSound: {fileID: 0}
+  gotHitSound: {fileID: 0}
+  lostSource: {fileID: 0}
 --- !u!1 &4283414946299386388
 GameObject:
   m_ObjectHideFlags: 0

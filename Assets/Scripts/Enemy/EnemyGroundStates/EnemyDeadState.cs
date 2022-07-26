@@ -8,6 +8,8 @@ public class EnemyDeadState : EnemyBaseState
     bool once;
     public override void EnterState(EnemyStateManager enemy)
     {
+        EnemyStateManager.Destroy(enemy.col);
+        enemy.rb.constraints = RigidbodyConstraints2D.FreezePosition;
         once = true;
         enemy.anim.SetTrigger("Dead");
         enemy.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");

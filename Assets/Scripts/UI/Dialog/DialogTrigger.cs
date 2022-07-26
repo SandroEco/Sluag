@@ -18,6 +18,7 @@ public class DialogTrigger : MonoBehaviour
     public bool jim;
     public bool mysteriousMan;
     public bool chronos;
+    public bool chronosEnd;
     public bool sluagsMom;
     public bool steven;
 
@@ -70,6 +71,11 @@ public class DialogTrigger : MonoBehaviour
                 SaveManager.instance.Save();
             }
         }
+
+        if(chronosEnd && other.tag == "Player")
+        {
+            transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -107,12 +113,7 @@ public class DialogTrigger : MonoBehaviour
             transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
         }
 
-
-        if (steven && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.gold < 10)
-        {
-            transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
-        }
-        else if(steven && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.gold >= 10)
+        if(steven && other.tag == "Player" && Input.GetButton("Interact"))
         {
             transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
             FindObjectOfType<WallJumping>().enabled = true;

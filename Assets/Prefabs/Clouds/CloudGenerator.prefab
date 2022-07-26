@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 4039236463915954638, guid: 92bedbcfa9f68fc42a9e7ac033f22359, type: 3}
   - {fileID: 2860212665602602699, guid: 39cf086459f4d084b858e785d507c058, type: 3}
   - {fileID: 307779868273213608, guid: ac6b342539d311540a4ed20112d1251d, type: 3}
-  spawnInterval: 5
+  spawnInterval: 3
   endPoint: {fileID: 3450533197743260346}
 --- !u!1 &3450533197743260346
 GameObject:

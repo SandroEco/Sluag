@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8392162443558988328}
   - component: {fileID: 8392162443558988329}
   - component: {fileID: 8392162443558988327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Demon_Tier1_Flying
   m_TagString: Demon
   m_Icon: {fileID: 0}
