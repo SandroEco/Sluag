@@ -15,9 +15,13 @@ public class SaveManager : MonoBehaviour
 
     public bool hasLoaded;
 
+    public GameObject ladeschnecke;
+
     private void Awake()
     {
         instance = this;
+
+        ladeschnecke.SetActive(false);
 
         Load();
     }
@@ -29,11 +33,6 @@ public class SaveManager : MonoBehaviour
             Save();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Load();
-        }
-
         if (Input.GetKeyDown(KeyCode.J))
         {
             DeleteSaveData();
@@ -42,17 +41,19 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
+
         string dataPath = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(SaveData));
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
-
     }
 
     public void Load()
     {
+        StartCoroutine(Ladeschnecke());
+
         string dataPath = Application.persistentDataPath;
 
         if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
@@ -68,12 +69,21 @@ public class SaveManager : MonoBehaviour
 
     public void DeleteSaveData()
     {
+        StartCoroutine(Ladeschnecke());
+
         string dataPath = Application.persistentDataPath;
 
         if(System.IO.File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
             File.Delete(dataPath + "/" + activeSave.saveName + ".save");
         }
+    }
+
+    private IEnumerator Ladeschnecke()
+    {
+        ladeschnecke.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        ladeschnecke.SetActive(false);
     }
 }
 

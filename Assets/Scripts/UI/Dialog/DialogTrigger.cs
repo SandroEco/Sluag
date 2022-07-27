@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogTrigger : MonoBehaviour
 {
@@ -119,6 +120,15 @@ public class DialogTrigger : MonoBehaviour
             FindObjectOfType<WallJumping>().enabled = true;
             SaveManager.instance.activeSave.enableWalljump = true;
         }
+
+        if (chronosEnd && other.tag == "Player")
+        {
+            if (!DialogManager.isActive)
+            {
+                Debug.Log("isNotActive");
+                //LoadScene && DestroyCollider
+            }
+        }
     }
 
     public void StartDialog()
@@ -133,6 +143,7 @@ public class DialogTrigger : MonoBehaviour
         SaveManager.instance.activeSave.talkedAboutLetter = movement.talkedAboutLetter;
         SaveManager.instance.Save();
     }
+
 }
 
 [System.Serializable]

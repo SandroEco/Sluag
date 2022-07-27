@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     public float maxMoveSpeed;
     public float movementDeceleration;
     public float horizontalDirection;
+    private float verticalDirection;
     private bool changingDirection => (rb.velocity.x > 0f && horizontalDirection < 0f) || (rb.velocity.x < 0f && horizontalDirection > 0f);
     public bool isFacingRight = true;
     public bool canMove;
@@ -51,6 +52,7 @@ public class Movement : MonoBehaviour
     public bool isDying;
     public bool isPlayingAnimation;
     public bool changingScene;
+    public bool activeGodMode = false;
 
     [Header("NPC Stuff")]
     public int readLetter;
@@ -164,6 +166,22 @@ public class Movement : MonoBehaviour
         if (changingScene)
         {
             canMove = false;
+        }
+
+        if(Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.Y) && activeGodMode == false)
+        {
+            activeGodMode = true;
+        }
+        else if(Input.GetKey(KeyCode.I) && Input.GetKeyDown(KeyCode.O) && Input.GetKey(KeyCode.P) && activeGodMode == true)
+        {
+            activeGodMode = false;
+            rb.gravityScale = 1;
+            fallMultiplier = 12;
+        }
+
+        if (activeGodMode)
+        {
+            GodMode();
         }
     }
 
@@ -316,5 +334,13 @@ public class Movement : MonoBehaviour
     public void Damaged()
     {
         anim.SetTrigger("Damaged");
+    }
+
+    public void GodMode()
+    {
+        rb.AddForce(new Vector2(0f, verticalDirection) * movementAcceleration);
+        rb.gravityScale = 0f;
+        fallMultiplier = 0;
+        verticalDirection = GetInput().y;
     }
 }
