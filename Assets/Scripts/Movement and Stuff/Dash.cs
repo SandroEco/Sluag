@@ -8,7 +8,6 @@ public class Dash : MonoBehaviour
     private Rigidbody2D rb;
     public Movement movementScript;
     private Animator anim;
-    //public GameObject destroyEffect;
 
     public float dashingVelocity = 14f;
     public float dashingTime = 0.5f;

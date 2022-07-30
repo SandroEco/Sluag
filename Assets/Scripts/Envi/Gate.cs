@@ -6,11 +6,20 @@ public class Gate : MonoBehaviour
 {
     private Animator anim;
     SFXController sfx;
+    public bool opened = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         sfx = GetComponent<SFXController>();
+        if(SaveManager.instance.activeSave.opened == true)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -20,6 +29,7 @@ public class Gate : MonoBehaviour
             sfx.OpenChestSound();
             anim.SetTrigger("Opened");
             InventoryScript.instance.key-= 1;
+            SaveManager.instance.activeSave.opened = true;
             SaveManager.instance.activeSave.key = InventoryScript.instance.key;
         }
     }

@@ -111,4 +111,6 @@ public class SaveData
     public bool gotHorn = false;
 
     public bool tpToCaveForest;
+    public bool talkedToBarkeeper = false;
+    public bool opened = false;
 }

@@ -26,6 +26,7 @@ public class BossThirdState : BossBaseState
 
         if(boss.health <= 0)
         {
+            boss.transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
             EnemyStateManager.Destroy(boss.gameObject);
         }
     }
@@ -50,7 +51,6 @@ public class BossThirdState : BossBaseState
         if (other.tag == "Stone")
         {
             boss.health -= 1;
-
         }
     }
 }

@@ -167,12 +167,12 @@ TextureImporter:
       name: Village_Tileset_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -192,12 +192,12 @@ TextureImporter:
       name: Village_Tileset_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -217,12 +217,12 @@ TextureImporter:
       name: Village_Tileset_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 96
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -242,18 +242,18 @@ TextureImporter:
       name: Village_Tileset_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 128
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5c1b2fb26f0c0d40a3987d0ae083662
+      spriteID: fd3471d2760e3b440ad4f9459013436f
       internalID: 421958196
       vertices: []
       indices: 
@@ -263,18 +263,18 @@ TextureImporter:
       name: Village_Tileset_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e263ed4f259cb0b4cb094d0112d2fdd0
+      spriteID: 6c99337f0875efa4ba95d66c6325ad14
       internalID: -1782697527
       vertices: []
       indices: 
@@ -284,18 +284,18 @@ TextureImporter:
       name: Village_Tileset_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 80
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9265ded0de82374a8db484e3838e3d8
+      spriteID: 800365745a4b54e468d1664350c342fa
       internalID: 157473418
       vertices: []
       indices: 
@@ -305,18 +305,18 @@ TextureImporter:
       name: Village_Tileset_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 96
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c9706e2161f94a4686e34e7f2bf718f
+      spriteID: e84f02435f3e93e43972a5216812262c
       internalID: 1348430855
       vertices: []
       indices: 
@@ -326,19 +326,61 @@ TextureImporter:
       name: Village_Tileset_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef394644192ec6b49bac8022d8e73e35
+      spriteID: 6ef9c823f90d9d241afe794ba00cb87d
       internalID: -863757561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Village_Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec69fd165e3d4c64986ed36efb3508bd
+      internalID: -1866668583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Village_Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54294ff0255543949ad62996f6271d2d
+      internalID: -2071902743
       vertices: []
       indices: 
       edges: []
@@ -358,8 +400,10 @@ TextureImporter:
       Village_Tileset_5: 157473418
       Village_Tileset_6: 1348430855
       Village_Tileset_7: -863757561
+      Village_Tileset_9: -2071902743
       Village_Tileset_1: 2085330079
       Village_Tileset_2: -1280047147
+      Village_Tileset_8: -1866668583
       Village_Tileset_3: 421958196
       Village_Tileset_4: -1782697527
   spritePackingTag: 

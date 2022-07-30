@@ -164,13 +164,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MysteriousMan-Sheet_0
+      name: Chronos_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,41 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8e79ca74d13276488d946a7e6775bbb
-      internalID: 639202291
+      spriteID: 7b3bc8b27bf39b8408aaf9c9724536b5
+      internalID: 960755579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MysteriousMan-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c095b6f3d1545f4f88613f585d4b51d
-      internalID: 619546915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_2
+      name: Chronos_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,41 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc495c1b8e8d16f468b0ff9d8e1932e6
-      internalID: -705597763
+      spriteID: 0498c0d13c56d6240a14ffa6473677a6
+      internalID: 966447407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MysteriousMan-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f6630d67dbbed64597445e804ff447e
-      internalID: 141973907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_4
+      name: Chronos_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,113 +220,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1350832aa2afde147ad62fd2333b75c8
-      internalID: 461642095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 240d5a074d085394ab840406a5c35b02
-      internalID: -650019002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a676599dc9d502a4594f2d8a6d7d80b7
-      internalID: 110512769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95cb8e51d29812e42bdb6dd051e1a06e
-      internalID: -1533574553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 079865cc1ef610e44b8bb53fcc5b859d
-      internalID: 1753002073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MysteriousMan-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfed572370bf03b4798b8efe0d1ec19c
-      internalID: 1940213325
+      spriteID: a62e1ebcf2ff02b4b8b9cb2cb01101bb
+      internalID: 423477361
       vertices: []
       indices: 
       edges: []
@@ -384,16 +237,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MysteriousMan-Sheet_9: 1940213325
-      MysteriousMan-Sheet_2: -705597763
-      MysteriousMan-Sheet_1: 619546915
-      MysteriousMan-Sheet_0: 639202291
-      MysteriousMan-Sheet_7: -1533574553
-      MysteriousMan-Sheet_8: 1753002073
-      MysteriousMan-Sheet_3: 141973907
-      MysteriousMan-Sheet_5: -650019002
-      MysteriousMan-Sheet_6: 110512769
-      MysteriousMan-Sheet_4: 461642095
+      Chronos_2: 423477361
+      Chronos_0: 960755579
+      Chronos_1: 966447407
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

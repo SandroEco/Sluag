@@ -13,6 +13,7 @@ public class SFXController : MonoBehaviour
     public AudioSource openChestSound;
     public AudioSource gotHitSound;
     public AudioSource lostSource;
+    public AudioSource openPfostenSource;
 
     private void Footstep()
     {
@@ -63,5 +64,10 @@ public class SFXController : MonoBehaviour
     public void LostSound()
     {
         lostSource.Play();
+    }
+
+    public void OpenPfostenSound()
+    {
+        openPfostenSource.Play();
     }
 }

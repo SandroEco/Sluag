@@ -22,6 +22,7 @@ public class DialogTrigger : MonoBehaviour
     public bool chronosEnd;
     public bool sluagsMom;
     public bool steven;
+    public bool barkeeper;
 
     private void Start()
     {
@@ -37,6 +38,11 @@ public class DialogTrigger : MonoBehaviour
         }
 
         if (steven && SaveManager.instance.activeSave.enableWalljump == true)
+        {
+            Destroy(gameObject);
+        }
+
+        if (barkeeper && SaveManager.instance.activeSave.talkedToBarkeeper == true)
         {
             Destroy(gameObject);
         }
@@ -76,6 +82,14 @@ public class DialogTrigger : MonoBehaviour
         if(chronosEnd && other.tag == "Player")
         {
             transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
+        }
+
+        if (barkeeper)
+        {
+            StartDialog();
+            SaveManager.instance.activeSave.talkedToBarkeeper = true;
+            SaveManager.instance.Save();
+            Destroy(this);
         }
     }
 

@@ -305,24 +305,14 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(bc.bounds.center - new Vector3(bc.bounds.extents.x, bc.bounds.extents.y + 0.1f), Vector2.right * (bc.bounds.extents.x + groundRaycastLength), Color.red);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Key")
+        if(other.tag == "circleShards" || other.tag == "squareShards")
         {
-            canMove = false;
-            isPlayingAnimation = true;
-            StartCoroutine(WaitForAnim());
+            StartCoroutine(TransformationTransition());
         }
     }
 
-    private IEnumerator WaitForAnim()
-    {
-        anim.SetTrigger("Win");
-        canMove = false;
-        yield return new WaitForSeconds(1.7f);
-        isPlayingAnimation = false;
-        canMove = true;
-    }
 
     public void Die()
     {
@@ -342,5 +332,16 @@ public class Movement : MonoBehaviour
         rb.gravityScale = 0f;
         fallMultiplier = 0;
         verticalDirection = GetInput().y;
+    }
+
+    private IEnumerator TransformationTransition()
+    {
+        anim.SetTrigger("Transform");
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.5f);
+        anim.SetTrigger("TransformBack");
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

@@ -15,16 +15,17 @@ public class CloudGeneratorScript : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
+        Prewarm();
         Invoke("AttemptSpawn", spawnInterval);
     }
 
-    void SpawnCloud()
+    void SpawnCloud(Vector2 startPos)
     {
         int randomIndex = UnityEngine.Random.Range(0, clouds.Length);
         GameObject cloud = Instantiate(clouds[randomIndex]);
 
-        startPos.y = UnityEngine.Random.Range(startPos.y - 3f, startPos.y + 3f);
-        cloud.transform.position = startPos;
+        float startY = UnityEngine.Random.Range(startPos.y - 6f, startPos.y + 6f);
+        cloud.transform.position = new Vector2(startPos.x, startY);
 
         float speed = UnityEngine.Random.Range(0.5f, 1.5f);
         cloud.GetComponent<CloudScript>().StartFloating(speed, endPoint.transform.position.x);
@@ -34,9 +35,18 @@ public class CloudGeneratorScript : MonoBehaviour
 
     void AttemptSpawn()
     {
-        SpawnCloud();
+        SpawnCloud(startPos);
 
         Invoke("AttemptSpawn", spawnInterval);
 
+    }
+
+    void Prewarm()
+    {
+        for (int i = 0; i < 40; i++)
+        {
+            Vector2 spawnPos = startPos + Vector2.right * (i * 2);
+            SpawnCloud(spawnPos);
+        }
     }
 }

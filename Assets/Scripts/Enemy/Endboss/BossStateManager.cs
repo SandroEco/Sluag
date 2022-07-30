@@ -12,6 +12,7 @@ public class BossStateManager : MonoBehaviour
     public GameObject stone;
     public int count = 0;
     public int health = 3;
+    public DialogManager dM;
 
     BossBaseState currentState;
     public BossFirstState FirstState = new BossFirstState();
@@ -25,6 +26,8 @@ public class BossStateManager : MonoBehaviour
         currentState.EnterState(this);
 
         anim = GetComponent<Animator>();
+        dM = FindObjectOfType<DialogManager>().GetComponent<DialogManager>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)

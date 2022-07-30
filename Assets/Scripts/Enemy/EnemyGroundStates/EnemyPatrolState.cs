@@ -9,9 +9,11 @@ public class EnemyPatrolState : EnemyBaseState
     private bool inAir;
     public float oldPos = 0.0f;
     private float castDist = 5;
+    private float timer = 1f;
 
     public override void EnterState(EnemyStateManager enemy)
     {
+        timer = 1f;
         enemy.mustPatrol = true;
         enemy.anim.SetBool("isChasing", false);
 
@@ -40,20 +42,27 @@ public class EnemyPatrolState : EnemyBaseState
         }
         oldPos = enemy.transform.position.x;
 
-        if (enemy.isFacingRight)
+        if(timer > 0)
         {
-            Debug.DrawRay(enemy.transform.position, Vector3.right * castDist, Color.green);
-            if (Physics2D.Raycast(enemy.transform.position, Vector3.right, castDist, enemy.playerLayer))
-            {
-                enemy.SwitchState(enemy.FoundState);
-            }
+            timer -= Time.deltaTime;
         }
-        else if (!enemy.isFacingRight)
+        else
         {
-            Debug.DrawRay(enemy.transform.position, Vector3.right * -castDist, Color.green);
-            if (Physics2D.Raycast(enemy.transform.position, Vector3.right, -castDist, enemy.playerLayer))
+            if (enemy.isFacingRight)
             {
-                enemy.SwitchState(enemy.FoundState);
+                Debug.DrawRay(enemy.transform.position, Vector3.right * castDist, Color.green);
+                if (Physics2D.Raycast(enemy.transform.position, Vector3.right, castDist, enemy.playerLayer))
+                {
+                    enemy.SwitchState(enemy.FoundState);
+                }
+            }
+            else if (!enemy.isFacingRight)
+            {
+                Debug.DrawRay(enemy.transform.position, Vector3.right * -castDist, Color.green);
+                if (Physics2D.Raycast(enemy.transform.position, Vector3.right, -castDist, enemy.playerLayer))
+                {
+                    enemy.SwitchState(enemy.FoundState);
+                }
             }
         }
     }

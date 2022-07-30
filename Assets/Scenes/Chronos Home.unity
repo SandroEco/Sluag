@@ -368,7 +368,9 @@ MonoBehaviour:
   - actorId: 0
     message: You just absorbed the soul, and can now transform into this Flying Squirrel.
   - actorId: 0
-    message: His abilites will help you on your journey.
+    message: His abilites will help you finding a Birsch.
+  - actorId: 0
+    message: They are somewhere here in the Bushy Forest
   - actorId: 0
     message: Good luck!
   actors:
@@ -383,6 +385,7 @@ MonoBehaviour:
   chronosEnd: 0
   sluagsMom: 0
   steven: 0
+  barkeeper: 0
 --- !u!1 &883633262
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +550,7 @@ MonoBehaviour:
   chronosEnd: 0
   sluagsMom: 0
   steven: 0
+  barkeeper: 0
 --- !u!1001 &932663480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19051,6 +19055,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 776020405742515747, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
+      propertyPath: vcam
+      value: 
+      objectReference: {fileID: 1807968317}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19061,7 +19069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552174, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000008011739
+      value: -0.000000089678
       objectReference: {fileID: 0}
     - target: {fileID: 776020406818552209, guid: c4bc758b1e8bb29438c8497fec03c092, type: 3}
       propertyPath: orthographic size
@@ -19514,12 +19522,12 @@ MonoBehaviour:
   - actorId: 0
     message: Ok, but it won't be easy.
   - actorId: 0
-    message: First you need to get me something deep down in the Average Cave.
+    message: First you need to find me a Birsch, one of the strongest animals on
+      this planet.
   - actorId: 0
-    message: The ...(name incoming, you'll see)
+    message: His powers will be really handy for you.
   - actorId: 0
-    message: I can tell you one thing to help you because you, my friend, have a
-      special ability.
+    message: But you'll need some help for that.
   - actorId: 0
     message: 'Do you see the soul upstairs? '
   - actorId: 0
@@ -19536,6 +19544,7 @@ MonoBehaviour:
   chronosEnd: 0
   sluagsMom: 0
   steven: 0
+  barkeeper: 0
 --- !u!1 &1993057972
 GameObject:
   m_ObjectHideFlags: 0
@@ -19655,6 +19664,7 @@ GameObject:
   - component: {fileID: 2124301119}
   - component: {fileID: 2124301123}
   - component: {fileID: 2124301124}
+  - component: {fileID: 2124301125}
   m_Layer: 0
   m_Name: Chronos
   m_TagString: NPC
@@ -19679,8 +19689,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -19750,12 +19760,12 @@ SpriteRenderer:
   m_SortingLayerID: -71838269
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 639202291, guid: 9fbc75b5d8acaa24c914ecf1316002ae, type: 3}
+  m_Sprite: {fileID: 960755579, guid: 9fbc75b5d8acaa24c914ecf1316002ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19769,8 +19779,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124301116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 9, y: 0.9375, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1858013101}
@@ -19804,6 +19814,7 @@ MonoBehaviour:
   chronosEnd: 0
   sluagsMom: 0
   steven: 0
+  barkeeper: 0
 --- !u!114 &2124301124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19819,3 +19830,23 @@ MonoBehaviour:
   pressUp: {fileID: 1993057972}
   needsKey: 0
   chest: 0
+--- !u!95 &2124301125
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124301116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15d0c1c0a5b7b9b42be9e05922f11d37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

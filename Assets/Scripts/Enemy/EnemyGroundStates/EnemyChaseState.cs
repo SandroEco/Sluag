@@ -32,6 +32,11 @@ public class EnemyChaseState : EnemyBaseState
         {
             enemy.transform.position = enemy.transform.position + (-enemy.transform.right * speed * Time.deltaTime);
         }
+
+        if (enemy.col.IsTouchingLayers(enemy.groundLayer))
+        {
+            enemy.SwitchState(enemy.PatrolState);
+        }
     }
 
     public override void FixedUpdateState(EnemyStateManager enemy)
@@ -43,6 +48,7 @@ public class EnemyChaseState : EnemyBaseState
     {
 
     }
+
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D other)
     {
         if (other.tag == "Hit" || other.tag == "Hit 2")

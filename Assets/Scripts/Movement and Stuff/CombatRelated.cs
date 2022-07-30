@@ -59,7 +59,7 @@ public class CombatRelated : MonoBehaviour
         {
             movement.canMove = false;
         }
-        else if(!isAttacking && Door.canInteract)
+        else if(!isAttacking && Door.canInteract && this.name == "Sluag")
         {
             movement.canMove = true;
         }

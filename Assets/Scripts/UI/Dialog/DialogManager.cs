@@ -8,6 +8,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI actorName;
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
+    private AudioSource skipTextSource;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -52,6 +53,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        skipTextSource = GameObject.Find("SkipTextSource").GetComponent<AudioSource>();
         backgroundBox.transform.localScale = Vector3.zero;
     }
 
@@ -59,6 +61,7 @@ public class DialogManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isActive == true)
         {
+            skipTextSource.Play();
             NextMessage();
         }
     }
