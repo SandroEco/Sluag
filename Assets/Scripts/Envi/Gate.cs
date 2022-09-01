@@ -24,7 +24,7 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && Input.GetAxisRaw("Vertical") == 1f && InventoryScript.instance.key >= 1)
+        if(other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.key >= 1)
         {
             sfx.OpenChestSound();
             anim.SetTrigger("Opened");

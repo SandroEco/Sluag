@@ -28,15 +28,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Save();
-        }
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            DeleteSaveData();
-        }
     }
 
     public void Save()
@@ -113,4 +105,9 @@ public class SaveData
     public bool tpToCaveForest;
     public bool talkedToBarkeeper = false;
     public bool opened = false;
+
+    public bool blueApe;
+    public bool greenApe;
+    public bool purpleApe;
+    public bool redApe;
 }

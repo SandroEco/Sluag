@@ -20,6 +20,7 @@ public class DialogTrigger : MonoBehaviour
     public bool mysteriousMan;
     public bool chronos;
     public bool chronosEnd;
+    public bool chronosEnd2;
     public bool sluagsMom;
     public bool steven;
     public bool barkeeper;
@@ -123,7 +124,7 @@ public class DialogTrigger : MonoBehaviour
         {
             transform.Find("Dialog1").GetComponent<DialogTrigger>().StartDialog();
         }
-        else if (chronos && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.circleShards <= 1)
+        else if (chronos && other.tag == "Player" && Input.GetButton("Interact") && InventoryScript.instance.circleShards >= 1)
         {
             transform.Find("Dialog2").GetComponent<DialogTrigger>().StartDialog();
         }
@@ -135,13 +136,9 @@ public class DialogTrigger : MonoBehaviour
             SaveManager.instance.activeSave.enableWalljump = true;
         }
 
-        if (chronosEnd && other.tag == "Player")
+        if (chronosEnd2 && other.tag == "Player")
         {
-            if (!DialogManager.isActive)
-            {
-                Debug.Log("isNotActive");
-                //LoadScene && DestroyCollider
-            }
+            StartCoroutine(WaitTillNotActive());
         }
     }
 
@@ -158,6 +155,21 @@ public class DialogTrigger : MonoBehaviour
         SaveManager.instance.Save();
     }
 
+    private IEnumerator WaitTillNotActive()
+    {
+        yield return new WaitForSeconds(1.2f);
+        if (!DialogManager.isActive)
+        {
+            StartCoroutine(LoadScene());
+        }
+    }
+    private IEnumerator LoadScene()
+    {
+        Movement.Instance.canMove = false;
+        Fade.instance.FadeIn();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(4);
+    }
 }
 
 [System.Serializable]

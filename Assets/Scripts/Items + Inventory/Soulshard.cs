@@ -22,8 +22,8 @@ public class Soulshard : MonoBehaviour
 
             if (gameObject.tag == ("squareShards"))
             {
-                IS.squareShards++;
-                SaveManager.instance.activeSave.squareShards = IS.squareShards;
+                //IS.squareShards++;
+                //SaveManager.instance.activeSave.squareShards = IS.squareShards;
             }
 
             if(gameObject.tag == ("frogShards"))

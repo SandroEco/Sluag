@@ -18,7 +18,7 @@ public class Goldchest : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && Input.GetAxisRaw("Vertical") == 1f)
+        if(other.tag == "Player" && Input.GetButton("Interact"))
         {
             sfx.OpenChestSound();
             anim.SetTrigger("Open");
